@@ -1,3 +1,0 @@
-# kattasahan.github.io
-
-Portfolio
