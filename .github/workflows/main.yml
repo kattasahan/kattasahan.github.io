@@ -2,23 +2,23 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: setup git config
-      run: |
-        git config user.name "Katta Sahan"
-        git config user.email "kattasahan2234@gmail.com"
+      - name: setup git config
+        run: |
+          git config user.name "Katta Sahan"
+          git config user.email "kattasahan2234@gmail.com"
 
-    - name: setup deployment
-      run: |
-        npm install
-        npm run build
-        git add docs -f
-        git diff --staged --quiet || (git commit -m "build files - github action" && git push)
+      - name: setup deployment
+        run: |
+          npm install
+          npm run build
+          git add docs -f
+          git diff --staged --quiet || (git commit -m "build files - github action" && git push)
