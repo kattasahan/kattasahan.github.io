@@ -1,6 +1,6 @@
 {
-  "name": "test",
-  "private": true,
+  "name": "kattasahan",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
