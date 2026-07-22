@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "dependencies": {
+    "@portfolio/routes": "workspace:*"
+  },
   "exports": {
     "./routes": "./src/routes.ts",
     "./routes-config": "./src/routes.config.js"
