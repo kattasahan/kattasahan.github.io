@@ -39,6 +39,8 @@ For every milestone:
 - Added a responsive, light/dark theme-aware experience selector for Workspace, Journal, Editorial, and Calm.
 - Added the public `/notes/` route as the entry point to the future build-journal application.
 - Kept the page intentionally concise: it directs visitors into an experience instead of presenting a full portfolio feed.
+- Redesigned the Gateway as an editorial entry experience: a strong identity statement followed by five spacious, chapter-like routes for Workspace, Journal, Editorial, Calm, and Notes.
+- Replaced the card grid and dashboard framing with typography, whitespace, subtle atmosphere, and simple dividing lines.
 - Build and type-check verification remain pending because pnpm cannot initialize its local tool cache in this environment.
 
 ### Milestone 5 — Public Notes

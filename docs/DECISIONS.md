@@ -38,7 +38,9 @@
 
 ## ADR-007 — Make the gateway an experience selector
 
-**Decision:** Keep the root route intentionally concise: introduce the four portfolio perspectives, offer direct entry into each one, and link to the public build notes.
+**Status:** Superseded by ADR-015.
+
+**Original decision:** Keep the root route intentionally concise: introduce the four portfolio perspectives, offer direct entry into each one, and link to the public build notes.
 
 **Why:** The gateway should orient visitors without competing with the distinct mini-sites. A lightweight theme toggle and responsive card grid provide a polished first impression while leaving each experience space to establish its own identity.
 
@@ -85,3 +87,9 @@
 **Decision:** Keep shared route data and base-path resolution in a dependency-free JavaScript entrypoint, `@portfolio/config/routes-config`, and have the TypeScript runtime route module consume that entrypoint. Vite configuration imports the JavaScript entrypoint; application runtime code continues to import `@portfolio/config/routes`.
 
 **Why:** Vite configuration is loaded by Node before Vite transforms application TypeScript. A JavaScript entrypoint prevents Node's unknown `.ts` extension error while preserving one shared route contract and avoiding UI or routing behavior changes.
+
+## ADR-015 — Make the gateway an editorial entry experience
+
+**Decision:** Present the Gateway as a calm editorial introduction to Sahan Katta, followed by five large chapter-like entrances for Workspace, Journal, Editorial, Calm, and Notes. Use typography, whitespace, and simple dividing lines instead of cards, dashboards, or dense navigation patterns.
+
+**Why:** The root experience should create a memorable sense of authorship before visitors choose a perspective. Separate full-width sections give every destination room to feel distinct while keeping the gateway quiet, legible, and intentionally restrained.

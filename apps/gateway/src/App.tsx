@@ -1,54 +1,66 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type CSSProperties } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import {
   colorTokens,
   motionTokens,
-  radiusTokens,
   spacingTokens,
   typographyTokens,
   type ColorTheme,
 } from '@portfolio/tokens'
-import {
-  Button,
-  Card,
-  ExperienceSwitcher,
-  LinkButton,
-  Navbar,
-  ThemeProvider,
-} from '@portfolio/ui'
+import { Button, LinkButton, ThemeProvider } from '@portfolio/ui'
 import { gatewayRouterPath, route } from './routes'
 
 interface Experience {
   title: string
-  eyebrow: string
+  index: string
+  lens: string
   description: string
   href: string
+  action: string
 }
+
+type GatewayStyle = CSSProperties & Record<`--${string}`, string>
 
 const experiences: Experience[] = [
   {
     title: 'Workspace',
-    eyebrow: 'Product-minded',
-    description: 'A focused view of systems, decisions, and the work behind useful products.',
+    index: '01',
+    lens: 'The work, considered',
+    description: 'A product-minded view of systems, decisions, and the care behind useful digital work.',
     href: route('workspace'),
+    action: 'Enter Workspace',
   },
   {
     title: 'Journal',
-    eyebrow: 'Storytelling',
-    description: 'A slower, narrative-led space for the ideas and moments that shape the work.',
+    index: '02',
+    lens: 'Stories in progress',
+    description: 'A slower place for observations, process, and the moments that give the work its point of view.',
     href: route('journal'),
+    action: 'Open Journal',
   },
   {
     title: 'Editorial',
-    eyebrow: 'Typography-first',
-    description: 'A reading experience where hierarchy, pace, and language are the interface.',
+    index: '03',
+    lens: 'Language as interface',
+    description: 'A reading-led experience shaped by hierarchy, rhythm, and the quiet force of well-chosen words.',
     href: route('editorial'),
+    action: 'Read Editorial',
   },
   {
     title: 'Calm',
-    eyebrow: 'Quietly immersive',
-    description: 'A pared-back retreat built around atmosphere, reflection, and considered motion.',
+    index: '04',
+    lens: 'Room to pause',
+    description: 'A pared-back space for atmosphere, reflection, and motion that never asks for more attention than it earns.',
     href: route('calm'),
+    action: 'Find Calm',
+  },
+  {
+    title: 'Notes',
+    index: '05',
+    lens: 'The making of it',
+    description: 'An open journal about the architecture, design decisions, accessibility, and lessons behind this portfolio.',
+    href: route('notes'),
+    action: 'Read the notes',
   },
 ]
 
@@ -66,157 +78,94 @@ function GatewayLanding() {
     document.documentElement.style.colorScheme = theme
   }, [theme])
 
-  const switcherItems = experiences.map(({ href, title }) => ({ href, label: title }))
+  const pageStyle: GatewayStyle = {
+    '--gateway-background': color.background,
+    '--gateway-border': color.border,
+    '--gateway-focus': color.focus,
+    '--gateway-muted': color.textMuted,
+    '--gateway-subtle': color.textSubtle,
+    '--gateway-text': color.text,
+    '--gateway-space-1': spacingTokens[1],
+    '--gateway-space-2': spacingTokens[2],
+    '--gateway-space-3': spacingTokens[3],
+    '--gateway-space-4': spacingTokens[4],
+    '--gateway-space-6': spacingTokens[6],
+    '--gateway-space-10': spacingTokens[10],
+    '--gateway-space-16': spacingTokens[16],
+    '--gateway-motion': motionTokens.duration.normal,
+    '--gateway-easing': motionTokens.easing.standard,
+    backgroundColor: color.background,
+    color: color.text,
+    fontFamily: typographyTokens.fontFamily.sans,
+  }
 
   return (
     <ThemeProvider theme={theme}>
-      <div
-        style={{
-          backgroundColor: color.background,
-          color: color.text,
-          fontFamily: typographyTokens.fontFamily.sans,
-          minHeight: '100vh',
-          transition: `background-color ${motionTokens.duration.normal} ${motionTokens.easing.standard}, color ${motionTokens.duration.normal} ${motionTokens.easing.standard}`,
-        }}
-      >
-        <Navbar
-          brand={
-            <a href={route('gateway')} style={{ color: color.text, fontWeight: typographyTokens.fontWeight.semibold, textDecoration: 'none' }}>
-              Sahan Katta
-            </a>
-          }
-          items={[{ href: route('notes'), label: 'Build notes' }]}
-          theme={theme}
-        >
-          <Button
-            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-            onClick={() => setTheme((current) => (current === 'light' ? 'dark' : 'light'))}
-            theme={theme}
-            variant="secondary"
-          >
-            {theme === 'light' ? 'Dark mode' : 'Light mode'}
-          </Button>
-        </Navbar>
+      <div className="gateway" style={pageStyle}>
+        <header className="gateway__header">
+          <a className="gateway__wordmark" href={route('gateway')}>
+            Sahan Katta
+          </a>
+          <div className="gateway__headerActions">
+            <a className="gateway__notesLink" href={route('notes')}>Notes</a>
+            <Button
+              aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+              className="gateway__themeToggle"
+              onClick={() => setTheme((current) => (current === 'light' ? 'dark' : 'light'))}
+              theme={theme}
+              variant="ghost"
+            >
+              {theme === 'light' ? 'Dark' : 'Light'}
+            </Button>
+          </div>
+        </header>
 
-        <main style={{ margin: '0 auto', maxWidth: '76rem', padding: `${spacingTokens[6]} ${spacingTokens[3]}` }}>
-          <section aria-labelledby="gateway-title" style={{ maxWidth: '50rem' }}>
-            <p
-              style={{
-                color: color.textMuted,
-                fontSize: typographyTokens.fontSize.sm,
-                fontWeight: typographyTokens.fontWeight.semibold,
-                letterSpacing: typographyTokens.letterSpacing.wide,
-                margin: 0,
-                textTransform: 'uppercase',
-              }}
-            >
-              Four ways to look at the work
-            </p>
-            <h1
-              id="gateway-title"
-              style={{
-                fontSize: `clamp(${typographyTokens.fontSize['4xl']}, 8vw, ${typographyTokens.fontSize['6xl']})`,
-                letterSpacing: typographyTokens.letterSpacing.tight,
-                lineHeight: typographyTokens.lineHeight.tight,
-                margin: `${spacingTokens[2]} 0 0`,
-              }}
-            >
-              Choose a point of view.
-            </h1>
-            <p
-              style={{
-                color: color.textMuted,
-                fontSize: typographyTokens.fontSize.lg,
-                lineHeight: typographyTokens.lineHeight.relaxed,
-                margin: `${spacingTokens[2]} 0 0`,
-                maxWidth: '40rem',
-              }}
-            >
-              This is a gateway, not a catalog. Each space below tells the same story through a different lens.
-            </p>
-          </section>
-
-          <section aria-label="Experience shortcuts" style={{ marginTop: spacingTokens[4] }}>
-            <ExperienceSwitcher items={switcherItems} theme={theme} />
-          </section>
-
-          <section aria-labelledby="experiences-title" style={{ marginTop: spacingTokens[5] }}>
-            <h2 id="experiences-title" style={{ fontSize: typographyTokens.fontSize.sm, fontWeight: typographyTokens.fontWeight.semibold, letterSpacing: typographyTokens.letterSpacing.wide, margin: 0, textTransform: 'uppercase' }}>
-              Experiences
-            </h2>
-            <div
-              style={{
-                display: 'grid',
-                gap: spacingTokens[2],
-                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 16rem), 1fr))',
-                marginTop: spacingTokens[2],
-              }}
-            >
-              {experiences.map((experience) => (
-                <Card
-                  as="article"
-                  elevated
-                  key={experience.href}
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    minHeight: '18rem',
-                    transition: `box-shadow ${motionTokens.duration.normal} ${motionTokens.easing.standard}, transform ${motionTokens.duration.normal} ${motionTokens.easing.standard}`,
-                  }}
-                  theme={theme}
-                >
-                  <p
-                    style={{
-                      color: color.textMuted,
-                      fontSize: typographyTokens.fontSize.sm,
-                      fontWeight: typographyTokens.fontWeight.medium,
-                      margin: 0,
-                    }}
-                  >
-                    {experience.eyebrow}
-                  </p>
-                  <h3
-                    style={{
-                      fontSize: typographyTokens.fontSize['2xl'],
-                      letterSpacing: typographyTokens.letterSpacing.tight,
-                      margin: `${spacingTokens[1]} 0 0`,
-                    }}
-                  >
-                    {experience.title}
-                  </h3>
-                  <p style={{ color: color.textMuted, lineHeight: typographyTokens.lineHeight.relaxed, margin: `${spacingTokens[1]} 0 0` }}>
-                    {experience.description}
-                  </p>
-                  <LinkButton href={experience.href} style={{ alignSelf: 'start', marginTop: 'auto' }} theme={theme} variant="ghost">
-                    Enter {experience.title}
-                  </LinkButton>
-                </Card>
-              ))}
+        <main>
+          <section className="gateway__hero" aria-labelledby="gateway-title">
+            <p className="gateway__kicker">Independent designer &amp; builder</p>
+            <h1 id="gateway-title">Sahan<br />Katta</h1>
+            <div className="gateway__heroFooter">
+              <p>
+                A portfolio of thoughtful digital experiences, each offering a different way to meet the work.
+              </p>
+              <a className="gateway__scrollCue" href="#experiences">Explore the collection <span aria-hidden="true">↓</span></a>
             </div>
           </section>
 
-          <section
-            aria-label="How this portfolio was made"
-            style={{
-              backgroundColor: color.surface,
-              border: `1px solid ${color.border}`,
-              borderRadius: radiusTokens.lg,
-              marginTop: spacingTokens[5],
-              padding: spacingTokens[3],
-            }}
-          >
-            <p style={{ color: color.textMuted, margin: 0 }}>For builders</p>
-            <h2 style={{ fontSize: typographyTokens.fontSize['2xl'], letterSpacing: typographyTokens.letterSpacing.tight, margin: `${spacingTokens[1]} 0 0` }}>
-              Follow the decisions behind the work.
-            </h2>
-            <p style={{ color: color.textMuted, lineHeight: typographyTokens.lineHeight.relaxed, margin: `${spacingTokens[1]} 0 0`, maxWidth: '42rem' }}>
-              The notes are an article series about the architecture, design system, accessibility, motion, and lessons learned while making this portfolio.
-            </p>
-            <LinkButton href={route('notes')} style={{ marginTop: spacingTokens[2] }} theme={theme} variant="secondary">
-              Read the build notes
-            </LinkButton>
+          <section className="gateway__intro" aria-labelledby="experiences-title">
+            <p className="gateway__sectionLabel">Selected perspectives</p>
+            <h2 id="experiences-title">One practice.<br />Five ways in.</h2>
+          </section>
+
+          <section className="gateway__experiences" id="experiences" aria-label="Portfolio experiences">
+            {experiences.map((experience) => (
+              <article className="gateway__chapter" key={experience.href}>
+                <p className="gateway__chapterIndex">{experience.index}</p>
+                <div className="gateway__chapterHeading">
+                  <p className="gateway__chapterLens">{experience.lens}</p>
+                  <h3>{experience.title}</h3>
+                </div>
+                <div className="gateway__chapterDetail">
+                  <p>{experience.description}</p>
+                  <LinkButton
+                    className="gateway__chapterLink"
+                    href={experience.href}
+                    style={{ borderRadius: '0', minHeight: 'auto', padding: '0' }}
+                    theme={theme}
+                    variant="ghost"
+                  >
+                    {experience.action} <span aria-hidden="true">↗</span>
+                  </LinkButton>
+                </div>
+              </article>
+            ))}
           </section>
         </main>
+
+        <footer className="gateway__footer">
+          <p>Made with intention in India.</p>
+          <a href={route('notes')}>How this was made <span aria-hidden="true">↗</span></a>
+        </footer>
       </div>
     </ThemeProvider>
   )
