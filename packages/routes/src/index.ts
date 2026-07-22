@@ -27,7 +27,7 @@ export function restoreStaticRoute(): void {
 }
 
 export const appRouteNames = [
-  'gateway',
+  'home',
   'workspace',
   'journal',
   'editorial',
@@ -60,7 +60,7 @@ export type NotesArticleRoute = (typeof notesArticleRouteNames)[number]
 
 /** Route names grouped by the public experience that owns them. */
 export const appRoutes = {
-  gateway: ['gateway'],
+  home: ['home'],
   workspace: workspaceRouteNames,
   journal: ['journal'],
   editorial: ['editorial'],
@@ -99,7 +99,7 @@ export function relativeRoutePath(appRoute: AppRoute, route: PublicRoute): strin
   const appPath = publicRoutes[appRoute]
   const routePath = publicRoutes[route]
 
-  if (appRoute !== 'gateway' && (!routesForApp(appRoute).includes(route) || !routePath.startsWith(appPath))) {
+  if (appRoute !== 'home' && (!routesForApp(appRoute).includes(route) || !routePath.startsWith(appPath))) {
     throw new Error(`Route ${route} does not belong to app route ${appRoute}`)
   }
 

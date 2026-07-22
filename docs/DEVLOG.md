@@ -18,7 +18,7 @@ For every milestone:
 
 - Created the pnpm workspace declaration, root package manifest, and shared TypeScript base configuration.
 - Added minimal root ESLint and Prettier configuration.
-- Created workspace manifests for Gateway, Workspace, Journal, Editorial, Calm, Notes, UI, tokens, content, icons, and shared config.
+- Created workspace manifests for Home, Workspace, Journal, Editorial, Calm, Notes, UI, tokens, content, icons, and shared config.
 - No application source code or UI has been created.
 - Dependency installation and command verification remain pending because pnpm could not initialize its local tool cache in this environment.
 
@@ -33,20 +33,21 @@ For every milestone:
 - Refactored the UI library into one folder per component, with shared styling, focus, navigation, and field helpers in `packages/ui/src/lib`.
 - Preserved the public barrel exports and component behavior for consuming apps.
 
-### Milestone 2 — Gateway
+### Milestone 2 — Home
 
-- Built the static Vite and React gateway application at `/`.
+- Built the static Vite and React Home application at `/`.
 - Added a responsive, light/dark theme-aware experience selector for Workspace, Journal, Editorial, and Calm.
 - Added the public `/notes/` route as the entry point to the future build-journal application.
 - Kept the page intentionally concise: it directs visitors into an experience instead of presenting a full portfolio feed.
-- Redesigned the Gateway as an editorial entry experience: a strong identity statement followed by five spacious, chapter-like routes for Workspace, Journal, Editorial, Calm, and Notes.
+- Redesigned Home as an editorial entry experience with a strong identity statement and spacious, chapter-like routes.
+- Clarified Home as an entry point to four perspectives—Workspace, Journal, Editorial, and Calm—and separated the Engineering Journal into one quiet postscript link to Notes.
 - Replaced the card grid and dashboard framing with typography, whitespace, subtle atmosphere, and simple dividing lines.
 - Build and type-check verification remain pending because pnpm cannot initialize its local tool cache in this environment.
 
 ### Milestone 5 — Public Notes
 
 - Built the public Notes application as a calm, article-style developer journal under `/notes/`.
-- Added six polished articles covering intent, the gateway, design tokens, shared components, static routing and deployment, and lessons learned.
+- Added six polished articles covering intent, Home, design tokens, shared components, static routing and deployment, and lessons learned.
 - Created static entry pages for the Notes index and each article, with responsive layouts, light/dark themes, and reduced-motion handling.
 - Kept Notes separate from internal documentation: it explains the reasoning behind the portfolio rather than its setup.
 
@@ -56,8 +57,8 @@ For every milestone:
 - Added root and mini-site route constants, nested Workspace and Notes route groups, app-scoped helpers, matching, and configurable GitHub Pages base-path resolution.
 - Added the Node-loadable `@portfolio/routes/config` entrypoint for Vite config-time base-path resolution, avoiding direct Node imports of TypeScript source.
 - Kept `@portfolio/config` route entries as temporary compatibility re-exports; app-routing imports and behavior were intentionally left unchanged.
-- Updated Gateway and Notes links and Vite base configuration to use a configurable site base path.
-- Migrated Gateway and Notes to React Router; Notes now has one route tree for the journal index and all article URLs.
+- Updated Home and Notes links and Vite base configuration to use a configurable site base path.
+- Migrated Home and Notes to React Router; Notes now has one route tree for the journal index and all article URLs.
 - Added explicit shared route names for each public Notes article and removed the former multi-page Notes entries.
 
 ### Milestone 4 — Workspace shell
@@ -81,7 +82,7 @@ For every milestone:
 ## Milestone 6 — Deployment
 
 - Added a GitHub Actions workflow that builds and deploys the aggregate static artifact to GitHub Pages on `main`.
-- Added `pnpm build:pages` to compose Gateway, Workspace, and Notes into `.pages/` with root-hosted Vite bases.
+- Added `pnpm build:pages` to compose Home, Workspace, and Notes into `.pages/` with root-hosted Vite bases.
 - Added a static fallback and route restoration for direct Workspace and Notes deep links on GitHub Pages.
 - Reserved the Journal, Editorial, and Calm paths with generated redirects until those experiences are implemented.
 - Validated the aggregate production build and its required Pages route entries locally.

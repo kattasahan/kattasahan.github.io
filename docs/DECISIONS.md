@@ -36,13 +36,13 @@
 
 **Why:** The portfolio can share reliable interaction and accessibility defaults without coupling every app to Tailwind, a CSS-in-JS runtime, or a fixed page layout. Apps can compose the primitives and add experience-specific styling while retaining one light/dark token foundation.
 
-## ADR-007 — Make the gateway an experience selector
+## ADR-007 — Make Home an experience selector
 
 **Status:** Superseded by ADR-015.
 
 **Original decision:** Keep the root route intentionally concise: introduce the four portfolio perspectives, offer direct entry into each one, and link to the public build notes.
 
-**Why:** The gateway should orient visitors without competing with the distinct mini-sites. A lightweight theme toggle and responsive card grid provide a polished first impression while leaving each experience space to establish its own identity.
+**Why:** Home should orient visitors without competing with the distinct mini-sites. A lightweight theme toggle and responsive card grid provide a polished first impression while leaving each experience space to establish its own identity.
 
 ## ADR-008 — Publish Notes as static editorial pages
 
@@ -50,7 +50,7 @@
 
 **Original decision:** Build the public Notes app as a Vite multi-page application, with a static entry for the journal index and every article beneath `/notes/`.
 
-**Superseded because:** Notes now uses React Router with explicit shared article routes, aligning it with Gateway and Workspace. GitHub Pages deep-link fallback support moves to the deployment milestone.
+**Superseded because:** Notes now uses React Router with explicit shared article routes, aligning it with Home and Workspace. GitHub Pages deep-link fallback support moves to the deployment milestone.
 
 ## ADR-009 — Organize shared UI by component boundary
 
@@ -64,7 +64,7 @@
 
 **Original decision:** Define all public routes and base-path resolution in a framework-agnostic shared module. Apps use the same resolver for internal links and Vite build bases.
 
-**Why:** A configurable site base supports GitHub Pages deployments from either a custom domain root or a repository subpath. One route contract avoids link drift between the gateway, Notes articles, and future mini-sites.
+**Why:** A configurable site base supports GitHub Pages deployments from either a custom domain root or a repository subpath. One route contract avoids link drift between Home, Notes articles, and future mini-sites.
 
 ## ADR-011 — Use Workspace as the experience-shell reference
 
@@ -80,7 +80,7 @@
 
 ## ADR-013 — Standardize React Router across interactive experience apps
 
-**Decision:** Use React Router browser-history routing for Gateway, Notes, and Workspace. Keep each app's basename and every route path derived from the shared route contract; use full links when Gateway hands off to a separately deployed experience.
+**Decision:** Use React Router browser-history routing for Home, Notes, and Workspace. Keep each app's basename and every route path derived from the shared route contract; use full links when Home hands off to a separately deployed experience.
 
 **Why:** A common router model gives the interactive apps consistent navigation behavior while preserving their independent build boundaries. Explicit Notes article routes replace its former multi-page setup, and the deployment milestone will provide the shared GitHub Pages deep-link fallback.
 
@@ -96,14 +96,22 @@
 
 **Why:** Vite configuration is loaded by Node before Vite transforms application TypeScript. A JavaScript entrypoint prevents Node's unknown `.ts` extension error without duplicating route data or weakening the dedicated routing-package boundary.
 
-## ADR-016 — Make the gateway an editorial entry experience
+## ADR-016 — Make Home an editorial entry experience
 
-**Decision:** Present the Gateway as a calm editorial introduction to Sahan Katta, followed by five large chapter-like entrances for Workspace, Journal, Editorial, Calm, and Notes. Use typography, whitespace, and simple dividing lines instead of cards, dashboards, or dense navigation patterns.
+**Status:** Superseded by ADR-018.
 
-**Why:** The root experience should create a memorable sense of authorship before visitors choose a perspective. Separate full-width sections give every destination room to feel distinct while keeping the gateway quiet, legible, and intentionally restrained.
+**Original decision:** Present Home as a calm editorial introduction to Sahan Katta, followed by large chapter-like entrances. Use typography, whitespace, and simple dividing lines instead of cards, dashboards, or dense navigation patterns.
+
+**Why:** The root experience should create a memorable sense of authorship before visitors choose a perspective. Separate full-width sections give every destination room to feel distinct while keeping Home quiet, legible, and intentionally restrained.
 
 ## ADR-017 — Deploy one aggregated GitHub Pages artifact
 
-**Decision:** Build Gateway, Workspace, and Notes independently, then compose their static outputs into a single `.pages/` artifact for the GitHub Pages Actions workflow. Use a generated static `404.html` redirect plus a shared route-restoration helper to support direct Workspace and Notes deep links. Reserve the future Journal, Editorial, and Calm paths with generated redirects until those apps exist.
+**Decision:** Build Home, Workspace, and Notes independently, then compose their static outputs into a single `.pages/` artifact for the GitHub Pages Actions workflow. Use a generated static `404.html` redirect plus a shared route-restoration helper to support direct Workspace and Notes deep links. Reserve the future Journal, Editorial, and Calm paths with generated redirects until those apps exist.
 
 **Why:** GitHub Pages deploys one static artifact and has no server-side history fallback. Aggregation preserves each app's public base path, while the fallback makes browser-history routes reload safely without changing app content or adding backend infrastructure.
+
+## ADR-018 — Separate Home perspectives from the Engineering Journal
+
+**Decision:** The Home application is the entry point to the portfolio. It introduces four perspectives: Workspace, Journal, Editorial, and Calm. The Engineering Journal is intentionally separated because it explains how the portfolio was built rather than presenting the portfolio itself.
+
+**Why:** Treating the Engineering Journal as a fifth perspective blurs the purpose of the entry experience. A quiet, secondary invitation after the four perspectives preserves the Home page's clarity while keeping the learning resource easy to discover.

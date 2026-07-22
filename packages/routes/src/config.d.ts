@@ -1,4 +1,6 @@
 export const publicRoutes: Readonly<{
+  home: '/'
+  /** @deprecated Use home. Retained for unchanged legacy app imports. */
   gateway: '/'
   workspace: '/workspace/'
   workspaceWork: '/workspace/work/'

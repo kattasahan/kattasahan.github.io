@@ -4,9 +4,9 @@
 
 Set up the pnpm monorepo, shared configuration, app workspaces, and shared package folders. Status: complete.
 
-## Milestone 2 — Gateway
+## Milestone 2 — Home
 
-Build the gateway experience. Status: complete.
+Build the Home entry experience. Status: complete.
 
 ## Milestone 3 — Shared design system
 

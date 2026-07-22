@@ -4,7 +4,7 @@ Live site: [kattasahan.github.io](https://kattasahan.github.io/)
 
 ## Local development
 
-Install dependencies, then run the Gateway from the repository root:
+Install dependencies, then run Home from the repository root:
 
 ```sh
 pnpm install

@@ -6,7 +6,7 @@ import { spawnSync } from 'node:child_process'
 const repositoryRoot = fileURLToPath(new URL('..', import.meta.url))
 const outputDirectory = join(repositoryRoot, '.pages')
 const appBuilds = [
-  { name: '@portfolio/gateway', output: '' },
+  { name: '@portfolio/home', output: '' },
   { name: '@portfolio/workspace', output: 'workspace' },
   { name: '@portfolio/notes', output: 'notes' },
 ]

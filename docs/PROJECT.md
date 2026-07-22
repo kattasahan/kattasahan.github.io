@@ -2,16 +2,16 @@
 
 ## Goal
 
-Build a premium, static portfolio composed of a gateway and five distinct experiences: Workspace, Journal, Editorial, Calm, and Notes.
+Build a premium, static portfolio composed of Home and four distinct portfolio perspectives: Workspace, Journal, Editorial, and Calm. Notes is the separate Engineering Journal.
 
 ## Routes
 
-- `/` — gateway
+- `/` — Home entry point
 - `/workspace` — product-minded experience
 - `/journal` — storytelling experience
 - `/editorial` — typography-first experience
 - `/calm` — quiet immersive experience
-- `/notes` — public build-journal and learning resource
+- `/notes` — Engineering Journal and learning resource
 
 ## Product principles
 
@@ -24,7 +24,7 @@ Build a premium, static portfolio composed of a gateway and five distinct experi
 
 ## Notes application
 
-`apps/notes` is a public portfolio application, not project documentation. It will publish polished, article-style explanations of the architectural, design, accessibility, routing, motion, and deployment decisions behind this portfolio.
+`apps/notes` is the public Engineering Journal, not a portfolio perspective or project documentation. It publishes polished, article-style explanations of the architectural, design, accessibility, routing, motion, and deployment decisions behind this portfolio.
 
 ## Documentation policy
 

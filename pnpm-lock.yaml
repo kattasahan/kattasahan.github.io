@@ -34,7 +34,7 @@ importers:
 
   apps/editorial: {}
 
-  apps/gateway:
+  apps/home:
     dependencies:
       '@portfolio/routes':
         specifier: workspace:*
