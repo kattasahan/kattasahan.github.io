@@ -47,3 +47,9 @@
 **Decision:** Build the public Notes app as a Vite multi-page application, with a static entry for the journal index and every article beneath `/notes/`.
 
 **Why:** Notes are meant to be read, bookmarked, and shared. Static article routes work directly on GitHub Pages without a client-router fallback, while preserving React composition and the shared design system.
+
+## ADR-009 — Organize shared UI by component boundary
+
+**Decision:** Keep each public UI component in its own folder and move cross-cutting implementation details into small `src/lib` helpers, while maintaining one top-level barrel export.
+
+**Why:** Component-level ownership makes the library easier to navigate, test, and extend as more portfolio experiences arrive. The barrel keeps imports stable for apps, so internal maintenance does not create unnecessary migration work.

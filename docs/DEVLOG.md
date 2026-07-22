@@ -30,6 +30,8 @@ For every milestone:
 - Defined light and dark color themes, typography, 8-point spacing, radius, elevation, motion, z-index, and breakpoint tokens.
 - Added reusable, accessible React primitives in `packages/ui`: actions, navigation, modal, form, content, and portfolio-specific composition components.
 - Components consume shared tokens, support light and dark themes, and avoid a CSS framework or Tailwind dependency.
+- Refactored the UI library into one folder per component, with shared styling, focus, navigation, and field helpers in `packages/ui/src/lib`.
+- Preserved the public barrel exports and component behavior for consuming apps.
 
 ### Milestone 2 — Gateway
 
