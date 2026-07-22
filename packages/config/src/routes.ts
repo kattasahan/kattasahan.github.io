@@ -1,26 +1,15 @@
+import {
+  appBasePath,
+  normalizeBasePath,
+  publicRoutes,
+  resolvePublicRoute,
+} from './routes.config.js'
+
 /**
- * Public URLs for the portfolio. This module intentionally has no framework
- * or build-tool dependency so apps and deployment configuration can share it.
+ * Framework-agnostic runtime route helpers. Route data and config-time base
+ * resolution are defined in the Node-loadable routes.config.js entrypoint.
  */
-export const publicRoutes = {
-  gateway: '/',
-  workspace: '/workspace/',
-  workspaceWork: '/workspace/work/',
-  workspaceCaseStudy: '/workspace/case-study/:slug/',
-  workspaceAbout: '/workspace/about/',
-  workspaceContact: '/workspace/contact/',
-  journal: '/journal/',
-  editorial: '/editorial/',
-  calm: '/calm/',
-  notes: '/notes/',
-  notesWhyThisPortfolioExists: '/notes/why-this-portfolio-exists/',
-  notesBuildingTheGateway: '/notes/building-the-gateway/',
-  notesDesignSystemDecisions: '/notes/design-system-decisions/',
-  notesSharedComponents: '/notes/shared-components/',
-  notesRoutingAndDeployment: '/notes/routing-and-deployment/',
-  notesWhatILearned: '/notes/what-i-learned/',
-  notesArticle: '/notes/:slug/',
-} as const
+export { appBasePath, normalizeBasePath, publicRoutes, resolvePublicRoute }
 
 export type PublicRoute = keyof typeof publicRoutes
 export type RouteParameters = Record<string, string | number>
@@ -39,23 +28,6 @@ export type NotesArticleRoute = (typeof notesArticleRouteNames)[number]
 export interface MatchedPublicRoute {
   route: PublicRoute
   parameters: RouteParameters
-}
-
-export function normalizeBasePath(basePath = '/') {
-  const trimmed = basePath.trim()
-  if (!trimmed || trimmed === '/') return '/'
-
-  return `/${trimmed.replace(/^\/+|\/+$/g, '')}/`
-}
-
-export function resolvePublicRoute(route: PublicRoute, basePath = '/', parameters: RouteParameters = {}) {
-  const routePath = publicRoutes[route].replace(/:([A-Za-z0-9_]+)/g, (_match, parameterName: string) => {
-    const value = parameters[parameterName]
-    if (value === undefined) throw new Error(`Missing route parameter: ${parameterName}`)
-    return encodeURIComponent(String(value))
-  })
-
-  return `${normalizeBasePath(basePath).replace(/\/$/, '')}${routePath}`
 }
 
 export function createRouteResolver(basePath = '/') {
@@ -115,9 +87,4 @@ export function matchPublicRoute(pathname: string, basePath = '/'): MatchedPubli
   }
 
   return undefined
-}
-
-/** Returns the public base Vite should use when building an individual app. */
-export function appBasePath(route: Exclude<PublicRoute, 'notesArticle'>, siteBasePath = '/') {
-  return resolvePublicRoute(route, siteBasePath)
 }

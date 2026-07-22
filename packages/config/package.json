@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "exports": {
-    "./routes": "./src/routes.ts"
+    "./routes": "./src/routes.ts",
+    "./routes-config": "./src/routes.config.js"
   }
 }

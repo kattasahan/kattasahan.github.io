@@ -28,7 +28,7 @@ packages/
 
 ## Routing strategy
 
-`packages/config/src/routes.ts` is the single source of truth for public URLs. It exports the root, mini-site, Notes, and Notes article routes, along with a resolver that prefixes a configurable site base path.
+`packages/config/src/routes.config.js` is the Node-loadable source of truth for public URLs and base-path resolution. `packages/config/src/routes.ts` consumes that entrypoint and exposes the TypeScript runtime route API for applications. This keeps the route contract shared while allowing Vite configuration to load without a TypeScript runtime loader.
 
 Each app builds for the base path matching its public route. The gateway uses `/`; the experience apps use their route names, such as `/workspace/` and `/notes/`. Vite configurations use the shared route resolver, so the same builds can be hosted at the domain root or beneath a GitHub Pages repository path.
 

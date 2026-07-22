@@ -15,7 +15,7 @@ This is the implementation rulebook for the repository. Follow it alongside ever
 ## Routes
 
 - Never hardcode public route strings in application code.
-- Use `@portfolio/config/routes` as the only source of public route constants and route resolution.
+- Use `@portfolio/config/routes` for application runtime route constants and resolution. Vite configuration must use the Node-loadable `@portfolio/config/routes-config` entrypoint.
 - Use the shared route resolver for both internal links and app build-base configuration.
 - Keep route utilities framework-agnostic and pass deployment base paths explicitly.
 

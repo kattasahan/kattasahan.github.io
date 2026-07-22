@@ -79,3 +79,9 @@
 **Decision:** Use React Router browser-history routing for Gateway, Notes, and Workspace. Keep each app's basename and every route path derived from `@portfolio/config/routes`; use full links when Gateway hands off to a separately deployed experience.
 
 **Why:** A common router model gives the interactive apps consistent navigation behavior while preserving their independent build boundaries. Explicit Notes article routes replace its former multi-page setup, and the deployment milestone will provide the shared GitHub Pages deep-link fallback.
+
+## ADR-014 — Separate config-time route access from TypeScript runtime access
+
+**Decision:** Keep shared route data and base-path resolution in a dependency-free JavaScript entrypoint, `@portfolio/config/routes-config`, and have the TypeScript runtime route module consume that entrypoint. Vite configuration imports the JavaScript entrypoint; application runtime code continues to import `@portfolio/config/routes`.
+
+**Why:** Vite configuration is loaded by Node before Vite transforms application TypeScript. A JavaScript entrypoint prevents Node's unknown `.ts` extension error while preserving one shared route contract and avoiding UI or routing behavior changes.
