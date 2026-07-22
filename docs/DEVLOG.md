@@ -31,6 +31,14 @@ For every milestone:
 - Added reusable, accessible React primitives in `packages/ui`: actions, navigation, modal, form, content, and portfolio-specific composition components.
 - Components consume shared tokens, support light and dark themes, and avoid a CSS framework or Tailwind dependency.
 
+### Milestone 2 — Gateway
+
+- Built the static Vite and React gateway application at `/`.
+- Added a responsive, light/dark theme-aware experience selector for Workspace, Journal, Editorial, and Calm.
+- Added the public `/notes/` route as the entry point to the future build-journal application.
+- Kept the page intentionally concise: it directs visitors into an experience instead of presenting a full portfolio feed.
+- Build and type-check verification remain pending because pnpm cannot initialize its local tool cache in this environment.
+
 ## Current task
 
-Milestone 3 design-system foundation is complete. No app pages have been built.
+Milestones 2 and 3 are complete. The next milestone is Milestone 4 — portfolio experiences.

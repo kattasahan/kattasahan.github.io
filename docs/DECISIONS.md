@@ -35,3 +35,9 @@
 **Decision:** Build `packages/ui` as accessible React components with semantic HTML, token-backed TypeScript style objects, a small theme context, and style/children escape hatches instead of a CSS framework.
 
 **Why:** The portfolio can share reliable interaction and accessibility defaults without coupling every app to Tailwind, a CSS-in-JS runtime, or a fixed page layout. Apps can compose the primitives and add experience-specific styling while retaining one light/dark token foundation.
+
+## ADR-007 — Make the gateway an experience selector
+
+**Decision:** Keep the root route intentionally concise: introduce the four portfolio perspectives, offer direct entry into each one, and link to the public build notes.
+
+**Why:** The gateway should orient visitors without competing with the distinct mini-sites. A lightweight theme toggle and responsive card grid provide a polished first impression while leaving each experience space to establish its own identity.
