@@ -116,3 +116,10 @@ For every milestone:
 - Removed incidental chapter numbering and differentiated Workspace, Journal, Editorial, and Calm through layout, type treatment, and whitespace rather than cards, color, or decoration.
 - Tightened the vertical rhythm, strengthened the destination-specific CTAs, and renamed the separate Engineering Journal heading to “How this portfolio was built.”
 - Preserved shared tokens, shared routes, light and dark modes, responsive behavior, visible focus treatment, and reduced-motion support.
+
+## Manual GitHub Pages deployment workflow
+
+- Changed GitHub Pages deployment to manual dispatch during active development.
+- Pushes no longer publish automatically, enabling faster iteration, fewer unnecessary Actions runs, lower Actions usage, and review-driven releases.
+- Preserved the frozen-lockfile install, pnpm cache, repository verification, Pages configuration, and aggregate static build.
+- Documented the commented future production-mode trigger for automatic deployment on pushes to `main`.

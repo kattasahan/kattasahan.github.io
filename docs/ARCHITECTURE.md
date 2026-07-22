@@ -47,7 +47,7 @@ Home, Notes, and Workspace use browser-history routing. The Pages artifact inclu
 
 ## Deployment
 
-`.github/workflows/deploy-pages.yml` publishes on pushes to `main` and manual runs. It installs frozen pnpm dependencies, invokes `pnpm build:pages`, uploads the `.pages/` directory, and deploys through the `github-pages` environment. The user-site deployment sets `VITE_SITE_BASE=/`, so the portfolio is served from `https://kattasahan.github.io/` without a repository subpath.
+`.github/workflows/deploy-pages.yml` publishes only through manual dispatch during active development. It installs frozen pnpm dependencies, invokes `pnpm build:pages`, uploads the `.pages/` directory, and deploys through the `github-pages` environment. The user-site deployment sets `VITE_SITE_BASE=/`, so the portfolio is served from `https://kattasahan.github.io/` without a repository subpath. A commented `push` trigger documents the future production-mode switch to automatic deployment on `main`.
 
 Before artifact assembly, the workflow runs `pnpm verify` (`pnpm build`, `pnpm lint`, and `pnpm typecheck`). This keeps the deployment workflow aligned with the repository Definition of Done while retaining frozen-lockfile installation and pnpm caching.
 

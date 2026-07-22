@@ -46,3 +46,7 @@ The files in `docs/` are the project's single source of truth. Before each miles
 ## Definition of Done
 
 Follow the Definition of Done in `docs/CODING_STANDARDS.md` before committing work. It defines the required architecture, quality, dependency, verification, documentation, UX, and commit checks for this repository.
+
+## Deployment workflow
+
+During active development, GitHub Pages deployment is manual and review-driven: push freely, review the change, then start the **Deploy GitHub Pages** workflow from GitHub Actions when the site should be published. Automatic deployment on pushes to `main` is reserved for a future production mode.

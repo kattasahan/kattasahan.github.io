@@ -139,3 +139,9 @@
 **Decision:** Keep Home monochrome and chapter-based. Use a restrained geometric hero focal point, a concise authorial statement, and perspective-specific layout and typography treatments to create distinction. Remove decorative numbering and avoid cards, color coding, and prominent motion.
 
 **Why:** The opening page needs emotional clarity without turning into a gallery of visual devices. Composition gives each perspective an identity while preserving the calm, premium, editorial character of one cohesive product entry point.
+
+## ADR-023 — Deploy GitHub Pages manually during active development
+
+**Decision:** Use `workflow_dispatch` as the only active GitHub Pages deployment trigger. Keep a commented `push` trigger in the workflow as the documented switch for a future production mode that deploys on `main`.
+
+**Why:** Manual publishing separates iteration from release decisions, avoids unnecessary Actions runs and usage, and gives each public update an explicit review point without weakening the existing build, quality, caching, or Pages configuration.

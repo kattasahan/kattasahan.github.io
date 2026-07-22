@@ -1,9 +1,10 @@
 name: Deploy GitHub Pages
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
+  # Future production mode:
+  # push:
+  #   branches: [main]
 
 permissions:
   contents: read
