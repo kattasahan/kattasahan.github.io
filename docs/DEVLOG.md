@@ -12,15 +12,16 @@ For every milestone:
 6. When appropriate, turn the completed milestone into a polished public article in `apps/notes`.
 7. Commit the completed change with a meaningful message.
 
-## Progress
+## Completed
 
 ### Milestone 1 — Repository foundation
 
 - Created the pnpm workspace declaration, root package manifest, and shared TypeScript base configuration.
 - Added minimal root ESLint and Prettier configuration.
-- App and shared-package workspaces are deliberately deferred; no application implementation has started.
+- Created workspace manifests for Gateway, Workspace, Journal, Editorial, Calm, Notes, UI, tokens, content, icons, and shared config.
+- No application source code or UI has been created.
 - Dependency installation and command verification remain pending because pnpm could not initialize its local tool cache in this environment.
 
 ## Current task
 
-Milestone 1 remains in progress. The next step is to create the app and shared-package workspace skeletons.
+Milestone 1 is complete. The next milestone is Milestone 2 — Gateway.
