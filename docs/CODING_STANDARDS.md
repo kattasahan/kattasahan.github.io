@@ -15,7 +15,7 @@ This is the implementation rulebook for the repository. Follow it alongside ever
 ## Routes
 
 - Never hardcode public route strings in application code.
-- Use `@portfolio/config/routes` as the only source of public route constants and route resolution.
+- Use `@portfolio/routes` as the only source of public route constants and route resolution. `@portfolio/config/routes` is a temporary compatibility re-export for existing imports only.
 - Use the shared route resolver for both internal links and app build-base configuration.
 - Keep route utilities framework-agnostic and pass deployment base paths explicitly.
 
