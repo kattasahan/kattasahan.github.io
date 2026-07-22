@@ -1,13 +1,13 @@
 import { colorTokens, spacingTokens, typographyTokens } from '@portfolio/tokens'
 import { LinkButton, Tag, useTheme } from '@portfolio/ui'
+import type { NotesArticleRoute } from '@portfolio/config/routes'
 import { articleHref, articles, findArticle } from './content'
-import { NotesShell } from './NotesShell'
 import { route } from './routes'
 
-function ArticleContent({ slug }: { slug: string | undefined }) {
+function ArticleContent({ routeName }: { routeName: NotesArticleRoute | undefined }) {
   const { theme } = useTheme()
   const color = colorTokens[theme]
-  const article = findArticle(slug)
+  const article = findArticle(routeName)
 
   if (!article) {
     return (
@@ -19,7 +19,7 @@ function ArticleContent({ slug }: { slug: string | undefined }) {
     )
   }
 
-  const currentIndex = articles.findIndex((item) => item.slug === article.slug)
+  const currentIndex = articles.findIndex((item) => item.route === article.route)
   const nextArticle = articles[(currentIndex + 1) % articles.length]
 
   return (
@@ -42,13 +42,12 @@ function ArticleContent({ slug }: { slug: string | undefined }) {
       <footer style={{ borderTop: `1px solid ${color.border}`, marginTop: spacingTokens[5], paddingTop: spacingTokens[3] }}>
         <p style={{ color: color.textMuted, margin: 0 }}>Continue reading</p>
         <h2 style={{ fontSize: typographyTokens.fontSize['2xl'], margin: `${spacingTokens[1]} 0 0` }}>{nextArticle.title}</h2>
-        <LinkButton href={articleHref(nextArticle.slug)} style={{ marginTop: spacingTokens[2] }} theme={theme} variant="secondary">Read next note</LinkButton>
+        <LinkButton href={articleHref(nextArticle.route)} style={{ marginTop: spacingTokens[2] }} theme={theme} variant="secondary">Read next note</LinkButton>
       </footer>
     </article>
   )
 }
 
-export function ArticlePage() {
-  const slug = window.location.pathname.split('/').filter(Boolean).at(-1)
-  return <NotesShell><ArticleContent slug={slug} /></NotesShell>
+export function ArticlePage({ routeName }: { routeName?: NotesArticleRoute }) {
+  return <ArticleContent routeName={routeName} />
 }

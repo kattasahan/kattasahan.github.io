@@ -52,6 +52,8 @@ For every milestone:
 
 - Added `@portfolio/config/routes` as the framework-agnostic source of truth for all public routes.
 - Updated Gateway and Notes links and Vite base configuration to use a configurable site base path.
+- Migrated Gateway and Notes to React Router; Notes now has one route tree for the journal index and all article URLs.
+- Added explicit shared route names for each public Notes article and removed the former multi-page Notes entries.
 
 ### Milestone 4 — Workspace shell
 

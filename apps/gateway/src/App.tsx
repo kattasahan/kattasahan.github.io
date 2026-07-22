@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
 import {
   colorTokens,
   motionTokens,
@@ -15,7 +16,7 @@ import {
   Navbar,
   ThemeProvider,
 } from '@portfolio/ui'
-import { route } from './routes'
+import { gatewayRouterPath, route } from './routes'
 
 interface Experience {
   title: string
@@ -56,7 +57,7 @@ function getInitialTheme(): ColorTheme {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
-export function App() {
+function GatewayLanding() {
   const [theme, setTheme] = useState<ColorTheme>(getInitialTheme)
   const color = colorTokens[theme]
 
@@ -218,5 +219,13 @@ export function App() {
         </main>
       </div>
     </ThemeProvider>
+  )
+}
+
+export function App() {
+  return (
+    <Routes>
+      <Route path={gatewayRouterPath('gateway')} element={<GatewayLanding />} />
+    </Routes>
   )
 }

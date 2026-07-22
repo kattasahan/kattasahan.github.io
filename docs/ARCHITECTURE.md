@@ -32,11 +32,11 @@ packages/
 
 Each app builds for the base path matching its public route. The gateway uses `/`; the experience apps use their route names, such as `/workspace/` and `/notes/`. Vite configurations use the shared route resolver, so the same builds can be hosted at the domain root or beneath a GitHub Pages repository path.
 
-The Notes app uses static multi-page entries for its index and articles so URLs below `/notes/` can be opened directly without relying on server-side route rewrites.
+Notes uses a React Router browser-history route tree for its index and articles. GitHub Pages deployment must provide a static fallback for direct URLs below `/notes/`.
 
 Workspace is the reference shell for future experience apps. It combines the shared route contract with a React Router route tree, a theme-aware application frame, reusable page/section layout components, and loading and not-found states. Its router basename and route patterns are derived from `@portfolio/config/routes`.
 
-Workspace uses browser-history routing, so the GitHub Pages deployment work must include a static fallback strategy for direct deep links beneath `/workspace/`.
+Gateway, Notes, and Workspace use browser-history routing, so the GitHub Pages deployment work must include a static fallback strategy for direct deep links beneath their route bases.
 
 ## Boundaries
 

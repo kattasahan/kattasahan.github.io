@@ -44,9 +44,11 @@
 
 ## ADR-008 — Publish Notes as static editorial pages
 
-**Decision:** Build the public Notes app as a Vite multi-page application, with a static entry for the journal index and every article beneath `/notes/`.
+**Status:** Superseded by ADR-013.
 
-**Why:** Notes are meant to be read, bookmarked, and shared. Static article routes work directly on GitHub Pages without a client-router fallback, while preserving React composition and the shared design system.
+**Original decision:** Build the public Notes app as a Vite multi-page application, with a static entry for the journal index and every article beneath `/notes/`.
+
+**Superseded because:** Notes now uses React Router with explicit shared article routes, aligning it with Gateway and Workspace. GitHub Pages deep-link fallback support moves to the deployment milestone.
 
 ## ADR-009 — Organize shared UI by component boundary
 
@@ -71,3 +73,9 @@
 **Decision:** Use React Router's declarative `BrowserRouter`, `Routes`, and `Route` components for Workspace navigation. Derive its basename and route patterns from the shared route contract instead of duplicating URLs.
 
 **Why:** React Router owns browser-history behavior, back/forward navigation, parameter parsing, and not-found matching more reliably than a local History API implementation. The shared route module remains the authoritative source for public URLs and deployment base paths; GitHub Pages deep-link fallback support is deferred to the deployment milestone.
+
+## ADR-013 — Standardize React Router across interactive experience apps
+
+**Decision:** Use React Router browser-history routing for Gateway, Notes, and Workspace. Keep each app's basename and every route path derived from `@portfolio/config/routes`; use full links when Gateway hands off to a separately deployed experience.
+
+**Why:** A common router model gives the interactive apps consistent navigation behavior while preserving their independent build boundaries. Explicit Notes article routes replace its former multi-page setup, and the deployment milestone will provide the shared GitHub Pages deep-link fallback.

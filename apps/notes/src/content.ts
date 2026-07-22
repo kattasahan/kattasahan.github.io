@@ -1,10 +1,13 @@
+import type { NotesArticleRoute } from '@portfolio/config/routes'
+import { route } from './routes'
+
 export interface ArticleSection {
   heading: string
   paragraphs: string[]
 }
 
 export interface Article {
-  slug: string
+  route: NotesArticleRoute
   title: string
   eyebrow: string
   description: string
@@ -15,7 +18,7 @@ export interface Article {
 
 export const articles: Article[] = [
   {
-    slug: 'why-this-portfolio',
+    route: 'notesWhyThisPortfolioExists',
     title: 'Why this portfolio exists',
     eyebrow: 'Intent',
     description: 'A portfolio can be evidence of taste, but it should also be evidence of thought.',
@@ -46,7 +49,7 @@ export const articles: Article[] = [
     ],
   },
   {
-    slug: 'building-the-gateway',
+    route: 'notesBuildingTheGateway',
     title: 'Building the gateway',
     eyebrow: 'Entry experience',
     description: 'The root page is a threshold: enough context to orient, enough restraint to invite exploration.',
@@ -77,7 +80,7 @@ export const articles: Article[] = [
     ],
   },
   {
-    slug: 'design-system-decisions',
+    route: 'notesDesignSystemDecisions',
     title: 'Design system decisions',
     eyebrow: 'Foundation',
     description: 'A compact token layer creates consistency without asking every experience to look the same.',
@@ -108,7 +111,7 @@ export const articles: Article[] = [
     ],
   },
   {
-    slug: 'shared-components',
+    route: 'notesSharedComponents',
     title: 'Shared components',
     eyebrow: 'Composition',
     description: 'Reusable components should provide reliable behavior without flattening the character of each mini-site.',
@@ -139,7 +142,7 @@ export const articles: Article[] = [
     ],
   },
   {
-    slug: 'routing-and-deployment',
+    route: 'notesRoutingAndDeployment',
     title: 'Routing and deployment',
     eyebrow: 'Static architecture',
     description: 'The routing model is shaped by a simple promise: every page should remain understandable as a static file.',
@@ -150,7 +153,7 @@ export const articles: Article[] = [
         heading: 'Routes are part of the architecture',
         paragraphs: [
           'Each experience is an independent Vite application with a route-specific base path. The gateway owns the root route; Notes owns /notes; later mini-sites will own their respective paths. This keeps each experience isolated while preserving a coherent public map.',
-          'The Notes app goes one step further and generates a static HTML entry for each article. A direct link to an article does not depend on a server rewriting a request back to a single client bundle.',
+          'Notes uses a browser-history route tree, but its article URLs still come from the same shared public route contract as every other experience.',
         ],
       },
       {
@@ -164,13 +167,13 @@ export const articles: Article[] = [
         heading: 'Build for the link you share',
         paragraphs: [
           'The important test for a journal is not only whether navigation works after loading the home page. It is whether an article URL can be opened directly, bookmarked, and shared without special runtime behavior.',
-          'Multi-page output makes that requirement explicit. It is a little more deliberate than a catch-all router, and that deliberateness is worth it here.',
+          'Browser-history routing makes the route tree easy to evolve; the deployment configuration must provide a static fallback so a shared article URL still reaches the Notes app first.',
         ],
       },
     ],
   },
   {
-    slug: 'what-i-learned',
+    route: 'notesWhatILearned',
     title: 'What I learned',
     eyebrow: 'Reflection',
     description: 'The project keeps returning to the same lesson: restraint becomes easier when the system is clear.',
@@ -202,11 +205,11 @@ export const articles: Article[] = [
   },
 ]
 
-export function articleHref(slug: string) {
-  return route('notesArticle', { slug })
+export function articleHref(routeName: NotesArticleRoute) {
+  return route(routeName)
 }
 
-export function findArticle(slug: string | undefined) {
-  return articles.find((article) => article.slug === slug)
+export function findArticle(routeName: NotesArticleRoute | undefined) {
+  return articles.find((article) => article.route === routeName)
 }
 import { route } from './routes'

@@ -13,6 +13,12 @@ export const publicRoutes = {
   editorial: '/editorial/',
   calm: '/calm/',
   notes: '/notes/',
+  notesWhyThisPortfolioExists: '/notes/why-this-portfolio-exists/',
+  notesBuildingTheGateway: '/notes/building-the-gateway/',
+  notesDesignSystemDecisions: '/notes/design-system-decisions/',
+  notesSharedComponents: '/notes/shared-components/',
+  notesRoutingAndDeployment: '/notes/routing-and-deployment/',
+  notesWhatILearned: '/notes/what-i-learned/',
   notesArticle: '/notes/:slug/',
 } as const
 
@@ -20,6 +26,15 @@ export type PublicRoute = keyof typeof publicRoutes
 export type RouteParameters = Record<string, string | number>
 export const workspaceRouteNames = ['workspace', 'workspaceWork', 'workspaceCaseStudy', 'workspaceAbout', 'workspaceContact'] as const
 export type WorkspaceRoute = (typeof workspaceRouteNames)[number]
+export const notesArticleRouteNames = [
+  'notesWhyThisPortfolioExists',
+  'notesBuildingTheGateway',
+  'notesDesignSystemDecisions',
+  'notesSharedComponents',
+  'notesRoutingAndDeployment',
+  'notesWhatILearned',
+] as const
+export type NotesArticleRoute = (typeof notesArticleRouteNames)[number]
 
 export interface MatchedPublicRoute {
   route: PublicRoute

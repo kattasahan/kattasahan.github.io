@@ -1,7 +1,6 @@
 import { colorTokens, spacingTokens, typographyTokens } from '@portfolio/tokens'
 import { NotesCard, SectionHeader, Timeline, useTheme } from '@portfolio/ui'
 import { articleHref, articles } from './content'
-import { NotesShell } from './NotesShell'
 
 function JournalIndexContent() {
   const { theme } = useTheme()
@@ -31,8 +30,8 @@ function JournalIndexContent() {
           {articles.map((article) => (
             <NotesCard
               excerpt={article.description}
-              href={articleHref(article.slug)}
-              key={article.slug}
+              href={articleHref(article.route)}
+              key={article.route}
               metadata={`${article.eyebrow} · ${article.readTime}`}
               tags={article.tags}
               title={article.title}
@@ -44,6 +43,4 @@ function JournalIndexContent() {
   )
 }
 
-export function NotesIndex() {
-  return <NotesShell><JournalIndexContent /></NotesShell>
-}
+export function NotesIndex() { return <JournalIndexContent /> }
