@@ -14,7 +14,8 @@
     "@portfolio/tokens": "workspace:*",
     "@portfolio/ui": "workspace:*",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",

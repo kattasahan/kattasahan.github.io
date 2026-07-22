@@ -1,13 +1,7 @@
-import { AppShell } from './components/AppShell/AppShell'
-import { WorkspaceRouteView } from './components/WorkspaceRouteView/WorkspaceRouteView'
-import { useWorkspaceRouter } from './lib/useWorkspaceRouter'
+import { BrowserRouter } from 'react-router-dom'
+import { WorkspaceRoutes } from './components/WorkspaceRoutes/WorkspaceRoutes'
+import { workspaceRouterBaseName } from './routes'
 
 export function App() {
-  const { isLoading, navigate, route } = useWorkspaceRouter()
-
-  return (
-    <AppShell activeRoute={route?.route} onNavigate={navigate}>
-      <WorkspaceRouteView currentRoute={route} isLoading={isLoading} />
-    </AppShell>
-  )
+  return <BrowserRouter basename={workspaceRouterBaseName}><WorkspaceRoutes /></BrowserRouter>
 }

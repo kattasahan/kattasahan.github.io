@@ -34,7 +34,9 @@ Each app builds for the base path matching its public route. The gateway uses `/
 
 The Notes app uses static multi-page entries for its index and articles so URLs below `/notes/` can be opened directly without relying on server-side route rewrites.
 
-Workspace is the reference shell for future experience apps. It combines the shared route contract with app-local route configuration, a theme-aware application frame, reusable page/section layout components, and loading and not-found states.
+Workspace is the reference shell for future experience apps. It combines the shared route contract with a React Router route tree, a theme-aware application frame, reusable page/section layout components, and loading and not-found states. Its router basename and route patterns are derived from `@portfolio/config/routes`.
+
+Workspace uses browser-history routing, so the GitHub Pages deployment work must include a static fallback strategy for direct deep links beneath `/workspace/`.
 
 ## Boundaries
 

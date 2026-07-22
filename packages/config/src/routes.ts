@@ -47,6 +47,18 @@ export function createRouteResolver(basePath = '/') {
   return (route: PublicRoute, parameters?: RouteParameters) => resolvePublicRoute(route, basePath, parameters)
 }
 
+/** Returns a child route path relative to an app route for framework routers. */
+export function relativeRoutePath(appRoute: PublicRoute, route: PublicRoute) {
+  const appPath = publicRoutes[appRoute]
+  const routePath = publicRoutes[route]
+
+  if (!routePath.startsWith(appPath)) {
+    throw new Error(`Route ${route} does not belong to app route ${appRoute}`)
+  }
+
+  return routePath.slice(appPath.length).replace(/\/$/, '')
+}
+
 function escapeRegExp(value: string) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }

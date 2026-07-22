@@ -1,7 +1,7 @@
 import {
+  appBasePath,
   createRouteResolver,
-  matchPublicRoute,
-  type MatchedPublicRoute,
+  relativeRoutePath,
   type WorkspaceRoute,
   workspaceRouteNames,
 } from '@portfolio/config/routes'
@@ -13,10 +13,6 @@ export interface WorkspaceRouteDefinition {
   label: string
   title: string
   description: string
-}
-
-export interface MatchedWorkspaceRoute extends Omit<MatchedPublicRoute, 'route'> {
-  route: WorkspaceRoute
 }
 
 export const workspaceRouteDefinitions: WorkspaceRouteDefinition[] = [
@@ -46,13 +42,11 @@ export const workspaceRouteDefinitions: WorkspaceRouteDefinition[] = [
   },
 ]
 
-const workspaceRouteSet = new Set<WorkspaceRoute>(workspaceRouteNames)
+export const workspaceRouterBaseName = appBasePath('workspace', import.meta.env.VITE_SITE_BASE).replace(/\/$/, '') || '/'
 
-export function getWorkspaceRoute(pathname: string): MatchedWorkspaceRoute | undefined {
-  const match = matchPublicRoute(pathname, import.meta.env.VITE_SITE_BASE)
-  return match && workspaceRouteSet.has(match.route as WorkspaceRoute)
-    ? { ...match, route: match.route as WorkspaceRoute }
-    : undefined
+export function workspaceRouterPath(routeName: WorkspaceRoute) {
+  const relativePath = relativeRoutePath('workspace', routeName)
+  return relativePath ? `/${relativePath}` : '/'
 }
 
 export function getWorkspaceRouteDefinition(routeName: WorkspaceRoute) {

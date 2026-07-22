@@ -65,3 +65,9 @@
 **Decision:** Build Workspace first as a small, theme-aware application shell with app-local route configuration backed by the shared route contract, reusable page/section layout components, and explicit loading and not-found states.
 
 **Why:** Future mini-sites need a proven structure for navigation, route handling, responsive layout, and accessible placeholders without forcing them to share the same visual identity or page content.
+
+## ADR-012 — Use React Router for Workspace client-side navigation
+
+**Decision:** Use React Router's declarative `BrowserRouter`, `Routes`, and `Route` components for Workspace navigation. Derive its basename and route patterns from the shared route contract instead of duplicating URLs.
+
+**Why:** React Router owns browser-history behavior, back/forward navigation, parameter parsing, and not-found matching more reliably than a local History API implementation. The shared route module remains the authoritative source for public URLs and deployment base paths; GitHub Pages deep-link fallback support is deferred to the deployment milestone.

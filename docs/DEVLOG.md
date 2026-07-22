@@ -60,6 +60,7 @@ For every milestone:
 - Established a reference layout with shared page container, section layout, navigation, footer, responsive wrapping, and light/dark theme support.
 - Deferred all actual Workspace page content.
 - Build and type-check verification remain pending because pnpm cannot initialize its local tool cache in this environment.
+- Replaced the custom History API router with React Router while preserving the shell, loading placeholder, and 404 placeholder.
 
 ## Repository standards
 

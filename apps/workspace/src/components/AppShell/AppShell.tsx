@@ -15,7 +15,7 @@ function initialTheme(): ColorTheme {
 export interface AppShellProps {
   activeRoute?: WorkspaceRoute
   children: ReactNode
-  onNavigate: (href: string) => void
+  onNavigate: (route: WorkspaceRoute) => void
 }
 
 export function AppShell({ activeRoute, children, onNavigate }: AppShellProps) {

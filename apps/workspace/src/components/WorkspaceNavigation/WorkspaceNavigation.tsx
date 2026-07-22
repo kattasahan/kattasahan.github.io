@@ -6,7 +6,7 @@ import { route, workspaceRouteDefinitions } from '../../routes'
 
 export interface WorkspaceNavigationProps {
   activeRoute?: WorkspaceRoute
-  onNavigate: (href: string) => void
+  onNavigate: (route: WorkspaceRoute) => void
   theme: Theme
 }
 
@@ -28,7 +28,7 @@ export function WorkspaceNavigation({ activeRoute, onNavigate, theme }: Workspac
                 onClick={(event) => {
                   if (!shouldHandleNavigation(event)) return
                   event.preventDefault()
-                  onNavigate(href)
+                  onNavigate(item.route)
                 }}
                 theme={theme}
                 variant={activeRoute === item.route ? 'primary' : 'ghost'}
