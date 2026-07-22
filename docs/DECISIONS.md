@@ -58,7 +58,9 @@
 
 ## ADR-010 — Centralize public route resolution
 
-**Decision:** Define all public routes and base-path resolution in the framework-agnostic `@portfolio/config/routes` module. Apps use the same resolver for internal links and Vite build bases.
+**Status:** Superseded by ADR-014.
+
+**Original decision:** Define all public routes and base-path resolution in a framework-agnostic shared module. Apps use the same resolver for internal links and Vite build bases.
 
 **Why:** A configurable site base supports GitHub Pages deployments from either a custom domain root or a repository subpath. One route contract avoids link drift between the gateway, Notes articles, and future mini-sites.
 
@@ -76,6 +78,12 @@
 
 ## ADR-013 — Standardize React Router across interactive experience apps
 
-**Decision:** Use React Router browser-history routing for Gateway, Notes, and Workspace. Keep each app's basename and every route path derived from `@portfolio/config/routes`; use full links when Gateway hands off to a separately deployed experience.
+**Decision:** Use React Router browser-history routing for Gateway, Notes, and Workspace. Keep each app's basename and every route path derived from the shared route contract; use full links when Gateway hands off to a separately deployed experience.
 
 **Why:** A common router model gives the interactive apps consistent navigation behavior while preserving their independent build boundaries. Explicit Notes article routes replace its former multi-page setup, and the deployment milestone will provide the shared GitHub Pages deep-link fallback.
+
+## ADR-014 — Publish the route contract as its own package
+
+**Decision:** Place the global route contract in the framework-agnostic `@portfolio/routes` package. It owns all public route constants, nested experience route groups, GitHub Pages base-path resolution, matching, and app-scoped route helpers. Keep `@portfolio/config/routes` as a temporary re-export while app imports migrate separately.
+
+**Why:** Routing is a cross-cutting public contract rather than build configuration. A dedicated package makes that boundary explicit, gives every present and future app one dependency for URLs, and avoids coupling the package move to a behavior-changing router migration.

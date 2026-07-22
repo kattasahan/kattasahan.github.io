@@ -50,7 +50,9 @@ For every milestone:
 
 ## Routing foundation
 
-- Added `@portfolio/config/routes` as the framework-agnostic source of truth for all public routes.
+- Extracted the framework-agnostic public route contract into `@portfolio/routes`.
+- Added root and mini-site route constants, nested Workspace and Notes route groups, app-scoped helpers, and configurable GitHub Pages base-path resolution.
+- Kept `@portfolio/config/routes` as a temporary compatibility re-export; app-routing imports and behavior were intentionally left unchanged.
 - Updated Gateway and Notes links and Vite base configuration to use a configurable site base path.
 - Migrated Gateway and Notes to React Router; Notes now has one route tree for the journal index and all article URLs.
 - Added explicit shared route names for each public Notes article and removed the former multi-page Notes entries.
