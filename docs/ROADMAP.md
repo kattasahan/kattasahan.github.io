@@ -14,7 +14,7 @@ Build shared UI primitives and design tokens. Status: complete.
 
 ## Milestone 4 — Portfolio experiences
 
-Build Workspace, Journal, Editorial, and Calm.
+Build Workspace, Journal, Editorial, and Calm. Status: in progress — Workspace shell complete; page content and remaining experiences deferred.
 
 ## Milestone 5 — Public notes
 

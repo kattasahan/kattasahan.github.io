@@ -59,3 +59,9 @@
 **Decision:** Define all public routes and base-path resolution in the framework-agnostic `@portfolio/config/routes` module. Apps use the same resolver for internal links and Vite build bases.
 
 **Why:** A configurable site base supports GitHub Pages deployments from either a custom domain root or a repository subpath. One route contract avoids link drift between the gateway, Notes articles, and future mini-sites.
+
+## ADR-011 — Use Workspace as the experience-shell reference
+
+**Decision:** Build Workspace first as a small, theme-aware application shell with app-local route configuration backed by the shared route contract, reusable page/section layout components, and explicit loading and not-found states.
+
+**Why:** Future mini-sites need a proven structure for navigation, route handling, responsive layout, and accessible placeholders without forcing them to share the same visual identity or page content.

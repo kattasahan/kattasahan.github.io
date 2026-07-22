@@ -53,10 +53,18 @@ For every milestone:
 - Added `@portfolio/config/routes` as the framework-agnostic source of truth for all public routes.
 - Updated Gateway and Notes links and Vite base configuration to use a configurable site base path.
 
+### Milestone 4 — Workspace shell
+
+- Built the Workspace application shell for the overview, work, case-study, about, and contact routes.
+- Added app-local route configuration backed by the shared public route matcher, with lightweight loading and 404 placeholders.
+- Established a reference layout with shared page container, section layout, navigation, footer, responsive wrapping, and light/dark theme support.
+- Deferred all actual Workspace page content.
+- Build and type-check verification remain pending because pnpm cannot initialize its local tool cache in this environment.
+
 ## Repository standards
 
 - Added `CODING_STANDARDS.md` as the implementation rulebook for component structure, routes, token usage, readability, accessibility, and maintainability.
 
 ## Current task
 
-Milestones 2, 3, and 5 are complete. The next milestone is Milestone 4 — portfolio experiences.
+Milestones 2, 3, and 5 are complete. Milestone 4 is in progress, beginning with the Workspace shell.

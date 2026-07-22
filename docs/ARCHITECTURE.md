@@ -34,6 +34,8 @@ Each app builds for the base path matching its public route. The gateway uses `/
 
 The Notes app uses static multi-page entries for its index and articles so URLs below `/notes/` can be opened directly without relying on server-side route rewrites.
 
+Workspace is the reference shell for future experience apps. It combines the shared route contract with app-local route configuration, a theme-aware application frame, reusable page/section layout components, and loading and not-found states.
+
 ## Boundaries
 
 - Apps own their experience-specific composition and content presentation.
