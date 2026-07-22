@@ -4,6 +4,8 @@
 
 Build a premium, static portfolio composed of Home and four distinct portfolio perspectives: Workspace, Journal, Editorial, and Calm. Notes is the separate Engineering Journal.
 
+Home is an editorial entry point, not a fifth portfolio experience or a full portfolio page. It introduces the four perspectives, then offers one visually secondary path to the Engineering Journal.
+
 ## Routes
 
 - `/` — Home entry point

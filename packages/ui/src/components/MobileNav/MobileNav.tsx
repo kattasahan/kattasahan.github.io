@@ -2,7 +2,7 @@ import { useId, useState } from 'react'
 import { spacingTokens } from '@portfolio/tokens'
 import { Button } from '../Button/Button'
 import type { NavbarProps } from '../Navbar/Navbar'
-import { type Theme, useTheme } from '../../theme'
+import { useTheme } from '../../theme'
 
 export interface MobileNavProps extends Omit<NavbarProps, 'children'> {
   open?: boolean

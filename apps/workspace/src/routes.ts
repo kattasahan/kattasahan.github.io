@@ -3,8 +3,7 @@ import {
   createRouteResolver,
   relativeRoutePath,
   type WorkspaceRoute,
-  workspaceRouteNames,
-} from '@portfolio/config/routes'
+} from '@portfolio/routes'
 
 export const route = createRouteResolver(import.meta.env.VITE_SITE_BASE)
 

@@ -1,6 +1,6 @@
 import { spacingTokens, typographyTokens } from '@portfolio/tokens'
 import { Card, LinkButton, useTheme } from '@portfolio/ui'
-import type { WorkspaceRoute } from '@portfolio/config/routes'
+import type { WorkspaceRoute } from '@portfolio/routes'
 import { getWorkspaceRouteDefinition, route } from '../../routes'
 import { SectionLayout } from '../SectionLayout/SectionLayout'
 

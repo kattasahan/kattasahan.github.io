@@ -1,7 +1,7 @@
 import type { MouseEvent } from 'react'
 import { spacingTokens } from '@portfolio/tokens'
 import { LinkButton, type Theme } from '@portfolio/ui'
-import type { WorkspaceRoute } from '@portfolio/config/routes'
+import type { WorkspaceRoute } from '@portfolio/routes'
 import { route, workspaceRouteDefinitions } from '../../routes'
 
 export interface WorkspaceNavigationProps {

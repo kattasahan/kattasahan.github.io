@@ -115,3 +115,9 @@
 **Decision:** The Home application is the entry point to the portfolio. It introduces four perspectives: Workspace, Journal, Editorial, and Calm. The Engineering Journal is intentionally separated because it explains how the portfolio was built rather than presenting the portfolio itself.
 
 **Why:** Treating the Engineering Journal as a fifth perspective blurs the purpose of the entry experience. A quiet, secondary invitation after the four perspectives preserves the Home page's clarity while keeping the learning resource easy to discover.
+
+## ADR-019 — Complete the Home naming migration in the route contract
+
+**Decision:** Remove the former root-app route alias and rename the related Engineering Journal article to “Building Home.” All application runtime links now import from `@portfolio/routes`; Node build tooling reads the same contract through `@portfolio/routes/config`.
+
+**Why:** A compatibility alias made the internal rename incomplete and allowed old terminology to persist in navigation, public content, and route keys. One canonical Home contract prevents link drift and keeps the project’s naming, deployment output, and public writing aligned.

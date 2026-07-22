@@ -21,7 +21,7 @@ export function NotesShell({ children }: { children: ReactNode }) {
     <ThemeProvider theme={theme}>
       <div className="notes-shell" style={{ backgroundColor: color.background, color: color.text, fontFamily: typographyTokens.fontFamily.sans, minHeight: '100vh', transition: `background-color ${motionTokens.duration.normal} ${motionTokens.easing.standard}, color ${motionTokens.duration.normal} ${motionTokens.easing.standard}` }}>
         <Navbar
-          brand={<a href={route('gateway')} style={{ color: color.text, fontWeight: typographyTokens.fontWeight.semibold, textDecoration: 'none' }}>Sahan Katta</a>}
+          brand={<a href={route('home')} style={{ color: color.text, fontWeight: typographyTokens.fontWeight.semibold, textDecoration: 'none' }}>Sahan Katta</a>}
           items={[{ href: route('notes'), label: 'Notes', current: true }]}
           theme={theme}
         >

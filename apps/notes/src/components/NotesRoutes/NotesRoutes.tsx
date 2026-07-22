@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { notesArticleRouteNames } from '@portfolio/config/routes'
+import { notesArticleRouteNames } from '@portfolio/routes'
 import { ArticlePage } from '../../ArticlePage'
 import { NotesIndex } from '../../NotesIndex'
 import { NotesShell } from '../../NotesShell'

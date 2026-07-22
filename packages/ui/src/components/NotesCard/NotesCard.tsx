@@ -1,6 +1,6 @@
 import { spacingTokens, typographyTokens } from '@portfolio/tokens'
 import type { ReactNode } from 'react'
-import { type Theme, useTheme } from '../../theme'
+import { useTheme } from '../../theme'
 import { Card, type CardProps } from '../Card/Card'
 import { LinkButton } from '../LinkButton/LinkButton'
 import { Tag } from '../Tag/Tag'

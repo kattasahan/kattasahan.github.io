@@ -49,7 +49,7 @@ export type WorkspaceRoute = (typeof workspaceRouteNames)[number]
 
 export const notesArticleRouteNames = [
   'notesWhyThisPortfolioExists',
-  'notesBuildingTheGateway',
+  'notesBuildingHome',
   'notesDesignSystemDecisions',
   'notesSharedComponents',
   'notesRoutingAndDeployment',

@@ -1,4 +1,4 @@
-import { appBasePath, createRouteResolver, relativeRoutePath, type PublicRoute } from '@portfolio/config/routes'
+import { appBasePath, createRouteResolver, relativeRoutePath, type PublicRoute } from '@portfolio/routes'
 
 export const route = createRouteResolver(import.meta.env.VITE_SITE_BASE)
 export const homeRouterBaseName = appBasePath('home', import.meta.env.VITE_SITE_BASE).replace(/\/$/, '') || '/'

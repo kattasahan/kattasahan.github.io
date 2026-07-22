@@ -2,7 +2,7 @@ import { spacingTokens, typographyTokens } from '@portfolio/tokens'
 import type { HTMLAttributes, ReactNode } from 'react'
 import { type Theme, useTheme } from '../../theme'
 
-export interface SectionHeaderProps extends HTMLAttributes<HTMLElement> {
+export interface SectionHeaderProps extends Omit<HTMLAttributes<HTMLElement>, 'title'> {
   title: ReactNode
   eyebrow?: ReactNode
   description?: ReactNode

@@ -1,4 +1,4 @@
-import type { NotesArticleRoute } from '@portfolio/config/routes'
+import type { NotesArticleRoute } from '@portfolio/routes'
 import { route } from './routes'
 
 export interface ArticleSection {
@@ -36,7 +36,7 @@ export const articles: Article[] = [
         heading: 'Four lenses, one practice',
         paragraphs: [
           'Workspace is practical and product-minded. Journal is reflective. Editorial gives reading and language priority. Calm makes space for a slower emotional register. Together, they describe a practice that cannot be reduced to a single case-study template.',
-          'The gateway does not ask visitors to consume everything. It asks them to choose a lens. That small choice makes the experience feel more like entering a conversation than scrolling through an archive.',
+          'Home does not ask visitors to consume everything. It asks them to choose a perspective. That small choice makes the experience feel more like entering a conversation than scrolling through an archive.',
         ],
       },
       {
@@ -49,31 +49,31 @@ export const articles: Article[] = [
     ],
   },
   {
-    route: 'notesBuildingTheGateway',
-    title: 'Building the gateway',
+    route: 'notesBuildingHome',
+    title: 'Building Home',
     eyebrow: 'Entry experience',
     description: 'The root page is a threshold: enough context to orient, enough restraint to invite exploration.',
     readTime: '5 min read',
-    tags: ['Gateway', 'Interaction'],
+    tags: ['Home', 'Interaction'],
     sections: [
       {
         heading: 'Start with orientation, not exposition',
         paragraphs: [
           'The first page has a narrow job. It introduces the four experiences, gives each one a short description, and sends the visitor somewhere meaningful. Turning it into a condensed portfolio would make every later page feel redundant.',
-          'That constraint shaped the hierarchy: a single statement, a compact experience switcher, and four cards. The content is intentionally incomplete. Curiosity does the rest.',
+          'That constraint shaped the hierarchy: a single statement, a clear invitation to choose a perspective, and four chapter-like entrances. The content is intentionally incomplete. Curiosity does the rest.',
         ],
       },
       {
         heading: 'Theme is part of the welcome',
         paragraphs: [
-          'Light and dark mode are not an ornament layered on after the fact. The gateway uses one semantic theme shape, so every surface, border, and piece of text changes together. The toggle simply lets the visitor choose the reading environment that feels right.',
+          'Light and dark mode are not an ornament layered on after the fact. Home uses one semantic theme shape, so every surface, border, and piece of text changes together. The toggle simply lets the visitor choose the reading environment that feels right.',
           'The transition is brief and the reduced-motion preference is respected. The change should feel calm, not theatrical.',
         ],
       },
       {
         heading: 'Responsive by composition',
         paragraphs: [
-          'The card grid uses available space rather than a fixed device taxonomy. Four columns are possible when room allows it; a smaller screen naturally becomes fewer columns without losing the reading order.',
+          'The chapter layout uses available space rather than a fixed device taxonomy. On smaller screens it becomes a single, deliberate reading sequence without losing the order of the perspectives.',
           'This is a small example of a larger preference: preserve the relationship between content before chasing a specific screenshot at every breakpoint.',
         ],
       },
@@ -152,7 +152,7 @@ export const articles: Article[] = [
       {
         heading: 'Routes are part of the architecture',
         paragraphs: [
-          'Each experience is an independent Vite application with a route-specific base path. The gateway owns the root route; Notes owns /notes; later mini-sites will own their respective paths. This keeps each experience isolated while preserving a coherent public map.',
+          'Each experience is an independent Vite application with a route-specific base path. Home owns the root route; Notes owns the Engineering Journal; later mini-sites will own their respective paths. This keeps each experience isolated while preserving a coherent public map.',
           'Notes uses a browser-history route tree, but its article URLs still come from the same shared public route contract as every other experience.',
         ],
       },
@@ -212,4 +212,3 @@ export function articleHref(routeName: NotesArticleRoute) {
 export function findArticle(routeName: NotesArticleRoute | undefined) {
   return articles.find((article) => article.route === routeName)
 }
-import { route } from './routes'

@@ -1,6 +1,6 @@
 import { colorTokens, spacingTokens, typographyTokens } from '@portfolio/tokens'
 import { LinkButton, Tag, useTheme } from '@portfolio/ui'
-import type { NotesArticleRoute } from '@portfolio/config/routes'
+import type { NotesArticleRoute } from '@portfolio/routes'
 import { articleHref, articles, findArticle } from './content'
 import { route } from './routes'
 

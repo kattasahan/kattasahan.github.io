@@ -1,5 +1,5 @@
 import { matchPath, Route, Routes, useLocation, useNavigate, useParams } from 'react-router-dom'
-import { workspaceRouteNames, type WorkspaceRoute } from '@portfolio/config/routes'
+import { workspaceRouteNames, type WorkspaceRoute } from '@portfolio/routes'
 import { AppShell } from '../AppShell/AppShell'
 import { WorkspaceRouteView } from '../WorkspaceRouteView/WorkspaceRouteView'
 import { useRouteLoadingState } from '../../lib/useRouteLoadingState'

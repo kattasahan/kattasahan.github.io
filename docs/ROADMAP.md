@@ -6,7 +6,7 @@ Set up the pnpm monorepo, shared configuration, app workspaces, and shared packa
 
 ## Milestone 2 — Home
 
-Build the Home entry experience. Status: complete.
+Build and audit the Home entry experience. Status: complete.
 
 ## Milestone 3 — Shared design system
 

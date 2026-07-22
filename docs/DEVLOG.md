@@ -42,7 +42,7 @@ For every milestone:
 - Redesigned Home as an editorial entry experience with a strong identity statement and spacious, chapter-like routes.
 - Clarified Home as an entry point to four perspectives—Workspace, Journal, Editorial, and Calm—and separated the Engineering Journal into one quiet postscript link to Notes.
 - Replaced the card grid and dashboard framing with typography, whitespace, subtle atmosphere, and simple dividing lines.
-- Build and type-check verification remain pending because pnpm cannot initialize its local tool cache in this environment.
+- Verified the Home build and aggregate GitHub Pages artifact locally.
 
 ### Milestone 5 — Public Notes
 
@@ -67,7 +67,7 @@ For every milestone:
 - Added app-local route configuration backed by the shared public route matcher, with lightweight loading and 404 placeholders.
 - Established a reference layout with shared page container, section layout, navigation, footer, responsive wrapping, and light/dark theme support.
 - Deferred all actual Workspace page content.
-- Build and type-check verification remain pending because pnpm cannot initialize its local tool cache in this environment.
+- Verified the Workspace build as part of the aggregate GitHub Pages artifact.
 - Replaced the custom History API router with React Router while preserving the shell, loading placeholder, and 404 placeholder.
 
 ## Repository standards
@@ -87,6 +87,11 @@ For every milestone:
 - Reserved the Journal, Editorial, and Calm paths with generated redirects until those experiences are implemented.
 - Validated the aggregate production build and its required Pages route entries locally.
 
-## Current task
+## Home architecture and UX audit
 
-Milestones 2, 3, and 5 are complete. Milestone 4 is in progress, beginning with the Workspace shell.
+- Audited the Home rename, information architecture, shared routing usage, GitHub Pages fallback, responsive CSS, theme handling, and accessibility semantics.
+- Confirmed Home presents exactly four perspectives and one visually secondary Engineering Journal CTA after them.
+- Removed the obsolete root-app alias, migrated application imports to `@portfolio/routes`, and renamed the public Engineering Journal article and route to “Building Home.”
+- Reworked the Pages assembly script to derive public paths from `@portfolio/routes/config`, including fallback handoffs and reserved-experience redirects.
+- Added the shared UI package's missing React type dependency and resolved the audit-discovered `SectionHeader` type conflict and stale imports.
+- Verified the completed state with production builds, type checks, source scans, and generated Pages artifact checks.
