@@ -28,7 +28,9 @@ packages/
 
 ## Routing strategy
 
-Each app builds for the base path matching its public route. The gateway uses `/`; the experience apps use their route names, such as `/workspace/` and `/notes/`.
+`packages/config/src/routes.ts` is the single source of truth for public URLs. It exports the root, mini-site, Notes, and Notes article routes, along with a resolver that prefixes a configurable site base path.
+
+Each app builds for the base path matching its public route. The gateway uses `/`; the experience apps use their route names, such as `/workspace/` and `/notes/`. Vite configurations use the shared route resolver, so the same builds can be hosted at the domain root or beneath a GitHub Pages repository path.
 
 The Notes app uses static multi-page entries for its index and articles so URLs below `/notes/` can be opened directly without relying on server-side route rewrites.
 

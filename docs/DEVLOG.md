@@ -48,6 +48,11 @@ For every milestone:
 - Created static entry pages for the Notes index and each article, with responsive layouts, light/dark themes, and reduced-motion handling.
 - Kept Notes separate from internal documentation: it explains the reasoning behind the portfolio rather than its setup.
 
+## Routing foundation
+
+- Added `@portfolio/config/routes` as the framework-agnostic source of truth for all public routes.
+- Updated Gateway and Notes links and Vite base configuration to use a configurable site base path.
+
 ## Current task
 
 Milestones 2, 3, and 5 are complete. The next milestone is Milestone 4 — portfolio experiences.

@@ -2,11 +2,12 @@ import { resolve } from 'node:path'
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { appBasePath } from '@portfolio/config/routes'
 
 const root = fileURLToPath(new URL('.', import.meta.url))
 
 export default defineConfig({
-  base: '/notes/',
+  base: appBasePath('notes', process.env.VITE_SITE_BASE),
   plugins: [react()],
   build: {
     rollupOptions: {

@@ -1,6 +1,7 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { colorTokens, motionTokens, spacingTokens, typographyTokens, type ColorTheme } from '@portfolio/tokens'
 import { Button, Navbar, ThemeProvider } from '@portfolio/ui'
+import { route } from './routes'
 
 function initialTheme(): ColorTheme {
   if (typeof window === 'undefined') return 'light'
@@ -20,8 +21,8 @@ export function NotesShell({ children }: { children: ReactNode }) {
     <ThemeProvider theme={theme}>
       <div className="notes-shell" style={{ backgroundColor: color.background, color: color.text, fontFamily: typographyTokens.fontFamily.sans, minHeight: '100vh', transition: `background-color ${motionTokens.duration.normal} ${motionTokens.easing.standard}, color ${motionTokens.duration.normal} ${motionTokens.easing.standard}` }}>
         <Navbar
-          brand={<a href="/" style={{ color: color.text, fontWeight: typographyTokens.fontWeight.semibold, textDecoration: 'none' }}>Sahan Katta</a>}
-          items={[{ href: '/notes/', label: 'Notes', current: true }]}
+          brand={<a href={route('gateway')} style={{ color: color.text, fontWeight: typographyTokens.fontWeight.semibold, textDecoration: 'none' }}>Sahan Katta</a>}
+          items={[{ href: route('notes'), label: 'Notes', current: true }]}
           theme={theme}
         >
           <Button aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`} onClick={() => setTheme((current) => (current === 'light' ? 'dark' : 'light'))} theme={theme} variant="secondary">

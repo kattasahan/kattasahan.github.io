@@ -2,6 +2,7 @@ import { colorTokens, spacingTokens, typographyTokens } from '@portfolio/tokens'
 import { LinkButton, Tag, useTheme } from '@portfolio/ui'
 import { articleHref, articles, findArticle } from './content'
 import { NotesShell } from './NotesShell'
+import { route } from './routes'
 
 function ArticleContent({ slug }: { slug: string | undefined }) {
   const { theme } = useTheme()
@@ -13,7 +14,7 @@ function ArticleContent({ slug }: { slug: string | undefined }) {
       <section aria-labelledby="not-found-title" className="article-column">
         <p style={{ color: color.textMuted }}>Notes</p>
         <h1 id="not-found-title">That article is not here.</h1>
-        <LinkButton href="/notes/" theme={theme} variant="secondary">Return to Notes</LinkButton>
+        <LinkButton href={route('notes')} theme={theme} variant="secondary">Return to Notes</LinkButton>
       </section>
     )
   }
@@ -23,7 +24,7 @@ function ArticleContent({ slug }: { slug: string | undefined }) {
 
   return (
     <article className="article-column">
-      <LinkButton href="/notes/" theme={theme} variant="ghost">← All notes</LinkButton>
+      <LinkButton href={route('notes')} theme={theme} variant="ghost">← All notes</LinkButton>
       <header style={{ marginTop: spacingTokens[3] }}>
         <p style={{ color: color.textMuted, fontSize: typographyTokens.fontSize.sm, letterSpacing: typographyTokens.letterSpacing.wide, margin: 0, textTransform: 'uppercase' }}>{article.eyebrow} · {article.readTime}</p>
         <h1 style={{ fontSize: `clamp(${typographyTokens.fontSize['4xl']}, 7vw, ${typographyTokens.fontSize['6xl']})`, letterSpacing: typographyTokens.letterSpacing.tight, lineHeight: typographyTokens.lineHeight.tight, margin: `${spacingTokens[2]} 0 0` }}>{article.title}</h1>

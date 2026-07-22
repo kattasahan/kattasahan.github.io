@@ -203,9 +203,10 @@ export const articles: Article[] = [
 ]
 
 export function articleHref(slug: string) {
-  return `/notes/${slug}/`
+  return route('notesArticle', { slug })
 }
 
 export function findArticle(slug: string | undefined) {
   return articles.find((article) => article.slug === slug)
 }
+import { route } from './routes'

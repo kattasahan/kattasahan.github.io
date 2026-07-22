@@ -15,6 +15,7 @@ import {
   Navbar,
   ThemeProvider,
 } from '@portfolio/ui'
+import { route } from './routes'
 
 interface Experience {
   title: string
@@ -28,25 +29,25 @@ const experiences: Experience[] = [
     title: 'Workspace',
     eyebrow: 'Product-minded',
     description: 'A focused view of systems, decisions, and the work behind useful products.',
-    href: '/workspace/',
+    href: route('workspace'),
   },
   {
     title: 'Journal',
     eyebrow: 'Storytelling',
     description: 'A slower, narrative-led space for the ideas and moments that shape the work.',
-    href: '/journal/',
+    href: route('journal'),
   },
   {
     title: 'Editorial',
     eyebrow: 'Typography-first',
     description: 'A reading experience where hierarchy, pace, and language are the interface.',
-    href: '/editorial/',
+    href: route('editorial'),
   },
   {
     title: 'Calm',
     eyebrow: 'Quietly immersive',
     description: 'A pared-back retreat built around atmosphere, reflection, and considered motion.',
-    href: '/calm/',
+    href: route('calm'),
   },
 ]
 
@@ -79,11 +80,11 @@ export function App() {
       >
         <Navbar
           brand={
-            <a href="/" style={{ color: color.text, fontWeight: typographyTokens.fontWeight.semibold, textDecoration: 'none' }}>
+            <a href={route('gateway')} style={{ color: color.text, fontWeight: typographyTokens.fontWeight.semibold, textDecoration: 'none' }}>
               Sahan Katta
             </a>
           }
-          items={[{ href: '/notes/', label: 'Build notes' }]}
+          items={[{ href: route('notes'), label: 'Build notes' }]}
           theme={theme}
         >
           <Button
@@ -210,7 +211,7 @@ export function App() {
             <p style={{ color: color.textMuted, lineHeight: typographyTokens.lineHeight.relaxed, margin: `${spacingTokens[1]} 0 0`, maxWidth: '42rem' }}>
               The notes are an article series about the architecture, design system, accessibility, motion, and lessons learned while making this portfolio.
             </p>
-            <LinkButton href="/notes/" style={{ marginTop: spacingTokens[2] }} theme={theme} variant="secondary">
+            <LinkButton href={route('notes')} style={{ marginTop: spacingTokens[2] }} theme={theme} variant="secondary">
               Read the build notes
             </LinkButton>
           </section>

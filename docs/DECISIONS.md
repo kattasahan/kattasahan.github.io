@@ -53,3 +53,9 @@
 **Decision:** Keep each public UI component in its own folder and move cross-cutting implementation details into small `src/lib` helpers, while maintaining one top-level barrel export.
 
 **Why:** Component-level ownership makes the library easier to navigate, test, and extend as more portfolio experiences arrive. The barrel keeps imports stable for apps, so internal maintenance does not create unnecessary migration work.
+
+## ADR-010 — Centralize public route resolution
+
+**Decision:** Define all public routes and base-path resolution in the framework-agnostic `@portfolio/config/routes` module. Apps use the same resolver for internal links and Vite build bases.
+
+**Why:** A configurable site base supports GitHub Pages deployments from either a custom domain root or a repository subpath. One route contract avoids link drift between the gateway, Notes articles, and future mini-sites.
