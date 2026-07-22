@@ -1,0 +1,37 @@
+# Architecture
+
+## Repository layout
+
+```text
+apps/
+  gateway/
+  workspace/
+  journal/
+  editorial/
+  calm/
+  notes/
+packages/
+  config/
+  content/
+  icons/
+  tokens/
+  ui/
+```
+
+## Build approach
+
+- pnpm workspaces manage the monorepo.
+- Each app is a standalone Vite application using React and TypeScript.
+- `packages/config` provides shared Vite configuration.
+- `packages/tokens`, `packages/ui`, `packages/content`, and `packages/icons` provide the shared foundation as the project grows.
+- Every app is statically built. GitHub Pages deployment will be added in Milestone 6.
+
+## Routing strategy
+
+Each app builds for the base path matching its public route. The gateway uses `/`; the experience apps use their route names, such as `/workspace/` and `/notes/`.
+
+## Boundaries
+
+- Apps own their experience-specific composition and content presentation.
+- Packages own reusable, cross-experience concerns.
+- Documentation belongs only in `docs/`; public educational articles belong only in `apps/notes/`.
