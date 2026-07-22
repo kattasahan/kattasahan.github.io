@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@portfolio/routes':
+        specifier: workspace:*
+        version: link:packages/routes
       '@types/node':
         specifier: ^22.10.2
         version: 22.20.1
