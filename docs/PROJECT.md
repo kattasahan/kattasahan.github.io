@@ -6,6 +6,15 @@ Build a premium, static portfolio composed of Home and four distinct portfolio p
 
 Home is an editorial entry point, not a fifth portfolio experience or a full portfolio page. It introduces the four perspectives, then offers one visually secondary path to the Engineering Journal.
 
+## Home perspective copy
+
+- Workspace — See how I build.
+- Journal — Read the story.
+- Editorial — Notice the details.
+- Calm — Slow down.
+
+Each perspective uses the same concise “Enter” CTA. The promise leads the decision; the title identifies the perspective.
+
 ## Routes
 
 - `/` — Home entry point

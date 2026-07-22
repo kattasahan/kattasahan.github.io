@@ -95,3 +95,9 @@ For every milestone:
 - Reworked the Pages assembly script to derive public paths from `@portfolio/routes/config`, including fallback handoffs and reserved-experience redirects.
 - Added the shared UI package's missing React type dependency and resolved the audit-discovered `SectionHeader` type conflict and stale imports.
 - Verified the completed state with production builds, type checks, source scans, and generated Pages artifact checks.
+
+## Home final product review
+
+- Reviewed Home as the final entry experience for naming, editorial hierarchy, perspective copy, CTA placement, motion, accessibility, routing, and GitHub Pages compatibility.
+- Replaced the perspective promises with the canonical product copy and standardized every perspective CTA as “Enter.”
+- Kept the Engineering Journal as one secondary link after the four perspective chapters and removed a stale, untracked legacy Notes directory.

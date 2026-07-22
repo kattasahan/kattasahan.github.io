@@ -37,6 +37,8 @@ Application runtime code imports from `@portfolio/routes`; Vite configuration an
 
 Each app builds for the base path matching its public route. Home uses `/`; portfolio perspectives use their route names, such as `/workspace/`; the separate Engineering Journal uses `/notes/`. Vite configurations use the shared route resolver, so the same builds can be hosted at the domain root or beneath a GitHub Pages repository path.
 
+Home has one product responsibility: introduce the four portfolio perspectives. Its composition prioritizes the Sahan Katta identity, the portfolio statement, “Choose your perspective,” and then the four promise-led chapter links. The Engineering Journal is one visually secondary link after those chapters.
+
 Notes uses a React Router browser-history route tree for its index and articles. GitHub Pages deployment must provide a static fallback for direct URLs below `/notes/`.
 
 Workspace is the reference shell for future experience apps. It combines the shared route contract with a React Router route tree, a theme-aware application frame, reusable page/section layout components, and loading and not-found states. Its router basename and route patterns are derived from the shared route contract.

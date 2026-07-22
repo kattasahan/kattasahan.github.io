@@ -121,3 +121,9 @@
 **Decision:** Remove the former root-app route alias and rename the related Engineering Journal article to “Building Home.” All application runtime links now import from `@portfolio/routes`; Node build tooling reads the same contract through `@portfolio/routes/config`.
 
 **Why:** A compatibility alias made the internal rename incomplete and allowed old terminology to persist in navigation, public content, and route keys. One canonical Home contract prevents link drift and keeps the project’s naming, deployment output, and public writing aligned.
+
+## ADR-020 — Let Home promises lead each perspective
+
+**Decision:** Keep Home limited to four perspective chapters, each with a fixed name, a one-line promise, and the same concise “Enter” CTA. Preserve the Engineering Journal as one separate, secondary path after the chapters.
+
+**Why:** The root experience should help a visitor choose how to enter the portfolio, not describe every destination or compete with them. Consistent actions and promise-led copy make that decision quick while typography, whitespace, and sequence retain the intended editorial character.

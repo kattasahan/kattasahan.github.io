@@ -24,30 +24,30 @@ const perspectives: Perspective[] = [
   {
     title: 'Workspace',
     index: '01',
-    description: 'Craft products.',
+    description: 'See how I build.',
     href: route('workspace'),
-    action: 'Enter Workspace',
+    action: 'Enter',
   },
   {
     title: 'Journal',
     index: '02',
-    description: 'Understand my journey.',
+    description: 'Read the story.',
     href: route('journal'),
-    action: 'Open Journal',
+    action: 'Enter',
   },
   {
     title: 'Editorial',
     index: '03',
-    description: 'Explore thoughtful design.',
+    description: 'Notice the details.',
     href: route('editorial'),
-    action: 'Read Editorial',
+    action: 'Enter',
   },
   {
     title: 'Calm',
     index: '04',
-    description: 'Experience intentional simplicity.',
+    description: 'Slow down.',
     href: route('calm'),
-    action: 'Find Calm',
+    action: 'Enter',
   },
 ]
 
@@ -112,7 +112,7 @@ function HomeLanding() {
 
           <section className="home__intro" aria-labelledby="perspectives-title">
             <p className="home__sectionLabel">The portfolio</p>
-            <h2 id="perspectives-title">Choose your<br />perspective.</h2>
+            <h2 id="perspectives-title">Choose your<br />perspective</h2>
           </section>
 
           <section className="home__perspectives" id="perspectives" aria-label="Portfolio perspectives">
