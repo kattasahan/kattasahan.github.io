@@ -42,3 +42,7 @@ Each perspective uses the same concise “Enter” CTA. The promise leads the de
 The files in `docs/` are the project's single source of truth. Before each milestone, read every document in this directory and follow the recorded decisions.
 
 `CODING_STANDARDS.md` is the repository rulebook for implementation structure, routes, design-token usage, accessibility, and maintainability.
+
+## Definition of Done
+
+Follow the Definition of Done in `docs/CODING_STANDARDS.md` before committing work. It defines the required architecture, quality, dependency, verification, documentation, UX, and commit checks for this repository.

@@ -35,6 +35,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Verify repository quality
+        run: pnpm verify
+
       - name: Build Pages artifact
         run: pnpm build:pages
         env:

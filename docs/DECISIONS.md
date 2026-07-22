@@ -127,3 +127,9 @@
 **Decision:** Keep Home limited to four perspective chapters, each with a fixed name, a one-line promise, and the same concise “Enter” CTA. Preserve the Engineering Journal as one separate, secondary path after the chapters.
 
 **Why:** The root experience should help a visitor choose how to enter the portfolio, not describe every destination or compete with them. Consistent actions and promise-led copy make that decision quick while typography, whitespace, and sequence retain the intended editorial character.
+
+## ADR-021 — Enforce a repository Definition of Done
+
+**Decision:** Treat the Definition of Done in `CODING_STANDARDS.md` as the required completion gate for every task. Dependency manifest changes require a synchronized committed lockfile, and `pnpm verify` enforces the mandatory build, lint, and type-check gates locally and in the GitHub Pages workflow.
+
+**Why:** GitHub Pages deployment previously exposed lockfile drift that local work had not caught. A shared, explicit workflow keeps documentation, dependency state, and validation aligned before a task is considered complete.

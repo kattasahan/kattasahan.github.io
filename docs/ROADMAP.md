@@ -26,4 +26,4 @@ Configure GitHub Pages deployment. Status: complete.
 
 ## Change policy
 
-Update this roadmap when a milestone's scope, sequence, or status changes.
+Update this roadmap when a milestone's scope, sequence, or status changes. Every milestone also follows the Definition of Done in `CODING_STANDARDS.md`.

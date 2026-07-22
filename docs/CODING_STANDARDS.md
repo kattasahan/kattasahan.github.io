@@ -41,3 +41,72 @@ This is the implementation rulebook for the repository. Follow it alongside ever
 - Respect `prefers-reduced-motion`; motion must clarify state, not distract from content.
 - Build responsive layouts from content relationships, not only device-specific snapshots.
 - Preserve public APIs and behavior during refactors unless a documented change requires otherwise.
+
+# Definition of Done
+
+A task is not complete until every applicable item below is satisfied.
+
+## Architecture
+
+- [ ] Follows the project architecture.
+- [ ] Follows `PROJECT.md`.
+- [ ] Follows `ARCHITECTURE.md`.
+- [ ] Follows `CODING_STANDARDS.md`.
+
+## Code Quality
+
+- [ ] Components are modular.
+- [ ] Each component has one responsibility.
+- [ ] No logic is duplicated without a documented reason.
+- [ ] The folder structure is readable.
+- [ ] Shared code belongs in `packages/`.
+
+## Dependencies
+
+Whenever any `package.json` changes:
+
+- [ ] Run `pnpm install`.
+- [ ] Update `pnpm-lock.yaml`.
+- [ ] Commit `pnpm-lock.yaml`.
+
+GitHub CI uses `pnpm install --frozen-lockfile`. The lockfile is part of the source of truth. Never commit a `package.json` change without a synchronized `pnpm-lock.yaml`.
+
+## Verification
+
+Before every commit run:
+
+- [ ] `pnpm build`
+- [ ] `pnpm lint`
+- [ ] `pnpm typecheck`
+
+`pnpm verify` runs these required checks in that order. Never commit code that does not pass.
+
+## Documentation
+
+When implementation changes, update as applicable:
+
+- [ ] `PROJECT.md`
+- [ ] `ARCHITECTURE.md`
+- [ ] `ROADMAP.md`
+- [ ] `DEVLOG.md`
+- [ ] `DECISIONS.md`
+
+Documentation is part of the implementation.
+
+## UX
+
+Every UI milestone satisfies:
+
+- [ ] Responsive behavior
+- [ ] Accessibility
+- [ ] Light mode
+- [ ] Dark mode
+- [ ] Keyboard navigation
+- [ ] Reduced motion
+- [ ] Shared tokens
+- [ ] Shared routes
+- [ ] Shared UI
+
+## Commits
+
+Commits are focused, meaningful, small, and atomic. Never mix unrelated work.

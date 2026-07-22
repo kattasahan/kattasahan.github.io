@@ -26,6 +26,7 @@
     "preview:calm": "pnpm --filter @portfolio/calm preview",
     "preview:notes": "pnpm --filter @portfolio/notes preview",
     "check": "pnpm lint && pnpm format:check && pnpm typecheck",
+    "verify": "pnpm build && pnpm lint && pnpm typecheck",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",

@@ -56,7 +56,7 @@ For every milestone:
 - Extracted the framework-agnostic public route contract into `@portfolio/routes`.
 - Added root and mini-site route constants, nested Workspace and Notes route groups, app-scoped helpers, matching, and configurable GitHub Pages base-path resolution.
 - Added the Node-loadable `@portfolio/routes/config` entrypoint for Vite config-time base-path resolution, avoiding direct Node imports of TypeScript source.
-- Kept `@portfolio/config` route entries as temporary compatibility re-exports; app-routing imports and behavior were intentionally left unchanged.
+- Kept `@portfolio/config` route entries as temporary compatibility re-exports, then migrated application runtime imports to `@portfolio/routes` without changing route behavior.
 - Updated Home and Notes links and Vite base configuration to use a configurable site base path.
 - Migrated Home and Notes to React Router; Notes now has one route tree for the journal index and all article URLs.
 - Added explicit shared route names for each public Notes article and removed the former multi-page Notes entries.
@@ -101,3 +101,10 @@ For every milestone:
 - Reviewed Home as the final entry experience for naming, editorial hierarchy, perspective copy, CTA placement, motion, accessibility, routing, and GitHub Pages compatibility.
 - Replaced the perspective promises with the canonical product copy and standardized every perspective CTA as “Enter.”
 - Kept the Engineering Journal as one secondary link after the four perspective chapters and removed a stale, untracked legacy Notes directory.
+
+## Engineering workflow improvement
+
+- GitHub Pages deployment initially failed because `pnpm-lock.yaml` was not synchronized with workspace dependency manifests.
+- The repository now requires lockfile synchronization whenever dependencies change: run `pnpm install`, update and commit `pnpm-lock.yaml`, then rely on CI’s frozen-lockfile install.
+- Added a formal Definition of Done to `CODING_STANDARDS.md` and a `pnpm verify` command for the required build, lint, and type-check gates.
+- The GitHub Pages workflow now runs the same verification command before it assembles and deploys the static artifact.
