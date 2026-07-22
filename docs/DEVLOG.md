@@ -12,16 +12,15 @@ For every milestone:
 6. When appropriate, turn the completed milestone into a polished public article in `apps/notes`.
 7. Commit the completed change with a meaningful message.
 
-## Completed
+## Progress
 
 ### Milestone 1 — Repository foundation
 
-- Created pnpm workspace configuration and shared TypeScript settings.
-- Created Vite app skeletons for Gateway, Workspace, Journal, Editorial, Calm, and Notes.
-- Created shared config, token, UI, content, and icon package skeletons.
-- Configured static route base paths for the future GitHub Pages deployment.
-- Dependency installation and build verification remain pending because pnpm could not initialize its local tool cache in this environment.
+- Created the pnpm workspace declaration, root package manifest, and shared TypeScript base configuration.
+- Added minimal root ESLint and Prettier configuration.
+- App and shared-package workspaces are deliberately deferred; no application implementation has started.
+- Dependency installation and command verification remain pending because pnpm could not initialize its local tool cache in this environment.
 
 ## Current task
 
-Documentation reorganization is complete. The next implementation milestone is Milestone 2 — Gateway.
+Milestone 1 remains in progress. The next step is to create the app and shared-package workspace skeletons.

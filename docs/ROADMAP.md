@@ -2,7 +2,7 @@
 
 ## Milestone 1 — Repository foundation
 
-Set up the pnpm monorepo, shared configuration, app workspaces, and shared package folders. Status: complete.
+Set up the pnpm monorepo, shared configuration, app workspaces, and shared package folders. Status: in progress — repository-root configuration is complete; app and package workspaces have not been implemented in this stage.
 
 ## Milestone 2 — Gateway
 
