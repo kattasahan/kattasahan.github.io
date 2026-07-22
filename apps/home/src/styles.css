@@ -84,11 +84,49 @@ textarea {
   justify-content: space-between;
   min-height: calc(100svh - 5.5rem);
   padding-block: var(--home-space-10) var(--home-space-4);
+  position: relative;
+}
+
+.home__hero::before,
+.home__hero::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+}
+
+.home__hero::before {
+  border: 1px solid var(--home-border);
+  border-radius: 50%;
+  height: clamp(17rem, 32vw, 34rem);
+  opacity: 0.7;
+  right: clamp(-9rem, 3vw, 4rem);
+  top: 17%;
+  width: clamp(17rem, 32vw, 34rem);
+}
+
+.home__hero::after {
+  background: linear-gradient(90deg, transparent, var(--home-border), transparent);
+  height: 1px;
+  opacity: 0.72;
+  right: clamp(-5rem, 8vw, 9rem);
+  top: 47%;
+  transform: rotate(-32deg);
+  width: clamp(16rem, 30vw, 31rem);
+}
+
+.home__heroIdentity,
+.home__heroFooter,
+.home__kicker {
+  position: relative;
+  z-index: 1;
+}
+
+.home__heroIdentity {
+  margin-block: auto;
 }
 
 .home__kicker,
 .home__sectionLabel,
-.home__chapterIndex,
 .home__footer {
   color: var(--home-muted);
   font-size: 0.75rem;
@@ -99,7 +137,6 @@ textarea {
 
 .home__kicker,
 .home__sectionLabel,
-.home__chapterIndex,
 .home__footer p {
   margin: 0;
 }
@@ -122,7 +159,15 @@ textarea {
 .home h1 {
   font-size: clamp(4.5rem, 14vw, 12.5rem);
   line-height: 0.82;
-  margin: auto 0;
+  margin: 0;
+}
+
+.home__heroStatement {
+  color: var(--home-text);
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  line-height: 1.35;
+  margin: var(--home-space-4) 0 0;
+  max-width: 30rem;
 }
 
 .home__heroFooter {
@@ -167,8 +212,8 @@ textarea {
   border-top: 1px solid var(--home-border);
   display: grid;
   gap: var(--home-space-3);
-  grid-template-columns: minmax(3rem, 0.75fr) minmax(12rem, 2fr) minmax(15rem, 1.25fr);
-  min-height: 30rem;
+  grid-template-columns: minmax(0, 2fr) minmax(14rem, 0.9fr);
+  min-height: 22rem;
   padding-block: var(--home-space-6);
 }
 
@@ -196,6 +241,60 @@ textarea {
   line-height: 1.55;
   margin: 0;
   max-width: 26rem;
+}
+
+.home__chapter--workspace h3,
+.home__chapter--workspace .home__chapterDetail {
+  align-self: end;
+}
+
+.home__chapter--workspace h3 {
+  padding-bottom: var(--home-space-2);
+}
+
+.home__chapter--journal {
+  grid-template-columns: minmax(0, 1.25fr) minmax(14rem, 1fr);
+  min-height: 24rem;
+}
+
+.home__chapter--journal h3 {
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.home__chapter--journal .home__chapterDetail {
+  align-self: end;
+}
+
+.home__chapter--editorial {
+  grid-template-columns: minmax(0, 1.6fr) minmax(14rem, 0.75fr);
+  min-height: 20rem;
+}
+
+.home__chapter--editorial h3 {
+  align-self: start;
+  font-size: clamp(3rem, 6.2vw, 6.5rem);
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
+}
+
+.home__chapter--editorial .home__chapterDetail {
+  align-self: start;
+  padding-top: var(--home-space-2);
+}
+
+.home__chapter--calm {
+  min-height: 27rem;
+}
+
+.home__chapter--calm h3 {
+  align-self: start;
+}
+
+.home__chapter--calm .home__chapterDetail {
+  align-self: end;
+  padding-bottom: var(--home-space-2);
 }
 
 .home__chapterLink,
@@ -233,12 +332,13 @@ textarea {
 
 @media (max-width: 64rem) {
   .home__chapter {
-    grid-template-columns: minmax(2.5rem, 0.45fr) 1fr;
+    grid-template-columns: minmax(0, 1.35fr) minmax(12rem, 0.8fr);
     min-height: 0;
   }
 
-  .home__chapterDetail {
-    grid-column: 2;
+  .home__chapter--journal,
+  .home__chapter--editorial {
+    grid-template-columns: minmax(0, 1.35fr) minmax(12rem, 0.8fr);
   }
 }
 
@@ -257,8 +357,23 @@ textarea {
     padding-block: var(--home-space-6) var(--home-space-3);
   }
 
+  .home__hero::before {
+    right: -9rem;
+    top: 22%;
+  }
+
+  .home__hero::after {
+    right: -7rem;
+    top: 43%;
+  }
+
   .home h1 {
     font-size: clamp(4.25rem, 21vw, 8rem);
+  }
+
+  .home__heroStatement {
+    margin-top: var(--home-space-3);
+    max-width: 22rem;
   }
 
   .home__heroFooter {
@@ -280,6 +395,11 @@ textarea {
   .home__chapter h3 {
     font-size: clamp(3.25rem, 17vw, 5.5rem);
     margin-top: var(--home-space-6);
+  }
+
+  .home__chapter--journal h3,
+  .home__chapter--editorial h3 {
+    font-size: clamp(3.25rem, 17vw, 5.5rem);
   }
 
   .home__chapterDetail {

@@ -12,7 +12,6 @@ import { homeRouterPath, route } from './routes'
 
 interface Perspective {
   title: string
-  index: string
   description: string
   href: string
   action: string
@@ -23,28 +22,24 @@ type HomeStyle = CSSProperties & Record<`--${string}`, string>
 const perspectives: Perspective[] = [
   {
     title: 'Workspace',
-    index: '01',
     description: 'See how I build.',
     href: route('workspace'),
     action: 'Enter',
   },
   {
     title: 'Journal',
-    index: '02',
     description: 'Read the story.',
     href: route('journal'),
     action: 'Enter',
   },
   {
     title: 'Editorial',
-    index: '03',
     description: 'Notice the details.',
     href: route('editorial'),
     action: 'Enter',
   },
   {
     title: 'Calm',
-    index: '04',
     description: 'Slow down.',
     href: route('calm'),
     action: 'Enter',
@@ -102,10 +97,13 @@ function HomeLanding() {
 
         <main>
           <section className="home__hero" aria-labelledby="home-title">
-            <p className="home__kicker">Independent designer &amp; builder</p>
-            <h1 id="home-title">Sahan<br />Katta</h1>
+            <p className="home__kicker">Independent engineer</p>
+            <div className="home__heroIdentity">
+              <h1 id="home-title">Sahan<br />Katta</h1>
+              <p className="home__heroStatement">I build digital products that feel simpler than they are.</p>
+            </div>
             <div className="home__heroFooter">
-              <p>A portfolio experienced through four distinct perspectives.</p>
+              <p>Four perspectives, one practice.</p>
               <a className="home__scrollCue" href="#perspectives">Choose a perspective <span aria-hidden="true">↓</span></a>
             </div>
           </section>
@@ -117,8 +115,7 @@ function HomeLanding() {
 
           <section className="home__perspectives" id="perspectives" aria-label="Portfolio perspectives">
             {perspectives.map((perspective) => (
-              <article className="home__chapter" key={perspective.href}>
-                <p className="home__chapterIndex">{perspective.index}</p>
+              <article className={`home__chapter home__chapter--${perspective.title.toLowerCase()}`} key={perspective.href}>
                 <h3>{perspective.title}</h3>
                 <div className="home__chapterDetail">
                   <p>{perspective.description}</p>
@@ -129,7 +126,7 @@ function HomeLanding() {
                     theme={theme}
                     variant="ghost"
                   >
-                    {perspective.action} <span aria-hidden="true">↗</span>
+                    {perspective.action} <span aria-hidden="true">→</span>
                   </LinkButton>
                 </div>
               </article>
@@ -138,7 +135,7 @@ function HomeLanding() {
 
           <section className="home__journal" aria-labelledby="journal-title">
             <p className="home__sectionLabel">Engineering Journal</p>
-            <h2 id="journal-title">Curious how this portfolio was built?</h2>
+            <h2 id="journal-title">How this portfolio was built.</h2>
             <LinkButton
               className="home__journalLink"
               href={route('notes')}

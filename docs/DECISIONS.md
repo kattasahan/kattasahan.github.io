@@ -133,3 +133,9 @@
 **Decision:** Treat the Definition of Done in `CODING_STANDARDS.md` as the required completion gate for every task. Dependency manifest changes require a synchronized committed lockfile, and `pnpm verify` enforces the mandatory build, lint, and type-check gates locally and in the GitHub Pages workflow.
 
 **Why:** GitHub Pages deployment previously exposed lockfile drift that local work had not caught. A shared, explicit workflow keeps documentation, dependency state, and validation aligned before a task is considered complete.
+
+## ADR-022 — Use composition, not decoration, to distinguish Home perspectives
+
+**Decision:** Keep Home monochrome and chapter-based. Use a restrained geometric hero focal point, a concise authorial statement, and perspective-specific layout and typography treatments to create distinction. Remove decorative numbering and avoid cards, color coding, and prominent motion.
+
+**Why:** The opening page needs emotional clarity without turning into a gallery of visual devices. Composition gives each perspective an identity while preserving the calm, premium, editorial character of one cohesive product entry point.

@@ -108,3 +108,11 @@ For every milestone:
 - The repository now requires lockfile synchronization whenever dependencies change: run `pnpm install`, update and commit `pnpm-lock.yaml`, then rely on CI’s frozen-lockfile install.
 - Added a formal Definition of Done to `CODING_STANDARDS.md` and a `pnpm verify` command for the required build, lint, and type-check gates.
 - The GitHub Pages workflow now runs the same verification command before it assembles and deploys the static artifact.
+
+## Home visual hierarchy and storytelling refinement
+
+- Refined Home without changing its route architecture or four-perspective information structure.
+- Added a concise hero statement and a restrained monochrome geometric focal element so the opening conveys the author, the work, and a reason to explore.
+- Removed incidental chapter numbering and differentiated Workspace, Journal, Editorial, and Calm through layout, type treatment, and whitespace rather than cards, color, or decoration.
+- Tightened the vertical rhythm, strengthened the destination-specific CTAs, and renamed the separate Engineering Journal heading to “How this portfolio was built.”
+- Preserved shared tokens, shared routes, light and dark modes, responsive behavior, visible focus treatment, and reduced-motion support.
