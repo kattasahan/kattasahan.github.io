@@ -68,6 +68,11 @@ For every milestone:
 
 - Added `CODING_STANDARDS.md` as the implementation rulebook for component structure, routes, token usage, readability, accessibility, and maintainability.
 
+## Developer experience
+
+- Added root-level, workspace-filtered development, build, and preview commands for every portfolio app.
+- Kept root build and quality commands intact; app workspaces remain the owners of their individual scripts.
+
 ## Current task
 
 Milestones 2, 3, and 5 are complete. Milestone 4 is in progress, beginning with the Workspace shell.
