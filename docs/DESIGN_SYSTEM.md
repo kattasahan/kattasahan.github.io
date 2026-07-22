@@ -2,7 +2,7 @@
 
 ## Status
 
-The shared design system will be implemented in Milestone 3. This document defines its initial direction.
+The framework-agnostic token foundation is implemented in `packages/tokens`. Shared UI components remain deferred within Milestone 3.
 
 ## Principles
 
@@ -14,7 +14,7 @@ The shared design system will be implemented in Milestone 3. This document defin
 
 ## Ownership
 
-- `packages/tokens` will hold reusable visual tokens.
+- `packages/tokens` holds reusable visual tokens.
 - `packages/ui` will hold accessible shared components.
 - `packages/icons` will hold shared icon components.
 - Individual apps may express their own personality without breaking shared accessibility or token conventions.

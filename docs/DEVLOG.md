@@ -22,6 +22,14 @@ For every milestone:
 - No application source code or UI has been created.
 - Dependency installation and command verification remain pending because pnpm could not initialize its local tool cache in this environment.
 
+## Progress
+
+### Milestone 3 — Shared design system
+
+- Added the framework-agnostic token foundation in `packages/tokens`.
+- Defined light and dark color themes, typography, 8-point spacing, radius, elevation, motion, z-index, and breakpoint tokens.
+- Shared UI components remain intentionally deferred.
+
 ## Current task
 
-Milestone 1 is complete. The next milestone is Milestone 2 — Gateway.
+Milestone 3 token foundation is complete. Shared UI components remain deferred.

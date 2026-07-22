@@ -23,3 +23,9 @@
 **Decision:** Share accessible foundations and design tokens, but allow each mini-site to have a distinct editorial and interaction character.
 
 **Why:** Consistency should improve quality and maintainability without making the portfolio feel like one repeated template.
+
+## ADR-005 — Use framework-agnostic semantic design tokens
+
+**Decision:** Keep design tokens in TypeScript as immutable data with semantic names, CSS-compatible values where units are needed, and no component or styling-framework dependency.
+
+**Why:** Every portfolio experience can consume the same accessible visual foundation while remaining free to choose its own implementation details. Light and dark themes share one token shape, and the eight-point spacing scale preserves consistent rhythm across experiences.
