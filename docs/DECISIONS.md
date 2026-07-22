@@ -101,3 +101,9 @@
 **Decision:** Present the Gateway as a calm editorial introduction to Sahan Katta, followed by five large chapter-like entrances for Workspace, Journal, Editorial, Calm, and Notes. Use typography, whitespace, and simple dividing lines instead of cards, dashboards, or dense navigation patterns.
 
 **Why:** The root experience should create a memorable sense of authorship before visitors choose a perspective. Separate full-width sections give every destination room to feel distinct while keeping the gateway quiet, legible, and intentionally restrained.
+
+## ADR-017 — Deploy one aggregated GitHub Pages artifact
+
+**Decision:** Build Gateway, Workspace, and Notes independently, then compose their static outputs into a single `.pages/` artifact for the GitHub Pages Actions workflow. Use a generated static `404.html` redirect plus a shared route-restoration helper to support direct Workspace and Notes deep links. Reserve the future Journal, Editorial, and Calm paths with generated redirects until those apps exist.
+
+**Why:** GitHub Pages deploys one static artifact and has no server-side history fallback. Aggregation preserves each app's public base path, while the fallback makes browser-history routes reload safely without changing app content or adding backend infrastructure.

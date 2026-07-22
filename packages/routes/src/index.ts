@@ -11,6 +11,21 @@ export { appBasePath, normalizeBasePath, publicRoutes, resolvePublicRoute }
 export type PublicRoute = keyof typeof publicRoutes
 export type RouteParameters = Record<string, string | number>
 
+const staticRouteParameter = '__gh_pages_route'
+
+/** Restores a deep link handed back from the GitHub Pages static 404 fallback. */
+export function restoreStaticRoute(): void {
+  if (typeof window === 'undefined') return
+
+  const requestedRoute = new URLSearchParams(window.location.search).get(staticRouteParameter)
+
+  if (!requestedRoute || !requestedRoute.startsWith('/') || requestedRoute.startsWith('//')) {
+    return
+  }
+
+  window.history.replaceState(null, '', requestedRoute)
+}
+
 export const appRouteNames = [
   'gateway',
   'workspace',

@@ -22,7 +22,7 @@ Build article-style learning pages in `apps/notes`. Status: complete.
 
 ## Milestone 6 — Deployment
 
-Add GitHub Pages deployment.
+Configure GitHub Pages deployment. Status: complete.
 
 ## Change policy
 

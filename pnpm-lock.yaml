@@ -36,6 +36,9 @@ importers:
 
   apps/gateway:
     dependencies:
+      '@portfolio/routes':
+        specifier: workspace:*
+        version: link:../../packages/routes
       '@portfolio/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
@@ -78,6 +81,9 @@ importers:
 
   apps/notes:
     dependencies:
+      '@portfolio/routes':
+        specifier: workspace:*
+        version: link:../../packages/routes
       '@portfolio/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
@@ -121,6 +127,9 @@ importers:
       '@portfolio/config':
         specifier: workspace:*
         version: link:../../packages/config
+      '@portfolio/routes':
+        specifier: workspace:*
+        version: link:../../packages/routes
       '@portfolio/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
@@ -156,11 +165,17 @@ importers:
         specifier: ^6.0.3
         version: 6.4.3(@types/node@22.20.1)
 
-  packages/config: {}
+  packages/config:
+    dependencies:
+      '@portfolio/routes':
+        specifier: workspace:*
+        version: link:../routes
 
   packages/content: {}
 
   packages/icons: {}
+
+  packages/routes: {}
 
   packages/tokens: {}
 

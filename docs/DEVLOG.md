@@ -78,6 +78,14 @@ For every milestone:
 - Added root-level, workspace-filtered development, build, and preview commands for every portfolio app.
 - Kept root build and quality commands intact; app workspaces remain the owners of their individual scripts.
 
+## Milestone 6 — Deployment
+
+- Added a GitHub Actions workflow that builds and deploys the aggregate static artifact to GitHub Pages on `main`.
+- Added `pnpm build:pages` to compose Gateway, Workspace, and Notes into `.pages/` with root-hosted Vite bases.
+- Added a static fallback and route restoration for direct Workspace and Notes deep links on GitHub Pages.
+- Reserved the Journal, Editorial, and Calm paths with generated redirects until those experiences are implemented.
+- Validated the aggregate production build and its required Pages route entries locally.
+
 ## Current task
 
 Milestones 2, 3, and 5 are complete. Milestone 4 is in progress, beginning with the Workspace shell.

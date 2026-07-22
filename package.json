@@ -12,6 +12,7 @@
     "dev:calm": "pnpm --filter @portfolio/calm dev",
     "dev:notes": "pnpm --filter @portfolio/notes dev",
     "build": "pnpm -r --if-present build",
+    "build:pages": "node scripts/build-pages.mjs",
     "build:gateway": "pnpm --filter @portfolio/gateway build",
     "build:workspace": "pnpm --filter @portfolio/workspace build",
     "build:journal": "pnpm --filter @portfolio/journal build",

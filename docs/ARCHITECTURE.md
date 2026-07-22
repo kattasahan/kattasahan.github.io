@@ -26,7 +26,8 @@ packages/
 - `packages/config` provides shared Vite configuration and a temporary route-export compatibility bridge.
 - `packages/routes` owns the framework-agnostic public route contract.
 - `packages/tokens`, `packages/ui`, `packages/content`, and `packages/icons` provide the shared foundation as the project grows.
-- Every app is statically built. GitHub Pages deployment will be added in Milestone 6.
+- The GitHub Pages workflow builds Gateway, Workspace, and Notes into one `.pages/` artifact and deploys it with the official Pages artifact actions.
+- Journal, Editorial, and Calm keep their public paths reserved with generated redirects until their applications are implemented.
 
 ## Routing strategy
 
@@ -40,7 +41,11 @@ Notes uses a React Router browser-history route tree for its index and articles.
 
 Workspace is the reference shell for future experience apps. It combines the shared route contract with a React Router route tree, a theme-aware application frame, reusable page/section layout components, and loading and not-found states. Its router basename and route patterns are derived from the shared route contract.
 
-Gateway, Notes, and Workspace use browser-history routing, so the GitHub Pages deployment work must include a static fallback strategy for direct deep links beneath their route bases.
+Gateway, Notes, and Workspace use browser-history routing. The Pages artifact includes a root `404.html` fallback that redirects Workspace and Notes deep links to their application entry points; a shared helper restores the requested browser route before React Router initializes.
+
+## Deployment
+
+`.github/workflows/deploy-pages.yml` publishes on pushes to `main` and manual runs. It installs frozen pnpm dependencies, invokes `pnpm build:pages`, uploads the `.pages/` directory, and deploys through the `github-pages` environment. The user-site deployment sets `VITE_SITE_BASE=/`, so the portfolio is served from `https://kattasahan.github.io/` without a repository subpath.
 
 ## Boundaries
 
