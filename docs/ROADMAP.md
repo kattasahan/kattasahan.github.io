@@ -18,7 +18,7 @@ Build Workspace, Journal, Editorial, and Calm.
 
 ## Milestone 5 — Public notes
 
-Build article-style learning pages in `apps/notes`.
+Build article-style learning pages in `apps/notes`. Status: complete.
 
 ## Milestone 6 — Deployment
 

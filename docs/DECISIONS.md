@@ -41,3 +41,9 @@
 **Decision:** Keep the root route intentionally concise: introduce the four portfolio perspectives, offer direct entry into each one, and link to the public build notes.
 
 **Why:** The gateway should orient visitors without competing with the distinct mini-sites. A lightweight theme toggle and responsive card grid provide a polished first impression while leaving each experience space to establish its own identity.
+
+## ADR-008 — Publish Notes as static editorial pages
+
+**Decision:** Build the public Notes app as a Vite multi-page application, with a static entry for the journal index and every article beneath `/notes/`.
+
+**Why:** Notes are meant to be read, bookmarked, and shared. Static article routes work directly on GitHub Pages without a client-router fallback, while preserving React composition and the shared design system.

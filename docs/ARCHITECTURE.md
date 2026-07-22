@@ -30,6 +30,8 @@ packages/
 
 Each app builds for the base path matching its public route. The gateway uses `/`; the experience apps use their route names, such as `/workspace/` and `/notes/`.
 
+The Notes app uses static multi-page entries for its index and articles so URLs below `/notes/` can be opened directly without relying on server-side route rewrites.
+
 ## Boundaries
 
 - Apps own their experience-specific composition and content presentation.

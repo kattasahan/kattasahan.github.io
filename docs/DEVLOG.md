@@ -39,6 +39,13 @@ For every milestone:
 - Kept the page intentionally concise: it directs visitors into an experience instead of presenting a full portfolio feed.
 - Build and type-check verification remain pending because pnpm cannot initialize its local tool cache in this environment.
 
+### Milestone 5 — Public Notes
+
+- Built the public Notes application as a calm, article-style developer journal under `/notes/`.
+- Added six polished articles covering intent, the gateway, design tokens, shared components, static routing and deployment, and lessons learned.
+- Created static entry pages for the Notes index and each article, with responsive layouts, light/dark themes, and reduced-motion handling.
+- Kept Notes separate from internal documentation: it explains the reasoning behind the portfolio rather than its setup.
+
 ## Current task
 
-Milestones 2 and 3 are complete. The next milestone is Milestone 4 — portfolio experiences.
+Milestones 2, 3, and 5 are complete. The next milestone is Milestone 4 — portfolio experiences.
