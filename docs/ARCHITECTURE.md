@@ -39,3 +39,4 @@ The Notes app uses static multi-page entries for its index and articles so URLs 
 - Apps own their experience-specific composition and content presentation.
 - Packages own reusable, cross-experience concerns.
 - Documentation belongs only in `docs/`; public educational articles belong only in `apps/notes/`.
+- `docs/CODING_STANDARDS.md` governs component organization, route usage, token usage, accessibility, and code maintainability across every boundary.

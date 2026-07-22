@@ -29,3 +29,5 @@ Build a premium, static portfolio composed of a gateway and five distinct experi
 ## Documentation policy
 
 The files in `docs/` are the project's single source of truth. Before each milestone, read every document in this directory and follow the recorded decisions.
+
+`CODING_STANDARDS.md` is the repository rulebook for implementation structure, routes, design-token usage, accessibility, and maintainability.

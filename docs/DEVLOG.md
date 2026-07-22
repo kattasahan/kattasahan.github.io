@@ -4,7 +4,7 @@
 
 For every milestone:
 
-1. Read every document in `docs/`.
+1. Read every document in `docs/`, including `CODING_STANDARDS.md`.
 2. Implement the milestone according to those documents.
 3. Update this log with progress and verification notes.
 4. Update `ROADMAP.md` if the plan changes.
@@ -52,6 +52,10 @@ For every milestone:
 
 - Added `@portfolio/config/routes` as the framework-agnostic source of truth for all public routes.
 - Updated Gateway and Notes links and Vite base configuration to use a configurable site base path.
+
+## Repository standards
+
+- Added `CODING_STANDARDS.md` as the implementation rulebook for component structure, routes, token usage, readability, accessibility, and maintainability.
 
 ## Current task
 
