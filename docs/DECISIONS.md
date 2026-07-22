@@ -29,3 +29,9 @@
 **Decision:** Keep design tokens in TypeScript as immutable data with semantic names, CSS-compatible values where units are needed, and no component or styling-framework dependency.
 
 **Why:** Every portfolio experience can consume the same accessible visual foundation while remaining free to choose its own implementation details. Light and dark themes share one token shape, and the eight-point spacing scale preserves consistent rhythm across experiences.
+
+## ADR-006 — Keep shared UI components dependency-light and composable
+
+**Decision:** Build `packages/ui` as accessible React components with semantic HTML, token-backed TypeScript style objects, a small theme context, and style/children escape hatches instead of a CSS framework.
+
+**Why:** The portfolio can share reliable interaction and accessibility defaults without coupling every app to Tailwind, a CSS-in-JS runtime, or a fixed page layout. Apps can compose the primitives and add experience-specific styling while retaining one light/dark token foundation.

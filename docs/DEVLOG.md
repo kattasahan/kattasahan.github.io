@@ -28,8 +28,9 @@ For every milestone:
 
 - Added the framework-agnostic token foundation in `packages/tokens`.
 - Defined light and dark color themes, typography, 8-point spacing, radius, elevation, motion, z-index, and breakpoint tokens.
-- Shared UI components remain intentionally deferred.
+- Added reusable, accessible React primitives in `packages/ui`: actions, navigation, modal, form, content, and portfolio-specific composition components.
+- Components consume shared tokens, support light and dark themes, and avoid a CSS framework or Tailwind dependency.
 
 ## Current task
 
-Milestone 3 token foundation is complete. Shared UI components remain deferred.
+Milestone 3 design-system foundation is complete. No app pages have been built.

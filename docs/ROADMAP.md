@@ -10,7 +10,7 @@ Build the gateway experience.
 
 ## Milestone 3 — Shared design system
 
-Build shared UI primitives and design tokens.
+Build shared UI primitives and design tokens. Status: complete.
 
 ## Milestone 4 — Portfolio experiences
 

@@ -2,7 +2,7 @@
 
 ## Status
 
-The framework-agnostic token foundation is implemented in `packages/tokens`. Shared UI components remain deferred within Milestone 3.
+The framework-agnostic token foundation and shared React component library are implemented in `packages/tokens` and `packages/ui`.
 
 ## Principles
 
@@ -15,7 +15,7 @@ The framework-agnostic token foundation is implemented in `packages/tokens`. Sha
 ## Ownership
 
 - `packages/tokens` holds reusable visual tokens.
-- `packages/ui` will hold accessible shared components.
+- `packages/ui` holds accessible shared React components.
 - `packages/icons` will hold shared icon components.
 - Individual apps may express their own personality without breaking shared accessibility or token conventions.
 
