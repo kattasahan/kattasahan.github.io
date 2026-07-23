@@ -151,3 +151,9 @@
 **Decision:** Preserve Home’s architecture and public routes while aligning its presentation to the approved monochrome editorial composition: a large author-led hero, subtle geometric atmosphere, hairline-divided perspective rows with meaningful ornaments, and a quiet Engineering Journal epilogue.
 
 **Why:** The reference provides a precise visual hierarchy and rhythm for the entry experience. Treating it as a composition contract keeps the implementation focused on typography, whitespace, and restrained geometry instead of introducing cards, dashboard patterns, or a separate visual language.
+
+## ADR-025 — Develop against the composed Pages route map
+
+**Decision:** Make `pnpm dev` build and locally serve the aggregate `.pages/` artifact. Its server returns the same static fallback document used by GitHub Pages for unknown paths, while the composed artifact remains the single implementation of cross-app route behavior.
+
+**Why:** Running Home alone made `/notes/` unavailable during local navigation even though it worked after deployment. Serving the composed output gives developers one local URL for Home, Workspace, the reserved perspective routes, Notes, and their deep-link restoration without changing individual app builds or duplicating route definitions.

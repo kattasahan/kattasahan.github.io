@@ -4,7 +4,8 @@
   "private": true,
   "packageManager": "pnpm@9.15.4",
   "scripts": {
-    "dev": "pnpm --filter @portfolio/home dev",
+    "dev": "pnpm dev:site",
+    "dev:site": "pnpm build:pages && node scripts/serve-pages.mjs",
     "dev:home": "pnpm --filter @portfolio/home dev",
     "dev:workspace": "pnpm --filter @portfolio/workspace dev",
     "dev:journal": "pnpm --filter @portfolio/journal dev",

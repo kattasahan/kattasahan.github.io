@@ -136,3 +136,9 @@ For every milestone:
 - Made the Home hero and top bar share one full first viewport so the perspective introduction does not appear before the visitor intentionally scrolls.
 - Increased the contrast of the existing hero circle and diagonal line without adding a new illustration or changing the monochrome composition.
 - Removed the duplicate Calm-to-Journal boundary by making the Engineering Journal's top rule the single intended separator.
+
+## Local composed route development
+
+- Changed the root `pnpm dev` command to build and serve the same aggregate route map used for GitHub Pages.
+- Added a small local static server that serves the composed artifact and returns its shared fallback document for direct Notes and Workspace deep links.
+- Kept the per-app development commands and the production Pages assembly unchanged; Home can now open `/notes/` locally without switching application servers.

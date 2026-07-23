@@ -45,6 +45,8 @@ Workspace is the reference shell for future experience apps. It combines the sha
 
 Home, Notes, and Workspace use browser-history routing. The Pages artifact includes a root `404.html` fallback that derives Workspace and Notes deep-link handoffs from the shared route contract; a shared helper restores the requested browser route before React Router initializes.
 
+`pnpm dev` builds the same composed `.pages/` artifact and serves it locally at `http://127.0.0.1:4173/`. The local static server returns the artifact's `404.html` for unmatched paths, reproducing GitHub Pages' route restoration for Notes and Workspace without requiring developers to swap between separate application servers. The individual app development scripts remain available for focused app work.
+
 ## Deployment
 
 `.github/workflows/deploy-pages.yml` publishes only through manual dispatch during active development. It installs frozen pnpm dependencies, invokes `pnpm build:pages`, uploads the `.pages/` directory, and deploys through the `github-pages` environment. The user-site deployment sets `VITE_SITE_BASE=/`, so the portfolio is served from `https://kattasahan.github.io/` without a repository subpath. A commented `push` trigger documents the future production-mode switch to automatic deployment on `main`.
