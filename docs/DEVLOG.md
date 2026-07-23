@@ -142,3 +142,9 @@ For every milestone:
 - Changed the root `pnpm dev` command to build and serve the same aggregate route map used for GitHub Pages.
 - Added a small local static server that serves the composed artifact and returns its shared fallback document for direct Notes and Workspace deep links.
 - Kept the per-app development commands and the production Pages assembly unchanged; Home can now open `/notes/` locally without switching application servers.
+
+## Development and preview workflow separation
+
+- Restored `pnpm dev` as Home’s Vite development server for fast refresh without building the Pages artifact.
+- Moved the composed static-site workflow to `pnpm preview`, preserving its production-like route fallback behavior.
+- Made the composed preview server select the next available port when its preferred port is occupied, matching Vite’s non-blocking local-server behavior.

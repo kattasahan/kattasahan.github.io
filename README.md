@@ -2,28 +2,36 @@
 
 Live site: [kattasahan.github.io](https://kattasahan.github.io/)
 
-## Local development
+## Development
 
-Install dependencies, then run the complete composed portfolio from the repository root:
+Install dependencies, then start Home with Vite’s development server:
 
 ```sh
 pnpm install
 pnpm dev
 ```
 
-Open [http://127.0.0.1:4173/](http://127.0.0.1:4173/). This local server uses the same composed output and route fallback as GitHub Pages, so `/`, `/workspace/`, `/journal/`, `/editorial/`, `/calm/`, and `/notes/` resolve from one entry point. Use an individual development server such as `pnpm dev:workspace` or `pnpm dev:notes` only for focused app work.
+Vite provides Hot Module Reload and Fast Refresh at [http://localhost:5173/](http://localhost:5173/) when available, or the next available port when it is occupied. It does not build the GitHub Pages artifact. Use `pnpm dev:workspace`, `pnpm dev:journal`, `pnpm dev:editorial`, `pnpm dev:calm`, or `pnpm dev:notes` for focused work on another app.
 
-## Production build
+## Preview
 
-Build the GitHub Pages artifact locally with:
+Preview the full production-like route map locally with:
 
 ```sh
-pnpm build:pages
+pnpm preview
 ```
 
-The generated static site is written to `.pages/`.
+This builds the GitHub Pages artifact, writes it to `.pages/`, and serves it with the same static fallback behavior used in production. The preview server uses its preferred port when available and automatically selects the next port if it is busy.
 
-The local development command rebuilds that artifact before serving it. GitHub Pages uses the same artifact, but is published manually through GitHub Actions.
+## Build
+
+Build workspace applications without starting a server:
+
+```sh
+pnpm build
+```
+
+Use `pnpm build:pages` when you need only the aggregate GitHub Pages artifact without serving it.
 
 ## Deployment
 
@@ -31,7 +39,8 @@ The repository publishes to [kattasahan.github.io](https://kattasahan.github.io/
 
 ### Development
 
-- Push freely; deployment is manual during active development.
+- `pnpm dev` is for fast local iteration; `pnpm preview` is for production-like local route checks.
+- Push freely; GitHub Pages deployment is manual during active development.
 - Review changes, then use **GitHub Actions → Deploy GitHub Pages → Run workflow** to update GitHub Pages.
 
 ### Production (future)

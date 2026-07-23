@@ -50,3 +50,9 @@ Follow the Definition of Done in `docs/CODING_STANDARDS.md` before committing wo
 ## Deployment workflow
 
 During active development, GitHub Pages deployment is manual and review-driven: push freely, review the change, then start the **Deploy GitHub Pages** workflow from GitHub Actions when the site should be published. Automatic deployment on pushes to `main` is reserved for a future production mode.
+
+## Local workflow
+
+- **Development:** `pnpm dev` runs Home through Vite’s development server with Fast Refresh and no production build. Vite uses port 5173 when available and selects the next available port otherwise.
+- **Preview:** `pnpm preview` builds the aggregate GitHub Pages artifact, then serves it locally with the same static fallback behavior used in production.
+- **Production:** GitHub Actions runs verification and publishes that same aggregate artifact to GitHub Pages only when manually dispatched during active development.

@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url'
 const repositoryRoot = fileURLToPath(new URL('..', import.meta.url))
 const outputDirectory = join(repositoryRoot, '.pages')
 const fallbackDocument = join(outputDirectory, '404.html')
-const port = Number(process.env.PORT ?? '4173')
+const preferredPort = Number(process.env.PORT ?? '4173')
 
 const contentTypes = {
   '.css': 'text/css; charset=utf-8',
@@ -77,6 +77,25 @@ const server = createServer(async (request, response) => {
   await sendFile(response, fallbackDocument, 404, request.method)
 })
 
-server.listen(port, '127.0.0.1', () => {
-  console.log(`Composed portfolio available at http://127.0.0.1:${port}/`)
+server.on('listening', () => {
+  const address = server.address()
+  const port = typeof address === 'object' && address ? address.port : preferredPort
+  console.log(`Composed portfolio preview available at http://127.0.0.1:${port}/`)
 })
+
+function startServer(port) {
+  server.once('error', (error) => {
+    if (error.code !== 'EADDRINUSE') {
+      console.error(error)
+      process.exitCode = 1
+      return
+    }
+
+    console.warn(`Port ${port} is in use; trying the next available port.`)
+    startServer(port + 1)
+  })
+
+  server.listen(port, '127.0.0.1')
+}
+
+startServer(preferredPort)

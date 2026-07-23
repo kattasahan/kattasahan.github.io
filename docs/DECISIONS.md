@@ -154,6 +154,14 @@
 
 ## ADR-025 — Develop against the composed Pages route map
 
+**Status:** Superseded by ADR-026.
+
 **Decision:** Make `pnpm dev` build and locally serve the aggregate `.pages/` artifact. Its server returns the same static fallback document used by GitHub Pages for unknown paths, while the composed artifact remains the single implementation of cross-app route behavior.
 
 **Why:** Running Home alone made `/notes/` unavailable during local navigation even though it worked after deployment. Serving the composed output gives developers one local URL for Home, Workspace, the reserved perspective routes, Notes, and their deep-link restoration without changing individual app builds or duplicating route definitions.
+
+## ADR-026 — Separate fast development from production-like preview
+
+**Decision:** Reserve the composed Pages artifact for `pnpm preview` and make `pnpm dev` run Home’s normal Vite development server. Let Vite choose the development port, and let the composed preview server advance from its preferred port when that port is occupied.
+
+**Why:** Building the entire static artifact before every Home edit made development slow and removed Vite’s Fast Refresh benefits. A separate preview command retains accurate multi-app and GitHub Pages fallback checks without burdening the normal edit loop or failing on a routine port conflict.

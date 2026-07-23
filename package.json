@@ -4,8 +4,7 @@
   "private": true,
   "packageManager": "pnpm@9.15.4",
   "scripts": {
-    "dev": "pnpm dev:site",
-    "dev:site": "pnpm build:pages && node scripts/serve-pages.mjs",
+    "dev": "pnpm --filter @portfolio/home dev",
     "dev:home": "pnpm --filter @portfolio/home dev",
     "dev:workspace": "pnpm --filter @portfolio/workspace dev",
     "dev:journal": "pnpm --filter @portfolio/journal dev",
@@ -26,6 +25,7 @@
     "preview:editorial": "pnpm --filter @portfolio/editorial preview",
     "preview:calm": "pnpm --filter @portfolio/calm preview",
     "preview:notes": "pnpm --filter @portfolio/notes preview",
+    "preview": "pnpm build:pages && node scripts/serve-pages.mjs",
     "check": "pnpm lint && pnpm format:check && pnpm typecheck",
     "verify": "pnpm build && pnpm lint && pnpm typecheck",
     "format": "prettier --write .",
