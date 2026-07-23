@@ -164,5 +164,5 @@ For every milestone:
 ## GitHub Pages source recovery
 
 - Confirmed the aggregate artifact contains a root `index.html`, every public route entry, `.nojekyll`, and the static fallback.
-- Added a deployment-time Pages source check that creates or updates the site to use GitHub Actions before publishing the artifact.
+- Restored the repository-level GitHub Pages source to GitHub Actions; the workflow token is intentionally not permitted to change this setting itself.
 - Preserved the existing manual deployment trigger, frozen-lockfile install, verification gate, root-hosted base path, and aggregate artifact deployment.

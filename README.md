@@ -37,7 +37,7 @@ Use `pnpm build:pages` when you need only the aggregate GitHub Pages artifact wi
 
 ## Deployment
 
-The repository publishes to [kattasahan.github.io](https://kattasahan.github.io/) through GitHub Actions. The deployment workflow ensures GitHub Pages uses GitHub Actions as its publishing source before it uploads the aggregate artifact.
+The repository publishes to [kattasahan.github.io](https://kattasahan.github.io/) through GitHub Actions. GitHub Pages is configured in **Settings → Pages** with **Source: GitHub Actions**, and the deployment workflow publishes the aggregate artifact.
 
 ### Development
 
