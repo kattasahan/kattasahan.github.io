@@ -42,6 +42,9 @@ importers:
       '@portfolio/routes':
         specifier: workspace:*
         version: link:../../packages/routes
+      '@portfolio/theme':
+        specifier: workspace:*
+        version: link:../../packages/theme
       '@portfolio/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
@@ -84,6 +87,9 @@ importers:
       '@portfolio/routes':
         specifier: workspace:*
         version: link:../../packages/routes
+      '@portfolio/theme':
+        specifier: workspace:*
+        version: link:../../packages/theme
       '@portfolio/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
@@ -124,6 +130,9 @@ importers:
       '@portfolio/routes':
         specifier: workspace:*
         version: link:../../packages/routes
+      '@portfolio/theme':
+        specifier: workspace:*
+        version: link:../../packages/theme
       '@portfolio/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
@@ -161,10 +170,26 @@ importers:
 
   packages/routes: {}
 
+  packages/theme:
+    dependencies:
+      '@portfolio/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+      react:
+        specifier: ^18.0.0 || ^19.0.0
+        version: 18.3.1
+    devDependencies:
+      '@types/react':
+        specifier: ^18.3.31
+        version: 18.3.31
+
   packages/tokens: {}
 
   packages/ui:
     dependencies:
+      '@portfolio/theme':
+        specifier: workspace:*
+        version: link:../theme
       '@portfolio/tokens':
         specifier: workspace:*
         version: link:../tokens

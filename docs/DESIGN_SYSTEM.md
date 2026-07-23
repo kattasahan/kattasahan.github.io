@@ -2,7 +2,7 @@
 
 ## Status
 
-The framework-agnostic token foundation and shared React component library are implemented in `packages/tokens` and `packages/ui`.
+The framework-agnostic token foundation, global theme package, and shared React component library are implemented in `packages/tokens`, `packages/theme`, and `packages/ui`.
 
 ## Principles
 
@@ -15,7 +15,8 @@ The framework-agnostic token foundation and shared React component library are i
 ## Ownership
 
 - `packages/tokens` holds reusable visual tokens.
-- `packages/ui` holds accessible shared React components.
+- `packages/theme` owns the selected light/dark mode, persistence, system-preference detection, `html[data-theme]`, browser chrome color, and the React provider/hook. Its bootstrap applies the resolved theme before React mounts to prevent a flash of incorrect color.
+- `packages/ui` holds accessible shared React components and consumes theme state for presentation; it does not own theme storage, browser APIs, or theme state.
 - Individual apps may express their own personality without breaking shared accessibility or token conventions.
 
 ## Inspiration boundary

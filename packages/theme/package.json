@@ -1,13 +1,13 @@
 {
-  "name": "@portfolio/ui",
+  "name": "@portfolio/theme",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./bootstrap": "./src/bootstrap.ts"
   },
   "dependencies": {
-    "@portfolio/theme": "workspace:*",
     "@portfolio/tokens": "workspace:*"
   },
   "peerDependencies": {

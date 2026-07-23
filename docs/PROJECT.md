@@ -30,6 +30,7 @@ Each perspective uses the same concise “Enter” CTA. The promise leads the de
 - Deploy freely to GitHub Pages.
 - Use React, TypeScript, Vite, and pnpm workspaces.
 - Share one design system while giving each experience its own character.
+- Keep global theme behavior in `@portfolio/theme` so every implemented experience reads and writes one persisted preference.
 - Keep shared packages limited to active, owned concerns; do not retain empty workspace placeholders.
 - Keep the visual language monochrome-first, with typography, whitespace, and subtle motion doing the work.
 - Exclude Concept 4 from the portfolio.
@@ -51,6 +52,10 @@ Follow the Definition of Done in `docs/CODING_STANDARDS.md` before committing wo
 ## Deployment workflow
 
 During active development, GitHub Pages deployment is manual and review-driven: push freely, review the change, then start the **Deploy GitHub Pages** workflow from GitHub Actions when the site should be published. Automatic deployment on pushes to `main` is reserved for a future production mode.
+
+## Theme system
+
+`@portfolio/theme` owns the global light/dark preference for the portfolio. Before React mounts, each implemented application applies the stored preference, or the system preference on a first visit, to `html[data-theme]`. The manager persists the resolved preference, updates browser `theme-color`, and keeps the same theme when visitors move between independently built applications. `@portfolio/ui` consumes that state only to present token-backed controls and surfaces.
 
 ## Local workflow
 

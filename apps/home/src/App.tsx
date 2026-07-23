@@ -1,13 +1,8 @@
-import { useEffect, useState, type CSSProperties } from 'react'
+import { type CSSProperties } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import {
-  colorTokens,
-  motionTokens,
-  spacingTokens,
-  typographyTokens,
-  type ColorTheme,
-} from '@portfolio/tokens'
-import { Button, LinkButton, ThemeProvider } from '@portfolio/ui'
+import { colorTokens, motionTokens, spacingTokens, typographyTokens } from '@portfolio/tokens'
+import { ThemeProvider, useTheme } from '@portfolio/theme'
+import { Button, LinkButton } from '@portfolio/ui'
 import { homeRouterPath, route } from './routes'
 
 interface Perspective {
@@ -58,19 +53,9 @@ const perspectives: Perspective[] = [
   },
 ]
 
-function getInitialTheme(): ColorTheme {
-  if (typeof window === 'undefined') return 'light'
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-}
-
 function HomeLanding() {
-  const [theme, setTheme] = useState<ColorTheme>(getInitialTheme)
+  const { theme, toggleTheme } = useTheme()
   const color = colorTokens[theme]
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme
-    document.documentElement.style.colorScheme = theme
-  }, [theme])
 
   const pageStyle: HomeStyle = {
     '--home-border': color.border,
@@ -95,96 +80,136 @@ function HomeLanding() {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className="home" style={pageStyle}>
-        <header className="home__header">
-          <a className="home__wordmark" href={route('home')}>Sahan Katta</a>
-          <Button
-            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-            className="home__themeToggle"
-            onClick={() => setTheme((current) => (current === 'light' ? 'dark' : 'light'))}
-            theme={theme}
-            variant="ghost"
-          >
-            {theme === 'light' ? 'Dark' : 'Light'}
-          </Button>
-        </header>
+    <div className="home" style={pageStyle}>
+      <header className="home__header">
+        <a className="home__wordmark" href={route('home')}>
+          Sahan Katta
+        </a>
+        <Button
+          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+          className="home__themeToggle"
+          onClick={toggleTheme}
+          theme={theme}
+          variant="ghost"
+        >
+          {theme === 'light' ? 'Dark' : 'Light'}
+        </Button>
+      </header>
 
-        <main>
-          <section className="home__hero" aria-labelledby="home-title">
-            <p className="home__kicker">Independent engineer</p>
-            <div className="home__heroIdentity">
-              <h1 id="home-title">Sahan<br />Katta</h1>
-              <p className="home__heroStatement">I build digital products that feel simpler than they are.</p>
-              <a aria-label="Choose a perspective" className="home__heroArrow" href="#perspectives"><span aria-hidden="true">↓</span></a>
-            </div>
-            <div className="home__heroFooter">
-              <p>Four perspectives, one practice.</p>
-              <a className="home__scrollCue" href="#perspectives">Choose a perspective <span aria-hidden="true">↓</span></a>
-            </div>
-          </section>
+      <main>
+        <section className="home__hero" aria-labelledby="home-title">
+          <p className="home__kicker">Independent engineer</p>
+          <div className="home__heroIdentity">
+            <h1 id="home-title">
+              Sahan
+              <br />
+              Katta
+            </h1>
+            <p className="home__heroStatement">
+              I build digital products that feel simpler than they are.
+            </p>
+            <a aria-label="Choose a perspective" className="home__heroArrow" href="#perspectives">
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+          <div className="home__heroFooter">
+            <p>Four perspectives, one practice.</p>
+            <a className="home__scrollCue" href="#perspectives">
+              Choose a perspective <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </section>
 
-          <section className="home__intro" aria-labelledby="perspectives-title">
-            <p className="home__sectionLabel">The portfolio</p>
-            <h2 id="perspectives-title">Choose your<br />perspective</h2>
-          </section>
+        <section className="home__intro" aria-labelledby="perspectives-title">
+          <p className="home__sectionLabel">The portfolio</p>
+          <h2 id="perspectives-title">
+            Choose your
+            <br />
+            perspective
+          </h2>
+        </section>
 
-          <section className="home__perspectives" id="perspectives" aria-label="Portfolio perspectives">
-            {perspectives.map((perspective) => (
-              <article className={`home__chapter home__chapter--${perspective.title.toLowerCase()}`} key={perspective.href}>
-                <div aria-label={perspective.ornamentLabel} className="home__chapterOrnament" role="img">
-                  <span>{perspective.ornament}</span>
-                </div>
-                <div className="home__chapterTitle">
-                  <h3>{perspective.title}</h3>
-                  {perspective.supportingTitle ? <p>{perspective.supportingTitle}</p> : null}
-                </div>
-                <div className="home__chapterDetail">
-                  <p>{perspective.description}</p>
-                  <LinkButton
-                    className="home__chapterLink"
-                    href={perspective.href}
-                    style={{ borderRadius: '0', minHeight: 'auto', padding: '0' }}
-                    theme={theme}
-                    variant="ghost"
-                  >
-                    {perspective.action} <span aria-hidden="true">→</span>
-                  </LinkButton>
-                </div>
-              </article>
-            ))}
-          </section>
-
-          <section className="home__journal" aria-labelledby="journal-title">
-            <p className="home__sectionLabel">Engineering Journal</p>
-            <div className="home__journalGrid">
-              <div>
-                <h2 id="journal-title">How this portfolio<br />was built.</h2>
+        <section
+          className="home__perspectives"
+          id="perspectives"
+          aria-label="Portfolio perspectives"
+        >
+          {perspectives.map((perspective) => (
+            <article
+              className={`home__chapter home__chapter--${perspective.title.toLowerCase()}`}
+              key={perspective.href}
+            >
+              <div
+                aria-label={perspective.ornamentLabel}
+                className="home__chapterOrnament"
+                role="img"
+              >
+                <span>{perspective.ornament}</span>
+              </div>
+              <div className="home__chapterTitle">
+                <h3>{perspective.title}</h3>
+                {perspective.supportingTitle ? <p>{perspective.supportingTitle}</p> : null}
+              </div>
+              <div className="home__chapterDetail">
+                <p>{perspective.description}</p>
                 <LinkButton
-                  className="home__journalLink"
-                  href={route('notes')}
+                  className="home__chapterLink"
+                  href={perspective.href}
                   style={{ borderRadius: '0', minHeight: 'auto', padding: '0' }}
                   theme={theme}
                   variant="ghost"
                 >
-                  Read the process <span aria-hidden="true">→</span>
+                  {perspective.action} <span aria-hidden="true">→</span>
                 </LinkButton>
               </div>
-              <p className="home__journalDescription">A behind-the-scenes look<br />at the ideas, decisions and<br />engineering behind this site.</p>
-            </div>
-          </section>
-        </main>
+            </article>
+          ))}
+        </section>
 
-        <footer className="home__footer"><p>Made with intention in India.</p><span aria-hidden="true" className="home__footerDot" /></footer>
-      </div>
-    </ThemeProvider>
+        <section className="home__journal" aria-labelledby="journal-title">
+          <p className="home__sectionLabel">Engineering Journal</p>
+          <div className="home__journalGrid">
+            <div>
+              <h2 id="journal-title">
+                How this portfolio
+                <br />
+                was built.
+              </h2>
+              <LinkButton
+                className="home__journalLink"
+                href={route('notes')}
+                style={{ borderRadius: '0', minHeight: 'auto', padding: '0' }}
+                theme={theme}
+                variant="ghost"
+              >
+                Read the process <span aria-hidden="true">→</span>
+              </LinkButton>
+            </div>
+            <p className="home__journalDescription">
+              A behind-the-scenes look
+              <br />
+              at the ideas, decisions and
+              <br />
+              engineering behind this site.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer className="home__footer">
+        <p>Made with intention in India.</p>
+        <span aria-hidden="true" className="home__footerDot" />
+      </footer>
+    </div>
   )
 }
 
 export function App() {
   return (
-    <Routes>
-      <Route path={homeRouterPath('home')} element={<HomeLanding />} />
-    </Routes>
+    <ThemeProvider>
+      <Routes>
+        <Route path={homeRouterPath('home')} element={<HomeLanding />} />
+      </Routes>
+    </ThemeProvider>
   )
 }

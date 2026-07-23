@@ -166,3 +166,11 @@ For every milestone:
 - Confirmed the aggregate artifact contains a root `index.html`, every public route entry, `.nojekyll`, and the static fallback.
 - Restored the repository-level GitHub Pages source to GitHub Actions; the workflow token is intentionally not permitted to change this setting itself.
 - Preserved the existing manual deployment trigger, frozen-lockfile install, verification gate, root-hosted base path, and aggregate artifact deployment.
+
+## Shared global theme system
+
+- Added `@portfolio/theme` as the single owner of light/dark mode state, local persistence, system-preference detection, document application, browser `theme-color`, subscriptions, and React integration.
+- Migrated Home, Workspace, and Notes from duplicated local React state, `localStorage`-adjacent behavior, `matchMedia`, and document mutation to the shared provider and hook. Their pre-mount bootstrap prevents a flash of incorrect theme.
+- Kept `@portfolio/ui` presentation-only by moving its former theme context implementation into the shared package while retaining its presentation helpers and compatibility exports.
+- Added cross-tab storage synchronization. Journal, Editorial, and Calm remain intentionally unimplemented static redirect routes and will consume the same package when their applications are built.
+- Synchronized `pnpm-lock.yaml` and verified the complete build, lint, and type-check gate.

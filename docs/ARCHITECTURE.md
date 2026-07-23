@@ -12,6 +12,7 @@ apps/
   notes/
 packages/
   routes/
+  theme/
   tokens/
   ui/
 ```
@@ -21,7 +22,8 @@ packages/
 - pnpm workspaces manage the monorepo.
 - Each app is a standalone Vite application using React and TypeScript.
 - `packages/routes` owns the framework-agnostic public route contract.
-- `packages/tokens` and `packages/ui` provide the active shared design and interaction foundation.
+- `packages/theme` owns global theme state, persistence, browser integration, and React bindings.
+- `packages/tokens` and `packages/ui` provide the active shared visual and interaction foundation; UI remains presentation-only.
 - Shared packages exist only when they have current ownership and consumers; future concerns are added when implemented rather than held as empty placeholders.
 - The GitHub Pages workflow builds Home, Workspace, and Notes into one `.pages/` artifact and deploys it with the official Pages artifact actions.
 - Journal, Editorial, and Calm keep their public paths reserved with generated redirects until their applications are implemented.
@@ -53,7 +55,12 @@ Before artifact assembly, the workflow runs `pnpm verify` (`pnpm build`, `pnpm l
 ## Boundaries
 
 - Apps own their experience-specific composition and content presentation.
+- `@portfolio/theme` is the only package allowed to read browser theme preferences, access theme storage, mutate `html[data-theme]`, or update browser `theme-color`. Implemented apps mount its provider and use its hook; the unimplemented Journal, Editorial, and Calm routes remain static redirects until those applications exist.
 - Packages own reusable, cross-experience concerns.
 - Documentation belongs only in `docs/`; public educational articles belong only in `apps/notes/`.
 - Generated output is ignored: Vite `dist/` directories, the aggregate `.pages/` artifact, local pnpm state, and obsolete generated documentation output never belong in version control.
 - `docs/CODING_STANDARDS.md` governs component organization, route usage, token usage, accessibility, and code maintainability across every boundary.
+
+## Theme lifecycle
+
+Each app calls the shared theme bootstrap before React mounts. It reads the persisted preference from local storage; on a first visit it detects the system color preference, persists that resolved theme, and applies it to `html[data-theme]` and `color-scheme`. The React `ThemeProvider` subscribes to the same manager for all controls and components. A theme change persists the value, reapplies the document attribute, updates `<meta name="theme-color">`, and notifies active consumers. Browser storage events also synchronize another open portfolio tab. This provides the same theme across refreshes and full navigations between separately built apps without a visual color flash.

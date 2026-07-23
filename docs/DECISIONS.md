@@ -189,3 +189,9 @@
 **Decision:** Configure GitHub Pages once at the repository level to use GitHub Actions; the manual workflow then builds and deploys the aggregate artifact.
 
 **Why:** A successful artifact deployment cannot restore a user site when GitHub Pages is disabled or still configured to publish from a branch directory. The workflow token is intentionally not permitted to change this repository-level setting, so the setting remains explicit in GitHub while the workflow owns artifact publication.
+
+## ADR-030 — Own global theme behavior in a dedicated package
+
+**Decision:** Put theme persistence, system-preference detection, document application, browser chrome updates, subscriptions, and the React provider/hook in `@portfolio/theme`. Keep `@portfolio/ui` presentation-only and let every implemented app mount the shared provider before rendering its experience.
+
+**Why:** Home, Workspace, and Notes are independently built applications but must feel like one product. A dedicated package gives every app one persisted source of truth, prevents local-storage and `matchMedia` duplication, avoids theme drift across app switches, and lets a lightweight pre-mount bootstrap prevent a flash of incorrect theme. Journal, Editorial, and Calm will inherit this boundary when their application implementations begin.
