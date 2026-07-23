@@ -11,9 +11,6 @@ apps/
   calm/
   notes/
 packages/
-  config/
-  content/
-  icons/
   routes/
   tokens/
   ui/
@@ -23,9 +20,9 @@ packages/
 
 - pnpm workspaces manage the monorepo.
 - Each app is a standalone Vite application using React and TypeScript.
-- `packages/config` provides shared configuration utilities.
 - `packages/routes` owns the framework-agnostic public route contract.
-- `packages/tokens`, `packages/ui`, `packages/content`, and `packages/icons` provide the shared foundation as the project grows.
+- `packages/tokens` and `packages/ui` provide the active shared design and interaction foundation.
+- Shared packages exist only when they have current ownership and consumers; future concerns are added when implemented rather than held as empty placeholders.
 - The GitHub Pages workflow builds Home, Workspace, and Notes into one `.pages/` artifact and deploys it with the official Pages artifact actions.
 - Journal, Editorial, and Calm keep their public paths reserved with generated redirects until their applications are implemented.
 
@@ -58,4 +55,5 @@ Before artifact assembly, the workflow runs `pnpm verify` (`pnpm build`, `pnpm l
 - Apps own their experience-specific composition and content presentation.
 - Packages own reusable, cross-experience concerns.
 - Documentation belongs only in `docs/`; public educational articles belong only in `apps/notes/`.
+- Generated output is ignored: Vite `dist/` directories, the aggregate `.pages/` artifact, local pnpm state, and obsolete generated documentation output never belong in version control.
 - `docs/CODING_STANDARDS.md` governs component organization, route usage, token usage, accessibility, and code maintainability across every boundary.

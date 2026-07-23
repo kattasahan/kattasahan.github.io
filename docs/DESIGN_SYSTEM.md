@@ -16,7 +16,6 @@ The framework-agnostic token foundation and shared React component library are i
 
 - `packages/tokens` holds reusable visual tokens.
 - `packages/ui` holds accessible shared React components.
-- `packages/icons` will hold shared icon components.
 - Individual apps may express their own personality without breaking shared accessibility or token conventions.
 
 ## Inspiration boundary

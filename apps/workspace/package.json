@@ -10,7 +10,6 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@portfolio/config": "workspace:*",
     "@portfolio/routes": "workspace:*",
     "@portfolio/tokens": "workspace:*",
     "@portfolio/ui": "workspace:*",

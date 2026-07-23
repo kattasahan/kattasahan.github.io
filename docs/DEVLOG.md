@@ -154,3 +154,9 @@ For every milestone:
 - Added a discovery-driven development gateway behind `pnpm dev` that starts implemented Vite applications and proxies them through one localhost origin.
 - The gateway derives app prefixes from `@portfolio/routes`, forwards WebSocket traffic for Hot Module Reload, and preserves production-equivalent Home redirects for app workspaces that are not implemented yet.
 - Preserved focused `pnpm dev:<app>` workflows, the production build, the Pages preview, and the GitHub Pages deployment pipeline.
+
+## Final repository architecture cleanup
+
+- Removed the unused route compatibility package and the empty content and icon workspace placeholders.
+- Removed obsolete generated documentation output from version control and expanded ignore rules for generated build and local pnpm artifacts.
+- Kept the active shared boundary to routes, tokens, and UI; production builds, the Pages preview, deployment, and the Development Orchestrator retain their existing behavior.

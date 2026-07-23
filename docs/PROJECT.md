@@ -30,6 +30,7 @@ Each perspective uses the same concise “Enter” CTA. The promise leads the de
 - Deploy freely to GitHub Pages.
 - Use React, TypeScript, Vite, and pnpm workspaces.
 - Share one design system while giving each experience its own character.
+- Keep shared packages limited to active, owned concerns; do not retain empty workspace placeholders.
 - Keep the visual language monochrome-first, with typography, whitespace, and subtle motion doing the work.
 - Exclude Concept 4 from the portfolio.
 

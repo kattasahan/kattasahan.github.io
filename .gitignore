@@ -3,5 +3,8 @@ dist/
 .pages/
 .vite/
 coverage/
+.pnpm-store/
+/docs/assets/
+/docs/index.html
 *.tsbuildinfo
 .DS_Store

@@ -86,11 +86,15 @@
 
 ## ADR-014 — Publish the route contract as its own package
 
+**Status:** Updated by ADR-028.
+
 **Decision:** Place the global route contract in the framework-agnostic `@portfolio/routes` package. It owns all public route constants, nested experience route groups, GitHub Pages base-path resolution, matching, and app-scoped route helpers. Keep `@portfolio/config/routes` as a temporary re-export while app imports migrate separately.
 
 **Why:** Routing is a cross-cutting public contract rather than build configuration. A dedicated package makes that boundary explicit, gives every present and future app one dependency for URLs, and avoids coupling the package move to a behavior-changing router migration.
 
 ## ADR-015 — Make package routes safe at build-config time
+
+**Status:** Superseded by ADR-028.
 
 **Decision:** Keep route data and base-path resolution in the dependency-free `@portfolio/routes/config` JavaScript entrypoint. The TypeScript `@portfolio/routes` runtime API consumes that same data, and `@portfolio/config/routes-config` remains a compatibility re-export for existing Vite configs.
 
@@ -173,3 +177,9 @@
 **Decision:** Make `pnpm dev` run a root development gateway that discovers app workspaces, starts each implemented Vite app internally, and proxies HTTP plus HMR WebSocket traffic through one localhost origin. Derive each app prefix from its matching direct route entry in `@portfolio/routes`; preserve independent `pnpm dev:<app>` commands and keep the composed Pages pipeline exclusively for preview and deployment.
 
 **Why:** The root Home Vite server could not serve the independently built Notes and Workspace applications, so navigation from one app to another failed in normal development. Discovery plus the shared route contract prevents a duplicated app registry: future apps join the unified environment by adding their public route and conventional `dev` script, while GitHub Pages retains its existing static deployment architecture.
+
+## ADR-028 — Keep only active shared packages and source artifacts
+
+**Decision:** Remove the deprecated `@portfolio/config` route compatibility package and the empty `@portfolio/content` and `@portfolio/icons` placeholders. Keep `@portfolio/routes`, `@portfolio/tokens`, and `@portfolio/ui` as the current shared package boundary. Ignore build output, local pnpm state, and obsolete generated documentation files.
+
+**Why:** Every application already imports the canonical route package, so a compatibility package only obscured ownership. Empty workspace packages create architectural promises without implementation. Removing them makes the repository's current architecture explicit, while ignored artifacts keep generated output out of the source tree and Git history without changing the Pages build or deployment workflow.
