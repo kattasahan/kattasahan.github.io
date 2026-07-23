@@ -148,3 +148,9 @@ For every milestone:
 - Restored `pnpm dev` as Home’s Vite development server for fast refresh without building the Pages artifact.
 - Moved the composed static-site workflow to `pnpm preview`, preserving its production-like route fallback behavior.
 - Made the composed preview server select the next available port when its preferred port is occupied, matching Vite’s non-blocking local-server behavior.
+
+## Unified development orchestrator
+
+- Added a discovery-driven development gateway behind `pnpm dev` that starts implemented Vite applications and proxies them through one localhost origin.
+- The gateway derives app prefixes from `@portfolio/routes`, forwards WebSocket traffic for Hot Module Reload, and preserves production-equivalent Home redirects for app workspaces that are not implemented yet.
+- Preserved focused `pnpm dev:<app>` workflows, the production build, the Pages preview, and the GitHub Pages deployment pipeline.

@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "pnpm@9.15.4",
   "scripts": {
-    "dev": "pnpm --filter @portfolio/home dev",
+    "dev": "node scripts/dev-orchestrator.mjs",
     "dev:home": "pnpm --filter @portfolio/home dev",
     "dev:workspace": "pnpm --filter @portfolio/workspace dev",
     "dev:journal": "pnpm --filter @portfolio/journal dev",

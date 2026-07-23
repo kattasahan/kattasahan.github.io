@@ -162,6 +162,14 @@
 
 ## ADR-026 — Separate fast development from production-like preview
 
+**Status:** Superseded by ADR-027.
+
 **Decision:** Reserve the composed Pages artifact for `pnpm preview` and make `pnpm dev` run Home’s normal Vite development server. Let Vite choose the development port, and let the composed preview server advance from its preferred port when that port is occupied.
 
 **Why:** Building the entire static artifact before every Home edit made development slow and removed Vite’s Fast Refresh benefits. A separate preview command retains accurate multi-app and GitHub Pages fallback checks without burdening the normal edit loop or failing on a routine port conflict.
+
+## ADR-027 — Use a discovery-driven development orchestrator
+
+**Decision:** Make `pnpm dev` run a root development gateway that discovers app workspaces, starts each implemented Vite app internally, and proxies HTTP plus HMR WebSocket traffic through one localhost origin. Derive each app prefix from its matching direct route entry in `@portfolio/routes`; preserve independent `pnpm dev:<app>` commands and keep the composed Pages pipeline exclusively for preview and deployment.
+
+**Why:** The root Home Vite server could not serve the independently built Notes and Workspace applications, so navigation from one app to another failed in normal development. Discovery plus the shared route contract prevents a duplicated app registry: future apps join the unified environment by adding their public route and conventional `dev` script, while GitHub Pages retains its existing static deployment architecture.

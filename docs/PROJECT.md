@@ -53,6 +53,6 @@ During active development, GitHub Pages deployment is manual and review-driven: 
 
 ## Local workflow
 
-- **Development:** `pnpm dev` runs Home through Vite’s development server with Fast Refresh and no production build. Vite uses port 5173 when available and selects the next available port otherwise.
+- **Development:** `pnpm dev` starts the Development Orchestrator: one Vite-powered localhost origin for every routed app, with Fast Refresh and no production build. It discovers app workspaces and route prefixes from the repository and shared route contract, using port 5173 when available and selecting the next available port otherwise.
 - **Preview:** `pnpm preview` builds the aggregate GitHub Pages artifact, then serves it locally with the same static fallback behavior used in production.
 - **Production:** GitHub Actions runs verification and publishes that same aggregate artifact to GitHub Pages only when manually dispatched during active development.

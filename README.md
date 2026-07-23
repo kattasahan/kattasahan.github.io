@@ -4,14 +4,16 @@ Live site: [kattasahan.github.io](https://kattasahan.github.io/)
 
 ## Development
 
-Install dependencies, then start Home with Vite’s development server:
+Install dependencies, then start the unified portfolio development environment:
 
 ```sh
 pnpm install
 pnpm dev
 ```
 
-Vite provides Hot Module Reload and Fast Refresh at [http://localhost:5173/](http://localhost:5173/) when available, or the next available port when it is occupied. It does not build the GitHub Pages artifact. Use `pnpm dev:workspace`, `pnpm dev:journal`, `pnpm dev:editorial`, `pnpm dev:calm`, or `pnpm dev:notes` for focused work on another app.
+The Development Orchestrator provides Home, Workspace, Journal, Editorial, Calm, and Notes from [http://localhost:5173/](http://localhost:5173/) when available, or the next available port when it is occupied. Implemented applications retain Vite Hot Module Reload and Fast Refresh through the shared origin. The development command does not build the GitHub Pages artifact. Use `pnpm dev:workspace`, `pnpm dev:journal`, `pnpm dev:editorial`, `pnpm dev:calm`, or `pnpm dev:notes` for focused, independent app work.
+
+The orchestrator discovers `apps/*` workspaces and matches each directory to a direct route entry in `@portfolio/routes`. A future app therefore joins the unified development origin by adding its route and a standard `dev` script; it does not require a second application registry. The production build, preview, and GitHub Pages deployment remain separate and unchanged.
 
 ## Preview
 
