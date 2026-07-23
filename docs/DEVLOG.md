@@ -123,3 +123,10 @@ For every milestone:
 - Pushes no longer publish automatically, enabling faster iteration, fewer unnecessary Actions runs, lower Actions usage, and review-driven releases.
 - Preserved the frozen-lockfile install, pnpm cache, repository verification, Pages configuration, and aggregate static build.
 - Documented the commented future production-mode trigger for automatic deployment on pushes to `main`.
+
+## Reference-led Home composition
+
+- Rebuilt the Home presentation around the approved editorial reference while preserving the frozen Home route, shared tokens, shared UI primitives, and light/dark mode behavior.
+- Matched the reference structure with an open hero, quiet top bar, atmospheric circle and diagonal line, strapline divider, four ornamented editorial rows, a separate Engineering Journal epilogue, and a minimal footer marker.
+- Kept the approved perspective promises and route destinations, while making each destination CTA explicit and visually discoverable.
+- Added only gentle opacity and small translate reveal motion, with the existing reduced-motion preference fully respected.

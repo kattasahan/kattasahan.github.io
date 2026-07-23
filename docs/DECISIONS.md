@@ -145,3 +145,9 @@
 **Decision:** Use `workflow_dispatch` as the only active GitHub Pages deployment trigger. Keep a commented `push` trigger in the workflow as the documented switch for a future production mode that deploys on `main`.
 
 **Why:** Manual publishing separates iteration from release decisions, avoids unnecessary Actions runs and usage, and gives each public update an explicit review point without weakening the existing build, quality, caching, or Pages configuration.
+
+## ADR-024 — Use the approved editorial reference as Home’s composition contract
+
+**Decision:** Preserve Home’s architecture and public routes while aligning its presentation to the approved monochrome editorial composition: a large author-led hero, subtle geometric atmosphere, hairline-divided perspective rows with meaningful ornaments, and a quiet Engineering Journal epilogue.
+
+**Why:** The reference provides a precise visual hierarchy and rhythm for the entry experience. Treating it as a composition contract keeps the implementation focused on typography, whitespace, and restrained geometry instead of introducing cards, dashboard patterns, or a separate visual language.
