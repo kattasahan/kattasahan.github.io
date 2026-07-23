@@ -53,8 +53,9 @@ textarea {
 .home__header {
   align-items: center;
   display: flex;
+  height: var(--home-space-8);
   justify-content: space-between;
-  padding-block: var(--home-space-3);
+  padding-block: 0;
 }
 
 .home__wordmark,
@@ -84,7 +85,7 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: clamp(34rem, 57vw, 43rem);
+  min-height: calc(100svh - var(--home-space-8));
   padding-block: var(--home-space-10) var(--home-space-3);
   position: relative;
 }
@@ -97,8 +98,9 @@ textarea {
 }
 
 .home__hero::before {
-  border: 1px solid color-mix(in srgb, var(--home-border) 62%, transparent);
+  border: 1px solid color-mix(in srgb, var(--home-text) 23%, transparent);
   border-radius: 50%;
+  box-shadow: 0 0 5rem color-mix(in srgb, var(--home-text) 5%, transparent);
   height: clamp(18rem, 29vw, 29rem);
   right: clamp(2rem, 5vw, 8rem);
   top: clamp(6rem, 9vw, 9rem);
@@ -106,9 +108,9 @@ textarea {
 }
 
 .home__hero::after {
-  background: linear-gradient(90deg, transparent, var(--home-border), transparent);
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--home-text) 30%, transparent), transparent);
   height: 1px;
-  opacity: 0.55;
+  opacity: 0.72;
   right: clamp(-1rem, 2vw, 3rem);
   top: 56%;
   transform: rotate(-33deg);
@@ -209,7 +211,7 @@ textarea {
 }
 
 .home__perspectives {
-  padding-bottom: var(--home-space-6);
+  padding-bottom: 0;
 }
 
 .home__chapter {
@@ -222,7 +224,7 @@ textarea {
 }
 
 .home__chapter:last-child {
-  border-bottom: 1px solid color-mix(in srgb, var(--home-border) 58%, transparent);
+  border-bottom: 0;
 }
 
 .home__chapterOrnament {
@@ -431,7 +433,7 @@ textarea {
   }
 
   .home__hero {
-    min-height: 38rem;
+    min-height: calc(100svh - var(--home-space-8));
     padding-block: var(--home-space-6) var(--home-space-3);
   }
 

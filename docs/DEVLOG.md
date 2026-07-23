@@ -130,3 +130,9 @@ For every milestone:
 - Matched the reference structure with an open hero, quiet top bar, atmospheric circle and diagonal line, strapline divider, four ornamented editorial rows, a separate Engineering Journal epilogue, and a minimal footer marker.
 - Kept the approved perspective promises and route destinations, while making each destination CTA explicit and visually discoverable.
 - Added only gentle opacity and small translate reveal motion, with the existing reduced-motion preference fully respected.
+
+## Home viewport framing and divider refinement
+
+- Made the Home hero and top bar share one full first viewport so the perspective introduction does not appear before the visitor intentionally scrolls.
+- Increased the contrast of the existing hero circle and diagonal line without adding a new illustration or changing the monochrome composition.
+- Removed the duplicate Calm-to-Journal boundary by making the Engineering Journal's top rule the single intended separator.

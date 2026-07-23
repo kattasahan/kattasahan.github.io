@@ -84,6 +84,7 @@ function HomeLanding() {
     '--home-space-3': spacingTokens[3],
     '--home-space-4': spacingTokens[4],
     '--home-space-6': spacingTokens[6],
+    '--home-space-8': spacingTokens[8],
     '--home-space-10': spacingTokens[10],
     '--home-space-16': spacingTokens[16],
     '--home-motion': motionTokens.duration.normal,
