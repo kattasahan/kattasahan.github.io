@@ -160,3 +160,9 @@ For every milestone:
 - Removed the unused route compatibility package and the empty content and icon workspace placeholders.
 - Removed obsolete generated documentation output from version control and expanded ignore rules for generated build and local pnpm artifacts.
 - Kept the active shared boundary to routes, tokens, and UI; production builds, the Pages preview, deployment, and the Development Orchestrator retain their existing behavior.
+
+## GitHub Pages source recovery
+
+- Confirmed the aggregate artifact contains a root `index.html`, every public route entry, `.nojekyll`, and the static fallback.
+- Added a deployment-time Pages source check that creates or updates the site to use GitHub Actions before publishing the artifact.
+- Preserved the existing manual deployment trigger, frozen-lockfile install, verification gate, root-hosted base path, and aggregate artifact deployment.

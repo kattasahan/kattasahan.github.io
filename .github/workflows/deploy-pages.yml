@@ -44,6 +44,29 @@ jobs:
         env:
           VITE_SITE_BASE: /
 
+      - name: Ensure GitHub Pages uses Actions
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          endpoint="https://api.github.com/repos/${GITHUB_REPOSITORY}/pages"
+          payload='{"build_type":"workflow"}'
+          headers=(
+            --header "Accept: application/vnd.github+json"
+            --header "Authorization: Bearer ${GITHUB_TOKEN}"
+            --header "X-GitHub-Api-Version: 2022-11-28"
+          )
+
+          status="$(curl --silent --show-error --output response.json --write-out '%{http_code}' --request PUT "${endpoint}" "${headers[@]}" --data "${payload}")"
+
+          if [ "${status}" = "404" ]; then
+            status="$(curl --silent --show-error --output response.json --write-out '%{http_code}' --request POST "${endpoint}" "${headers[@]}" --data "${payload}")"
+          fi
+
+          if [ "${status}" != "200" ] && [ "${status}" != "201" ] && [ "${status}" != "204" ]; then
+            cat response.json
+            exit 1
+          fi
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 

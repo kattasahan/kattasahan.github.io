@@ -183,3 +183,9 @@
 **Decision:** Remove the deprecated `@portfolio/config` route compatibility package and the empty `@portfolio/content` and `@portfolio/icons` placeholders. Keep `@portfolio/routes`, `@portfolio/tokens`, and `@portfolio/ui` as the current shared package boundary. Ignore build output, local pnpm state, and obsolete generated documentation files.
 
 **Why:** Every application already imports the canonical route package, so a compatibility package only obscured ownership. Empty workspace packages create architectural promises without implementation. Removing them makes the repository's current architecture explicit, while ignored artifacts keep generated output out of the source tree and Git history without changing the Pages build or deployment workflow.
+
+## ADR-029 — Ensure the Pages source during deployment
+
+**Decision:** Have the existing Pages workflow create or update the repository Pages site with GitHub Actions as its build type before configuring and deploying the aggregate artifact.
+
+**Why:** A successful artifact deployment cannot restore a user site when GitHub Pages is disabled or still configured to publish from a branch directory. Keeping this setting in the deployment workflow makes the artifact the explicit production source, prevents branch-source drift, and avoids reintroducing generated files into `docs/`.
