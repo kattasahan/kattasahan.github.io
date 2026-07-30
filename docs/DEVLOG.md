@@ -187,3 +187,4 @@ For every milestone:
 - Corrected the Home hero’s desktop composition to match the approved reference: a wide editorial canvas edge, vertically stacked right navigation, a deliberately large two-line name, a clear empty right field, and bottom metadata aligned independently from the header edge.
 - Replaced the overlong profile supporting line with the concise, source-profile-backed Frontend Engineer and 5+ years statement so the hero retains its intended two-line editorial rhythm.
 - Rechecked the refined composition in light mode at desktop and mobile viewports, preserving the shared theme toggle, responsive menu, keyboard focus treatment, and reduced-motion behavior.
+- Normalized the header-control intervals and hero type offsets onto named layout variables so the navigation, eyebrow, title, supporting line, arrow, and metadata follow a consistent spatial rhythm rather than competing hard-coded gaps.

@@ -14,6 +14,8 @@
   --home-space-16: 8rem;
   --home-canvas-edge: clamp(var(--home-space-6), 5.86vw, 5.625rem);
   --home-hero-start: clamp(15rem, 23.5vh, 18rem);
+  --home-title-offset: 3.75rem;
+  --home-content-gap: var(--home-space-4);
   --home-title-size: clamp(8.75rem, 14.3vw, 13.75rem);
   --home-motion-fast: 120ms;
   --home-motion-normal: 200ms;
@@ -102,7 +104,7 @@ a {
 .home-header__controls {
   align-items: flex-end;
   flex-direction: column;
-  gap: var(--home-space-4);
+  gap: var(--home-space-3);
 }
 
 .home-header__nav {
@@ -179,7 +181,7 @@ a {
   font-weight: 800;
   letter-spacing: -0.06em;
   line-height: 0.86;
-  margin: var(--home-space-6) 0 0;
+  margin: var(--home-title-offset) 0 0;
 }
 
 .home-hero__title-line,
@@ -206,7 +208,7 @@ a {
   font-size: clamp(1.375rem, 2vw, 2.125rem);
   font-weight: 400;
   line-height: 1.25;
-  margin: var(--home-space-6) 0 0;
+  margin: var(--home-content-gap) 0 0;
   max-width: 30rem;
 }
 
