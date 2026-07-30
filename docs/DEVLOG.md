@@ -181,3 +181,9 @@ For every milestone:
 - Populated the profile fields only from the approved professional context: Sahan Katta, Frontend Engineer, Bengaluru, India, and the verified 5+ years enterprise frontend supporting line.
 - Rebuilt the Home hero as a full-viewport, typography- and whitespace-led composition with responsive navigation, mobile menu, shared theme toggle, keyboard focus, and reduced-motion handling.
 - Removed Home-local visitor-facing copy and route strings; components render JSON fields and resolve route names through the shared routes package.
+
+## Home hero reference-alignment refinement
+
+- Corrected the Home hero’s desktop composition to match the approved reference: a wide editorial canvas edge, vertically stacked right navigation, a deliberately large two-line name, a clear empty right field, and bottom metadata aligned independently from the header edge.
+- Replaced the overlong profile supporting line with the concise, source-profile-backed Frontend Engineer and 5+ years statement so the hero retains its intended two-line editorial rhythm.
+- Rechecked the refined composition in light mode at desktop and mobile viewports, preserving the shared theme toggle, responsive menu, keyboard focus treatment, and reduced-motion behavior.
