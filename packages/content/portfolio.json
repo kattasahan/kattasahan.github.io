@@ -1,0 +1,88 @@
+{
+  "site": {
+    "name": "Sahan Katta",
+    "role": "Frontend Engineer",
+    "description": "5+ years building enterprise, data-heavy frontend systems with React, TypeScript, Angular, Next.js, Oracle VBCS, and Cypress.",
+    "location": "Bengaluru, India"
+  },
+  "symbols": {
+    "downArrow": "↓",
+    "forwardArrow": "→"
+  },
+  "navigation": {
+    "ariaLabel": "Primary navigation",
+    "menuLabel": "Menu",
+    "closeMenuLabel": "Close menu",
+    "items": [
+      { "label": "Work", "route": "workspace" },
+      { "label": "Writing", "route": "notes" },
+      { "label": "About", "route": "home" }
+    ],
+    "themeToggle": {
+      "lightLabel": "Light",
+      "darkLabel": "Dark",
+      "switchToLightLabel": "Switch to light mode",
+      "switchToDarkLabel": "Switch to dark mode"
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Frontend Engineer",
+      "title": ["Sahan", "Katta"],
+      "scrollTarget": "perspectives",
+      "scrollLabel": "Scroll to explore",
+      "bottomLeft": "Bengaluru, India",
+      "bottomRight": "Scroll to explore"
+    },
+    "perspectives": {
+      "id": "perspectives",
+      "label": "The portfolio",
+      "title": ["Choose your", "perspective"],
+      "ariaLabel": "Portfolio perspectives",
+      "items": [
+        {
+          "ornament": "01",
+          "ornamentLabel": "First perspective",
+          "title": "Workspace",
+          "description": "See how I build.",
+          "route": "workspace",
+          "action": "Enter Workspace"
+        },
+        {
+          "ornament": "“",
+          "ornamentLabel": "Second perspective",
+          "title": "Journal",
+          "description": "Read the story.",
+          "route": "journal",
+          "action": "Enter Journal"
+        },
+        {
+          "ornament": "",
+          "ornamentLabel": "Third perspective",
+          "title": "Editorial",
+          "description": "Notice the details.",
+          "route": "editorial",
+          "action": "Enter Editorial",
+          "supportingTitle": "Notice the details."
+        },
+        {
+          "ornament": "04",
+          "ornamentLabel": "Fourth perspective",
+          "title": "Calm",
+          "description": "Slow down.",
+          "route": "calm",
+          "action": "Enter Calm"
+        }
+      ]
+    },
+    "journal": {
+      "id": "journal",
+      "label": "Engineering Journal",
+      "title": ["How this portfolio", "was built."],
+      "description": "A behind-the-scenes look at the ideas, decisions and engineering behind this site.",
+      "route": "notes",
+      "action": "Read the process"
+    },
+    "footer": "Bengaluru, India"
+  }
+}

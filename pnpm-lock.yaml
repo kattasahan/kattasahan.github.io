@@ -39,6 +39,9 @@ importers:
 
   apps/home:
     dependencies:
+      '@portfolio/content':
+        specifier: workspace:*
+        version: link:../../packages/content
       '@portfolio/routes':
         specifier: workspace:*
         version: link:../../packages/routes
@@ -167,6 +170,8 @@ importers:
       vite:
         specifier: ^6.0.3
         version: 6.4.3(@types/node@22.20.1)
+
+  packages/content: {}
 
   packages/routes: {}
 

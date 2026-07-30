@@ -32,6 +32,7 @@ Each perspective uses the same concise “Enter” CTA. The promise leads the de
 - Share one design system while giving each experience its own character.
 - Keep global theme behavior in `@portfolio/theme` so every implemented experience reads and writes one persisted preference.
 - Keep shared packages limited to active, owned concerns; do not retain empty workspace placeholders.
+- Keep public Home content in `@portfolio/content/portfolio.json`; profile facts are editable there and must be sourced from the approved profile material.
 - Keep the visual language monochrome-first, with typography, whitespace, and subtle motion doing the work.
 - Exclude Concept 4 from the portfolio.
 
@@ -56,6 +57,10 @@ During active development, GitHub Pages deployment is manual and review-driven: 
 ## Theme system
 
 `@portfolio/theme` owns the global light/dark preference for the portfolio. Before React mounts, each implemented application applies the stored preference, or the system preference on a first visit, to `html[data-theme]`. The manager persists the resolved preference, updates browser `theme-color`, and keeps the same theme when visitors move between independently built applications. `@portfolio/ui` consumes that state only to present token-backed controls and surfaces.
+
+## Content policy
+
+`packages/content/portfolio.json` is the single editable source for visible Home content. React components render its profile, navigation, hero, perspective, journal, and footer fields without embedding visitor-facing copy. Personal facts in this file are limited to the approved professional profile material.
 
 ## Local workflow
 

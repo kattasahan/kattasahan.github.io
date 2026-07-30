@@ -2,11 +2,11 @@
 
 ## Milestone 1 — Repository foundation
 
-Set up the pnpm monorepo, shared configuration, app workspaces, and shared package folders. Status: complete.
+Set up the pnpm monorepo, shared configuration, app workspaces, and active shared package folders. Status: complete.
 
 ## Milestone 2 — Home
 
-Build, audit, and complete the final product review for the Home entry experience. Status: complete.
+Build, audit, and complete the final product review for the Home entry experience, including a profile-driven editorial hero. Status: complete.
 
 ## Milestone 3 — Shared design system
 

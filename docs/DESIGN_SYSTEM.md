@@ -8,6 +8,7 @@ The framework-agnostic token foundation, global theme package, and shared React 
 
 - Monochrome-first: use color sparingly and intentionally.
 - Typography leads: hierarchy, rhythm, and readable measure should carry the interface.
+- Home's hero is intentionally typography- and whitespace-led: it uses no illustration, gradients, decorative graphics, or card treatment.
 - Whitespace is a feature, not unused space.
 - Motion is subtle, purposeful, and respectful of reduced-motion preferences.
 - Accessibility is a default requirement, including semantic structure, keyboard access, contrast, focus treatment, and responsive layouts.

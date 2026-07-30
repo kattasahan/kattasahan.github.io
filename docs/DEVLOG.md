@@ -174,3 +174,10 @@ For every milestone:
 - Kept `@portfolio/ui` presentation-only by moving its former theme context implementation into the shared package while retaining its presentation helpers and compatibility exports.
 - Added cross-tab storage synchronization. Journal, Editorial, and Calm remain intentionally unimplemented static redirect routes and will consume the same package when their applications are built.
 - Synchronized `pnpm-lock.yaml` and verified the complete build, lint, and type-check gate.
+
+## Profile-driven Home hero
+
+- Reintroduced `@portfolio/content` as an active package and created `portfolio.json` as the single editable source for all visible Home content.
+- Populated the profile fields only from the approved professional context: Sahan Katta, Frontend Engineer, Bengaluru, India, and the verified 5+ years enterprise frontend supporting line.
+- Rebuilt the Home hero as a full-viewport, typography- and whitespace-led composition with responsive navigation, mobile menu, shared theme toggle, keyboard focus, and reduced-motion handling.
+- Removed Home-local visitor-facing copy and route strings; components render JSON fields and resolve route names through the shared routes package.

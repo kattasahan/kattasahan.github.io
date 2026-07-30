@@ -11,6 +11,7 @@ apps/
   calm/
   notes/
 packages/
+  content/
   routes/
   theme/
   tokens/
@@ -22,6 +23,7 @@ packages/
 - pnpm workspaces manage the monorepo.
 - Each app is a standalone Vite application using React and TypeScript.
 - `packages/routes` owns the framework-agnostic public route contract.
+- `packages/content` owns editable, profile-sourced public content for the Home experience.
 - `packages/theme` owns global theme state, persistence, browser integration, and React bindings.
 - `packages/tokens` and `packages/ui` provide the active shared visual and interaction foundation; UI remains presentation-only.
 - Shared packages exist only when they have current ownership and consumers; future concerns are added when implemented rather than held as empty placeholders.
@@ -55,6 +57,7 @@ Before artifact assembly, the workflow runs `pnpm verify` (`pnpm build`, `pnpm l
 ## Boundaries
 
 - Apps own their experience-specific composition and content presentation.
+- `@portfolio/content/portfolio.json` is the single source for visitor-facing Home content. App code resolves its route names through `@portfolio/routes` rather than embedding URLs.
 - `@portfolio/theme` is the only package allowed to read browser theme preferences, access theme storage, mutate `html[data-theme]`, or update browser `theme-color`. Implemented apps mount its provider and use its hook; the unimplemented Journal, Editorial, and Calm routes remain static redirects until those applications exist.
 - Packages own reusable, cross-experience concerns.
 - Documentation belongs only in `docs/`; public educational articles belong only in `apps/notes/`.

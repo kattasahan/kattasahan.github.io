@@ -195,3 +195,9 @@
 **Decision:** Put theme persistence, system-preference detection, document application, browser chrome updates, subscriptions, and the React provider/hook in `@portfolio/theme`. Keep `@portfolio/ui` presentation-only and let every implemented app mount the shared provider before rendering its experience.
 
 **Why:** Home, Workspace, and Notes are independently built applications but must feel like one product. A dedicated package gives every app one persisted source of truth, prevents local-storage and `matchMedia` duplication, avoids theme drift across app switches, and lets a lightweight pre-mount bootstrap prevent a flash of incorrect theme. Journal, Editorial, and Calm will inherit this boundary when their application implementations begin.
+
+## ADR-031 — Keep Home content in an active shared content package
+
+**Decision:** Reintroduce `@portfolio/content` only as an active package, with `portfolio.json` as the editable source for all visible Home content. Home resolves content route names through `@portfolio/routes` and keeps profile facts out of React components.
+
+**Why:** The previously removed content placeholder had no ownership or consumers. The Home hero now needs an editable, profile-backed content contract that can change without React edits. This keeps the package active and bounded, while preserving the routes package as the sole public URL authority.
