@@ -8,7 +8,7 @@ description: Maintain the minimal monochrome theme interface for this repository
 ## Design context
 
 - Use an editorial palette: warm off-white canvas in Light mode, charcoal rather than pure black in Dark mode, and one restrained coral accent for emphasis and interactive states. Avoid gradients and do not scatter the accent color across every element.
-- Use compact, thin-stroked `Circle` for Light and `Eclipse` for Dark from `lucide-react`. Keep theme transitions icon-minimal: do not introduce a third transitional icon. Do not add seasonal motifs, gradients, or decorative weather effects.
+- Use compact, thin-stroked `Circle` for Light and `Eclipse` for Dark from `lucide-react`. Switch page colors instantly. The theme icon may rotate briefly during its immediate swap, but must not fade, scale, delay the theme change, or use a third transitional icon. Do not add seasonal motifs, gradients, or decorative weather effects.
 - Keep the toggle in the page's top-right corner. Render only the icon with a transparent button surface; preserve a sufficiently large, keyboard-accessible hit target.
 - Use a left-aligned, typography-led profile sidebar with a small circular portrait, name, role, location, then an intentionally separated Current section with company, job title, and dates. Use flexible whitespace before a final divider and icon-only social links. Do not add a banner, wordmark, description, technology list, company logo, or decorative visuals. Populate public portfolio content only from verified user-provided context.
 - Preserve the avatar's original colors. Do not use company logos or logo-derived marks unless the user supplies documented authorization; identify employers with plain text only.

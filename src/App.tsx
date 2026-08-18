@@ -43,7 +43,7 @@ function App() {
     <main
       id="main-content"
       data-theme={theme}
-      className="group min-h-screen bg-canvas text-ink transition-colors duration-500 data-[theme=dark]:bg-ink data-[theme=dark]:text-zinc-50"
+      className="group min-h-screen bg-canvas text-ink data-[theme=dark]:bg-ink data-[theme=dark]:text-zinc-50"
     >
       <nav aria-label={content.ui.controlsLabel} className="absolute right-2 top-2 flex">
         <LanguageToggle language={language} onLanguageChange={updateLanguage} label={content.ui.language.switchTo} />
