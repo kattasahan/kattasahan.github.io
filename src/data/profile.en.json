@@ -1,0 +1,39 @@
+{
+  "locale": "en-IN",
+  "metadata": {
+    "title": "Sahan Katta — Frontend Engineer",
+    "description": "Portfolio of Sahan Katta, a Frontend Engineer based in Bengaluru, India."
+  },
+  "ui": {
+    "controlsLabel": "Site controls",
+    "profileLabel": "Professional profile",
+    "status": "Active",
+    "current": "Current",
+    "connect": "Connect",
+    "theme": {
+      "changing": "Changing theme",
+      "switchToLight": "Switch to light theme",
+      "switchToDark": "Switch to dark theme"
+    },
+    "language": {
+      "switchTo": "Switch to Japanese"
+    }
+  },
+  "profile": {
+    "name": "Sahan Katta",
+    "avatarUrl": "https://github.com/kattasahan.png",
+    "avatarAlt": "Sahan Katta",
+    "role": "Frontend Engineer",
+    "location": "Bengaluru, India",
+    "currentRole": {
+      "company": "Oracle",
+      "title": "Application Software Engineer 2",
+      "dates": "Mar 2025 — Present"
+    },
+    "links": [
+      { "type": "github", "label": "GitHub", "url": "https://github.com/kattasahan" },
+      { "type": "linkedin", "label": "LinkedIn", "url": "https://www.linkedin.com/in/kattasahan" },
+      { "type": "email", "label": "Email", "url": "mailto:kattasahan2234@gmail.com" }
+    ]
+  }
+}

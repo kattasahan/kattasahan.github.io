@@ -1,0 +1,4 @@
+interface:
+  display_name: "Seasonal UI"
+  short_description: "Maintain the Summer and Winter interface."
+  default_prompt: "Update this site while preserving the seasonal theme system."

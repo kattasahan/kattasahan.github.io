@@ -1,0 +1,39 @@
+{
+  "locale": "ja-JP",
+  "metadata": {
+    "title": "サハン・カッタ — フロントエンドエンジニア",
+    "description": "インド・ベンガルールを拠点とするフロントエンドエンジニア、サハン・カッタのポートフォリオ。"
+  },
+  "ui": {
+    "controlsLabel": "サイトコントロール",
+    "profileLabel": "プロフィール",
+    "status": "活動中",
+    "current": "現在",
+    "connect": "連絡先",
+    "theme": {
+      "changing": "テーマを変更中",
+      "switchToLight": "ライトテーマに切り替える",
+      "switchToDark": "ダークテーマに切り替える"
+    },
+    "language": {
+      "switchTo": "英語に切り替える"
+    }
+  },
+  "profile": {
+    "name": "サハン・カッタ",
+    "avatarUrl": "https://github.com/kattasahan.png",
+    "avatarAlt": "サハン・カッタ",
+    "role": "フロントエンドエンジニア",
+    "location": "インド・ベンガルール",
+    "currentRole": {
+      "company": "オラクル",
+      "title": "アプリケーション・ソフトウェア・エンジニア 2",
+      "dates": "2025年3月 — 現在"
+    },
+    "links": [
+      { "type": "github", "label": "GitHub", "url": "https://github.com/kattasahan" },
+      { "type": "linkedin", "label": "LinkedIn", "url": "https://www.linkedin.com/in/kattasahan" },
+      { "type": "email", "label": "メール", "url": "mailto:kattasahan2234@gmail.com" }
+    ]
+  }
+}
