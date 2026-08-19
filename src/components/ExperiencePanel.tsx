@@ -45,7 +45,7 @@ export function ExperiencePanel({ content }: ExperiencePanelProps) {
                     <ChevronDown className={`size-3.5 transition-transform duration-150 motion-reduce:transition-none ${isOpen ? 'rotate-180' : ''}`} strokeWidth={1.75} aria-hidden="true" />
                   </span>
                 </div>
-                <p className="text-[0.875rem] text-zinc-600 group-data-[theme=dark]:text-zinc-300">{entry.role}</p>
+                <p className="mt-1 text-[0.9375rem] font-medium leading-5 tracking-[-0.01em] text-zinc-800 group-data-[theme=dark]:text-zinc-200">{entry.role}</p>
               </button>
               <AnimatePresence initial={false}>
                 {isOpen && (
@@ -60,8 +60,8 @@ export function ExperiencePanel({ content }: ExperiencePanelProps) {
                     className="overflow-hidden"
                   >
                     <div className="pt-3">
-                      <p className="font-extralight text-pretty hyphens-auto text-justify text-[0.875rem] leading-5 text-zinc-600 group-data-[theme=dark]:text-zinc-300">{entry.description}</p>
-                      <ul className="mt-3 list-disc space-y-2 pl-4 text-pretty text-[0.8125rem] leading-5 text-zinc-500 marker:text-accent group-data-[theme=dark]:text-zinc-400">
+                      <p className="text-pretty hyphens-auto text-justify text-[0.9375rem] leading-6 text-zinc-600 group-data-[theme=dark]:text-zinc-300">{entry.description}</p>
+                      <ul className="mt-3 list-disc space-y-2 pl-4 text-pretty text-[0.875rem] leading-[1.55] text-zinc-500 marker:text-accent group-data-[theme=dark]:text-zinc-400">
                         {entry.details.map((detail) => <li key={detail}>{detail}</li>)}
                       </ul>
                     </div>

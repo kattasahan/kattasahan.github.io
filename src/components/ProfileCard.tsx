@@ -73,7 +73,7 @@ export function ProfileCard({ content }: ProfileCardProps) {
         <h2 id="current-company" className="mt-2 text-[1rem] tracking-[-0.015em]">
           {profile.currentRole.company}
         </h2>
-        <p className="text-pretty text-[0.875rem] text-zinc-600 group-data-[theme=dark]:text-zinc-300">
+        <p className="text-pretty text-[0.9375rem] leading-5 text-zinc-600 group-data-[theme=dark]:text-zinc-300">
           {profile.currentRole.title}
         </p>
         <p className="text-[0.875rem] text-zinc-500 group-data-[theme=dark]:text-zinc-400">
