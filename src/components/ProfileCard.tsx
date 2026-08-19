@@ -50,6 +50,10 @@ export function ProfileCard({ content }: ProfileCardProps) {
           className="size-18 shrink-0 rounded-full object-cover"
           src={profile.avatarUrl}
           alt={profile.avatarAlt}
+          width={72}
+          height={72}
+          fetchPriority="high"
+          decoding="async"
         />
 
         <div className="min-w-0 text-center lg:@min-[14rem]:text-left">
