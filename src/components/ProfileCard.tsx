@@ -36,7 +36,7 @@ export function ProfileCard({ content }: ProfileCardProps) {
       initial={reduceMotion ? false : { opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: reduceMotion ? 0 : 0.25, ease: 'easeOut' }}
-      className="@container relative flex w-full flex-col rounded-xl border border-[#ddd9d1] bg-surface p-5 text-ink shadow-[0_1px_2px_rgb(0_0_0/0.04)] sm:w-70 sm:rounded-2xl group-data-[theme=dark]:border-zinc-700 group-data-[theme=dark]:bg-[#22211f] group-data-[theme=dark]:text-zinc-50 group-data-[theme=dark]:shadow-none"
+      className="@container relative flex w-full flex-col rounded-xl border border-[#ddd9d1] bg-surface p-5 text-ink shadow-[0_1px_2px_rgb(0_0_0/0.04)] lg:w-70 lg:rounded-2xl group-data-[theme=dark]:border-zinc-700 group-data-[theme=dark]:bg-[#22211f] group-data-[theme=dark]:text-zinc-50 group-data-[theme=dark]:shadow-none"
     >
       <p id="profile-status" role="status" className="flex items-center gap-1.5 text-[0.625rem] font-medium uppercase tracking-[0.12em] text-accent">
         <span className="relative flex size-2" aria-hidden="true">
@@ -45,21 +45,21 @@ export function ProfileCard({ content }: ProfileCardProps) {
         </span>
         {ui.status}
       </p>
-      <header id="profile-header" className="mt-4 flex min-w-0 flex-col items-start gap-3 @min-[14rem]:flex-row @max-[14rem]:items-center">
+      <header id="profile-header" className="mt-4 flex min-w-0 flex-col items-center gap-3 lg:@min-[14rem]:flex-row">
         <img
           className="size-18 shrink-0 rounded-full object-cover"
           src={profile.avatarUrl}
           alt={profile.avatarAlt}
         />
 
-        <div className="min-w-0">
+        <div className="min-w-0 text-center lg:@min-[14rem]:text-left">
           <h1 id="profile-name" className="text-[clamp(1.5rem,8vw,1.75rem)] font-[650] leading-none tracking-[-0.04em]">
             {profile.name}
           </h1>
           <p id="profile-role" className="mt-1 text-pretty text-[1rem] tracking-[-0.015em]">
             {profile.role}
           </p>
-          <p id="profile-location" className="flex items-center gap-1.5 text-[0.875rem] text-zinc-500 group-data-[theme=dark]:text-zinc-400">
+          <p id="profile-location" className="flex justify-center gap-1.5 text-[0.875rem] text-zinc-500 lg:@min-[14rem]:justify-start group-data-[theme=dark]:text-zinc-400">
             <MapPin className="size-3.5 shrink-0" strokeWidth={1.75} aria-hidden="true" />
             {profile.location}
           </p>

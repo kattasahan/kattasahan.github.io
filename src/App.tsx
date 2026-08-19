@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { AboutPanel } from './components/AboutPanel'
+import { ExperiencePanel } from './components/ExperiencePanel'
 import { LanguageToggle } from './components/LanguageToggle'
 import { ThemeToggle } from './components/ThemeToggle'
 import { ProfileCard } from './components/ProfileCard'
@@ -51,10 +52,13 @@ function App() {
         <ThemeToggle theme={theme} onThemeChange={updateTheme} labels={content.ui.theme} />
       </nav>
       <div id="portfolio-layout" className="flex min-h-screen flex-col items-start gap-2 p-2 pt-14 sm:gap-3 sm:p-3 lg:flex-row lg:justify-center">
-        <aside id="profile-panel" aria-label={content.ui.profileLabel} className="w-full shrink-0 sm:w-70">
+        <aside id="profile-panel" aria-label={content.ui.profileLabel} className="w-full shrink-0 lg:w-70">
           <ProfileCard content={content} />
         </aside>
-        <AboutPanel content={content} />
+        <section id="content-panels" aria-label={content.ui.aboutPanelLabel} className="w-full space-y-3 lg:max-w-2xl">
+          <AboutPanel content={content} />
+          <ExperiencePanel content={content} />
+        </section>
       </div>
     </main>
   )

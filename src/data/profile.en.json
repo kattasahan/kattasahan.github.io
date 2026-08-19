@@ -41,6 +41,31 @@
     "title": "Building reliable interfaces for complex products.",
     "description": "Frontend Engineer with 5+ years of experience building enterprise web applications. I focus on UI architecture, API integration, validation flows, automated testing, accessibility, and translating Figma designs into dependable product experiences.",
     "techStackLabel": "Tech stack",
+    "experienceLabel": "Experience",
+    "experience": [
+      {
+        "company": "Oracle",
+        "role": "Application Software Engineer 2",
+        "dates": "Mar 2025 — Present",
+        "description": "Building reliable, data-heavy workflows for Monetization Product Catalog, with a focus on UI architecture, error handling, and test automation.",
+        "details": [
+          "Designed a reusable Oracle VBCS and Redwood error-handling framework across eight Offers and Attribute-Based Rules surfaces, covering API, validation, localized, and recovery states.",
+          "Built Cypress end-to-end automation for Charge Offer and Bundle Offer editing, with shared commands, fixtures, locators, and validation scenarios.",
+          "Delivered lifecycle, initiative, import/export, and concurrency workflows across Offers, Bundles, Balances, Rules, Service Design, General Ledger, and Taxation."
+        ]
+      },
+      {
+        "company": "Carelon Global Solutions India",
+        "role": "Software Engineer",
+        "dates": "Jun 2021 — Feb 2025",
+        "description": "Built React, Next.js, and Angular applications for healthcare data validation, network data automation, and configurable enterprise workflows.",
+        "details": [
+          "Built a React and Next.js workflow for sensitive-data classification and LOINC validation, including upload, review, validation, and export flows that reduced end-user processing time by 65%.",
+          "Developed Angular pricing and lookup-maintenance modules using configurable forms, role-based access, and spreadsheet export for network data automation.",
+          "Created Figma prototypes and supported production releases through quality fixes, deployment support, and stakeholder-facing proof of concepts."
+        ]
+      }
+    ],
     "techStack": [
       { "name": "React", "logo": "react" },
       { "name": "TypeScript", "logo": "typescript" },

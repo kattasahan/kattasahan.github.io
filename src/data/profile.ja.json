@@ -41,6 +41,31 @@
     "title": "複雑なプロダクトのために、信頼できるUIをつくる。",
     "description": "エンタープライズWebアプリケーションの開発に5年以上携わるフロントエンドエンジニアです。UIアーキテクチャ、API連携、検証フロー、自動テスト、アクセシビリティ、Figmaデザインを信頼できるプロダクト体験へ変えることに強みがあります。",
     "techStackLabel": "技術スタック",
+    "experienceLabel": "職務経歴",
+    "experience": [
+      {
+        "company": "オラクル",
+        "role": "アプリケーション・ソフトウェア・エンジニア 2",
+        "dates": "2025年3月 — 現在",
+        "description": "Monetization Product Catalogで、UIアーキテクチャ、エラーハンドリング、テスト自動化に重点を置いた信頼性の高いデータ駆動ワークフローを構築。",
+        "details": [
+          "OffersおよびAttribute-Based Rulesの8つの画面にわたり、API、バリデーション、ローカライズ、復旧状態を扱う再利用可能なOracle VBCS／Redwoodエラーハンドリングフレームワークを設計。",
+          "共有コマンド、フィクスチャ、ロケーター、バリデーションシナリオを用いて、Charge OfferおよびBundle Offerの編集フロー向けCypress E2E自動化を構築。",
+          "Offers、Bundles、Balances、Rules、Service Design、General Ledger、Taxationにまたがるライフサイクル、Initiative、インポート／エクスポート、並行処理のワークフローを提供。"
+        ]
+      },
+      {
+        "company": "ケアロン・グローバル・ソリューションズ・インディア",
+        "role": "ソフトウェアエンジニア",
+        "dates": "2021年6月 — 2025年2月",
+        "description": "医療データ検証、ネットワークデータ自動化、設定可能なエンタープライズワークフロー向けに、React、Next.js、Angularアプリケーションを開発。",
+        "details": [
+          "機微データ分類とLOINC検証のためにReact／Next.jsワークフローを構築。アップロード、確認、検証、エクスポートを実装し、エンドユーザーの処理時間を65%削減。",
+          "ネットワークデータ自動化のため、設定可能なフォーム、ロールベースアクセス、スプレッドシート出力を備えたAngularのPricingおよびLookup Maintenanceモジュールを開発。",
+          "Figmaプロトタイプを作成し、品質修正、デプロイ支援、ステークホルダー向けPoCを通じて本番リリースを支援。"
+        ]
+      }
+    ],
     "techStack": [
       { "name": "React", "logo": "react" },
       { "name": "TypeScript", "logo": "typescript" },
