@@ -45,11 +45,11 @@ function App() {
       data-theme={theme}
       className="group min-h-screen bg-canvas text-ink data-[theme=dark]:bg-ink data-[theme=dark]:text-zinc-50"
     >
-      <nav aria-label={content.ui.controlsLabel} className="absolute right-2 top-2 flex">
+      <nav aria-label={content.ui.controlsLabel} className="absolute right-2 top-2 z-10 flex">
         <LanguageToggle language={language} onLanguageChange={updateLanguage} label={content.ui.language.switchTo} />
         <ThemeToggle theme={theme} onThemeChange={updateTheme} labels={content.ui.theme} />
       </nav>
-      <aside id="profile-panel" aria-label={content.ui.profileLabel} className="flex min-h-screen items-start p-2 sm:p-3">
+      <aside id="profile-panel" aria-label={content.ui.profileLabel} className="flex min-h-screen items-start p-2 pt-14 sm:p-3">
         <ProfileCard content={content} />
       </aside>
     </main>

@@ -22,26 +22,26 @@ export function ProfileCard({ content }: ProfileCardProps) {
       initial={reduceMotion ? false : { opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: reduceMotion ? 0 : 0.25, ease: 'easeOut' }}
-      className="relative flex w-[min(100%,17.5rem)] flex-col rounded-2xl border border-[#ddd9d1] bg-surface p-5 text-ink shadow-[0_1px_2px_rgb(0_0_0/0.04)] group-data-[theme=dark]:border-zinc-700 group-data-[theme=dark]:bg-[#22211f] group-data-[theme=dark]:text-zinc-50 group-data-[theme=dark]:shadow-none"
+      className="relative flex w-full flex-col rounded-xl border border-[#ddd9d1] bg-surface p-5 text-ink shadow-[0_1px_2px_rgb(0_0_0/0.04)] sm:w-70 sm:rounded-2xl group-data-[theme=dark]:border-zinc-700 group-data-[theme=dark]:bg-[#22211f] group-data-[theme=dark]:text-zinc-50 group-data-[theme=dark]:shadow-none"
     >
-      <p id="profile-status" role="status" className="absolute right-5 top-5 flex items-center gap-1.5 text-[0.625rem] font-medium uppercase tracking-[0.12em] text-accent">
+      <p id="profile-status" role="status" className="absolute right-5 top-5 flex whitespace-nowrap items-center gap-1.5 text-[0.625rem] font-medium uppercase tracking-[0.12em] text-accent">
         <span className="relative flex size-2" aria-hidden="true">
           <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent/75 motion-reduce:animate-none" />
           <span className="relative inline-flex size-2 rounded-full bg-accent" />
         </span>
         {ui.status}
       </p>
-      <header id="profile-header">
+      <header id="profile-header" className="min-w-0">
         <img
           className="size-18 rounded-full object-cover"
           src={profile.avatarUrl}
           alt={profile.avatarAlt}
         />
 
-        <h1 id="profile-name" className="mt-3 text-[1.75rem] font-[650] leading-none tracking-[-0.04em]">
+        <h1 id="profile-name" className="mt-3 text-[clamp(1.5rem,8vw,1.75rem)] font-[650] leading-none tracking-[-0.04em]">
           {profile.name}
         </h1>
-        <p id="profile-role" className="mt-1 text-[1rem] tracking-[-0.015em]">
+        <p id="profile-role" className="mt-1 text-pretty text-[1rem] tracking-[-0.015em]">
           {profile.role}
         </p>
         <p id="profile-location" className="flex items-center gap-1.5 text-[0.875rem] text-zinc-500 group-data-[theme=dark]:text-zinc-400">
@@ -54,10 +54,10 @@ export function ProfileCard({ content }: ProfileCardProps) {
         <p id="current-label" className="text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-accent">
           {ui.current}
         </p>
-        <h2 id="current-company" className="mt-2 text-[1rem] font-semibold tracking-[-0.015em]">
+        <h2 id="current-company" className="mt-2 text-[1rem] tracking-[-0.015em]">
           {profile.currentRole.company}
         </h2>
-        <p className="text-[0.875rem] text-zinc-600 group-data-[theme=dark]:text-zinc-300">
+        <p className="text-pretty text-[0.875rem] text-zinc-600 group-data-[theme=dark]:text-zinc-300">
           {profile.currentRole.title}
         </p>
         <p className="text-[0.875rem] text-zinc-500 group-data-[theme=dark]:text-zinc-400">
