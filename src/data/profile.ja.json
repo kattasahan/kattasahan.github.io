@@ -55,7 +55,7 @@
         ]
       },
       {
-        "company": "ケアロン・グローバル・ソリューションズ・インディア",
+        "company": "ケアロン・グローバル・ソリューションズ",
         "role": "ソフトウェアエンジニア",
         "dates": "2021年6月 — 2025年2月",
         "description": "医療データ検証、ネットワークデータ自動化、設定可能なエンタープライズワークフロー向けに、React、Next.js、Angularアプリケーションを開発。",
@@ -67,16 +67,16 @@
       }
     ],
     "techStack": [
-      { "name": "React", "logo": "react" },
-      { "name": "TypeScript", "logo": "typescript" },
-      { "name": "JavaScript", "logo": "javascript" },
-      { "name": "Angular", "logo": "angular" },
-      { "name": "Next.js", "logo": "nextjs" },
-      { "name": "Oracle VBCS", "logo": null },
-      { "name": "Tailwind CSS", "logo": "tailwind" },
-      { "name": "Cypress", "logo": "cypress" },
-      { "name": "REST API", "logo": null },
-      { "name": "Figma", "logo": "figma" }
+      { "name": "リアクト", "logo": "react" },
+      { "name": "タイプスクリプト", "logo": "typescript" },
+      { "name": "ジャバスクリプト", "logo": "javascript" },
+      { "name": "アンギュラー", "logo": "angular" },
+      { "name": "ネクスト.js", "logo": "nextjs" },
+      { "name": "オラクル VBCS", "logo": null },
+      { "name": "テイルウィンド CSS", "logo": "tailwind" },
+      { "name": "サイプレス", "logo": "cypress" },
+      { "name": "レスト API", "logo": null },
+      { "name": "フィグマ", "logo": "figma" }
     ]
   }
 }

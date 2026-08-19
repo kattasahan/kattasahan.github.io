@@ -38,14 +38,16 @@ export function ExperiencePanel({ content }: ExperiencePanelProps) {
                 ))}
                 className="w-full text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
               >
-                <div className="flex flex-wrap items-baseline justify-between gap-x-3">
-                  <h2 className="text-[1rem] tracking-[-0.015em]">{entry.company}</h2>
-                  <span className="flex items-center gap-2 text-[0.8125rem] text-zinc-500 group-data-[theme=dark]:text-zinc-400">
+                <div className="flex min-w-0 items-start justify-between gap-3">
+                  <h2 className="min-w-0 text-[1rem] tracking-[-0.015em]">{entry.company}</h2>
+                  <span className="hidden shrink-0 items-center gap-2 text-[0.8125rem] text-zinc-500 sm:flex group-data-[theme=dark]:text-zinc-400">
                     {entry.dates}
                     <ChevronDown className={`size-3.5 transition-transform duration-150 motion-reduce:transition-none ${isOpen ? 'rotate-180' : ''}`} strokeWidth={1.75} aria-hidden="true" />
                   </span>
+                  <ChevronDown className={`mt-1 size-3.5 shrink-0 transition-transform duration-150 motion-reduce:transition-none sm:hidden ${isOpen ? 'rotate-180' : ''}`} strokeWidth={1.75} aria-hidden="true" />
                 </div>
                 <p className="mt-1 text-[0.9375rem] font-medium leading-5 tracking-[-0.01em] text-zinc-800 group-data-[theme=dark]:text-zinc-200">{entry.role}</p>
+                <p className="mt-1 text-[0.8125rem] text-zinc-500 sm:hidden group-data-[theme=dark]:text-zinc-400">{entry.dates}</p>
               </button>
               <AnimatePresence initial={false}>
                 {isOpen && (

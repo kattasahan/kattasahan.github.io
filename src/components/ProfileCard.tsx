@@ -89,7 +89,7 @@ export function ProfileCard({ content }: ProfileCardProps) {
               const Logo = technology.logo ? technologyLogos[technology.logo] : undefined
 
               return (
-                <li key={technology.name} className="flex min-w-0 items-center gap-2 py-1.5 text-[0.875rem] tracking-[-0.01em]">
+                <li key={technology.name} title={technology.name} className="group/tech relative flex min-w-0 items-center gap-2 py-1.5 text-[0.875rem] tracking-[-0.01em]">
                   {Logo && (
                     <Logo
                       className={`size-4 shrink-0 ${technology.logo === 'nextjs' ? 'group-data-[theme=dark]:invert' : ''}`}
@@ -97,6 +97,9 @@ export function ProfileCard({ content }: ProfileCardProps) {
                     />
                   )}
                   <span className="truncate" title={technology.name}>{technology.name}</span>
+                  <span role="tooltip" aria-hidden="true" className="pointer-events-none invisible absolute left-0 top-full z-10 w-max max-w-60 rounded-md bg-ink px-2 py-1 text-[0.75rem] leading-4 text-white opacity-0 shadow-sm transition-opacity duration-150 group-hover/tech:visible group-hover/tech:opacity-100 group-data-[theme=dark]:bg-surface group-data-[theme=dark]:text-ink">
+                    {technology.name}
+                  </span>
                 </li>
               )
             })}
