@@ -7,6 +7,7 @@
   "ui": {
     "controlsLabel": "サイトコントロール",
     "profileLabel": "プロフィール",
+    "aboutPanelLabel": "自己紹介と技術スタック",
     "status": "活動中",
     "current": "現在",
     "connect": "連絡先",
@@ -33,6 +34,24 @@
       { "type": "github", "label": "GitHub", "url": "https://github.com/kattasahan" },
       { "type": "linkedin", "label": "LinkedIn", "url": "https://www.linkedin.com/in/kattasahan" },
       { "type": "email", "label": "メール", "url": "mailto:kattasahan2234@gmail.com" }
+    ]
+  },
+  "about": {
+    "label": "自己紹介",
+    "title": "複雑なプロダクトのために、信頼できるUIをつくる。",
+    "description": "エンタープライズWebアプリケーションの開発に5年以上携わるフロントエンドエンジニアです。UIアーキテクチャ、API連携、検証フロー、自動テスト、アクセシビリティ、Figmaデザインを信頼できるプロダクト体験へ変えることに強みがあります。",
+    "techStackLabel": "技術スタック",
+    "techStack": [
+      { "name": "React", "logo": "react" },
+      { "name": "TypeScript", "logo": "typescript" },
+      { "name": "JavaScript", "logo": "javascript" },
+      { "name": "Angular", "logo": "angular" },
+      { "name": "Next.js", "logo": "nextjs" },
+      { "name": "Oracle VBCS", "logo": null },
+      { "name": "Tailwind CSS", "logo": "tailwind" },
+      { "name": "Cypress", "logo": "cypress" },
+      { "name": "REST API", "logo": null },
+      { "name": "Figma", "logo": "figma" }
     ]
   }
 }

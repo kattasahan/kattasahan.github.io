@@ -7,6 +7,7 @@
   "ui": {
     "controlsLabel": "Site controls",
     "profileLabel": "Professional profile",
+    "aboutPanelLabel": "About and technology",
     "status": "Active",
     "current": "Current",
     "connect": "Connect",
@@ -33,6 +34,24 @@
       { "type": "github", "label": "GitHub", "url": "https://github.com/kattasahan" },
       { "type": "linkedin", "label": "LinkedIn", "url": "https://www.linkedin.com/in/kattasahan" },
       { "type": "email", "label": "Email", "url": "mailto:kattasahan2234@gmail.com" }
+    ]
+  },
+  "about": {
+    "label": "About",
+    "title": "Building reliable interfaces for complex products.",
+    "description": "Frontend Engineer with 5+ years of experience building enterprise web applications. I focus on UI architecture, API integration, validation flows, automated testing, accessibility, and translating Figma designs into dependable product experiences.",
+    "techStackLabel": "Tech stack",
+    "techStack": [
+      { "name": "React", "logo": "react" },
+      { "name": "TypeScript", "logo": "typescript" },
+      { "name": "JavaScript", "logo": "javascript" },
+      { "name": "Angular", "logo": "angular" },
+      { "name": "Next.js", "logo": "nextjs" },
+      { "name": "Oracle VBCS", "logo": null },
+      { "name": "Tailwind CSS", "logo": "tailwind" },
+      { "name": "Cypress", "logo": "cypress" },
+      { "name": "REST APIs", "logo": null },
+      { "name": "Figma", "logo": "figma" }
     ]
   }
 }
