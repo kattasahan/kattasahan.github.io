@@ -1,10 +1,24 @@
 import { ExternalLink, MapPin, type LucideIcon } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
-import { GitHubDark, GitHubLight, Gmail, LinkedIn } from '@ridemountainpig/svgl-react'
+import type { ComponentType, SVGProps } from 'react'
+import { Angular, Cypress, Figma, GitHubDark, GitHubLight, Gmail, JavaScript, LinkedIn, Nextjs, ReactDark, TailwindCSS, TypeScript } from '@ridemountainpig/svgl-react'
 import type { PortfolioContent } from '../data/content'
 
 const socialIcons: Record<string, LucideIcon> = {
   portfolio: ExternalLink,
+}
+
+type TechnologyLogo = ComponentType<SVGProps<SVGSVGElement>>
+
+const technologyLogos: Record<string, TechnologyLogo> = {
+  angular: Angular,
+  cypress: Cypress,
+  figma: Figma,
+  javascript: JavaScript,
+  nextjs: Nextjs,
+  react: ReactDark,
+  tailwind: TailwindCSS,
+  typescript: TypeScript,
 }
 
 type ProfileCardProps = {
@@ -22,32 +36,34 @@ export function ProfileCard({ content }: ProfileCardProps) {
       initial={reduceMotion ? false : { opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: reduceMotion ? 0 : 0.25, ease: 'easeOut' }}
-      className="relative flex w-full flex-col rounded-xl border border-[#ddd9d1] bg-surface p-5 text-ink shadow-[0_1px_2px_rgb(0_0_0/0.04)] sm:w-70 sm:rounded-2xl group-data-[theme=dark]:border-zinc-700 group-data-[theme=dark]:bg-[#22211f] group-data-[theme=dark]:text-zinc-50 group-data-[theme=dark]:shadow-none"
+      className="@container relative flex w-full flex-col rounded-xl border border-[#ddd9d1] bg-surface p-5 text-ink shadow-[0_1px_2px_rgb(0_0_0/0.04)] sm:w-70 sm:rounded-2xl group-data-[theme=dark]:border-zinc-700 group-data-[theme=dark]:bg-[#22211f] group-data-[theme=dark]:text-zinc-50 group-data-[theme=dark]:shadow-none"
     >
-      <p id="profile-status" role="status" className="absolute right-5 top-5 flex whitespace-nowrap items-center gap-1.5 text-[0.625rem] font-medium uppercase tracking-[0.12em] text-accent">
+      <p id="profile-status" role="status" className="flex items-center gap-1.5 text-[0.625rem] font-medium uppercase tracking-[0.12em] text-accent">
         <span className="relative flex size-2" aria-hidden="true">
           <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent/75 motion-reduce:animate-none" />
           <span className="relative inline-flex size-2 rounded-full bg-accent" />
         </span>
         {ui.status}
       </p>
-      <header id="profile-header" className="min-w-0">
+      <header id="profile-header" className="mt-4 flex min-w-0 flex-col items-start gap-3 @min-[14rem]:flex-row @max-[14rem]:items-center">
         <img
-          className="size-18 rounded-full object-cover"
+          className="size-18 shrink-0 rounded-full object-cover"
           src={profile.avatarUrl}
           alt={profile.avatarAlt}
         />
 
-        <h1 id="profile-name" className="mt-3 text-[clamp(1.5rem,8vw,1.75rem)] font-[650] leading-none tracking-[-0.04em]">
-          {profile.name}
-        </h1>
-        <p id="profile-role" className="mt-1 text-pretty text-[1rem] tracking-[-0.015em]">
-          {profile.role}
-        </p>
-        <p id="profile-location" className="flex items-center gap-1.5 text-[0.875rem] text-zinc-500 group-data-[theme=dark]:text-zinc-400">
-          <MapPin className="size-3.5 shrink-0" strokeWidth={1.75} aria-hidden="true" />
-          {profile.location}
-        </p>
+        <div className="min-w-0">
+          <h1 id="profile-name" className="text-[clamp(1.5rem,8vw,1.75rem)] font-[650] leading-none tracking-[-0.04em]">
+            {profile.name}
+          </h1>
+          <p id="profile-role" className="mt-1 text-pretty text-[1rem] tracking-[-0.015em]">
+            {profile.role}
+          </p>
+          <p id="profile-location" className="flex items-center gap-1.5 text-[0.875rem] text-zinc-500 group-data-[theme=dark]:text-zinc-400">
+            <MapPin className="size-3.5 shrink-0" strokeWidth={1.75} aria-hidden="true" />
+            {profile.location}
+          </p>
+        </div>
       </header>
 
       <section id="current-role" aria-labelledby="current-label" className="mt-7 border-t border-[#ddd9d1] pt-4 group-data-[theme=dark]:border-zinc-700">
@@ -63,6 +79,29 @@ export function ProfileCard({ content }: ProfileCardProps) {
         <p className="text-[0.875rem] text-zinc-500 group-data-[theme=dark]:text-zinc-400">
           {profile.currentRole.dates}
         </p>
+
+        <section id="tech-stack" aria-labelledby="tech-stack-label" className="mt-5 border-t border-[#ddd9d1] pt-4 group-data-[theme=dark]:border-zinc-700">
+          <p id="tech-stack-label" className="text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-accent">
+            {content.about.techStackLabel}
+          </p>
+          <ul className="mt-2 grid grid-cols-1 min-[260px]:grid-cols-2">
+            {content.about.techStack.map((technology) => {
+              const Logo = technology.logo ? technologyLogos[technology.logo] : undefined
+
+              return (
+                <li key={technology.name} className="flex min-w-0 items-center gap-2 py-1.5 text-[0.875rem] tracking-[-0.01em]">
+                  {Logo && (
+                    <Logo
+                      className={`size-4 shrink-0 ${technology.logo === 'nextjs' ? 'group-data-[theme=dark]:invert' : ''}`}
+                      aria-hidden="true"
+                    />
+                  )}
+                  <span className="truncate" title={technology.name}>{technology.name}</span>
+                </li>
+              )
+            })}
+          </ul>
+        </section>
       </section>
 
       <nav id="profile-links" aria-labelledby="connect-label" className="mt-7 border-t border-[#ddd9d1] pt-4 group-data-[theme=dark]:border-zinc-700">
