@@ -1,12 +1,13 @@
-import { useEffect } from 'react'
-import { AboutPanel } from './components/AboutPanel'
-import { ExperiencePanel } from './components/ExperiencePanel'
+import { lazy, Suspense, useEffect } from 'react'
 import { LanguageToggle } from './components/LanguageToggle'
 import { ThemeToggle } from './components/ThemeToggle'
 import { ProfileCard } from './components/ProfileCard'
 import { getContent } from './data/content'
 import { useLanguagePreference } from './hooks/useLanguagePreference'
 import { useThemePreference } from './hooks/useThemePreference'
+
+const AboutPanel = lazy(() => import('./components/AboutPanel').then(({ AboutPanel: Panel }) => ({ default: Panel })))
+const ExperiencePanel = lazy(() => import('./components/ExperiencePanel').then(({ ExperiencePanel: Panel }) => ({ default: Panel })))
 
 function App() {
   const { theme, updateTheme } = useThemePreference()
@@ -18,28 +19,6 @@ function App() {
     document.title = content.metadata.title
     document.querySelector('meta[name="description"]')?.setAttribute('content', content.metadata.description)
   }, [content])
-
-  useEffect(() => {
-    if (!('serviceWorker' in navigator)) return
-
-    let registration: ServiceWorkerRegistration | undefined
-
-    void navigator.serviceWorker.register('/service-worker.js')
-      .then((registeredWorker) => {
-        registration = registeredWorker
-      })
-      .catch(() => {
-        // The site remains fully functional when service workers are unavailable.
-      })
-
-    const clearImageCache = () => {
-      const worker = navigator.serviceWorker.controller ?? registration?.active ?? registration?.waiting
-      worker?.postMessage({ type: 'CLEAR_IMAGE_CACHE' })
-    }
-
-    window.addEventListener('pagehide', clearImageCache)
-    return () => window.removeEventListener('pagehide', clearImageCache)
-  }, [])
 
   return (
     <main
@@ -56,8 +35,10 @@ function App() {
           <ProfileCard content={content} />
         </aside>
         <section id="content-panels" aria-label={content.ui.aboutPanelLabel} className="w-full space-y-3 lg:max-w-2xl">
-          <AboutPanel content={content} />
-          <ExperiencePanel content={content} />
+          <Suspense fallback={null}>
+            <AboutPanel content={content} />
+            <ExperiencePanel content={content} />
+          </Suspense>
         </section>
       </div>
     </main>

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import 'tailwindcss';
 
 @theme {
@@ -6,7 +5,7 @@
   --color-canvas: #f3f1ec;
   --color-surface: #fbfaf7;
   --color-ink: #181817;
-  --color-accent: #e95445;
+  --color-accent: #b42318;
 }
 
 @layer base {

@@ -38,7 +38,7 @@ export function ProfileCard({ content }: ProfileCardProps) {
       transition={{ duration: reduceMotion ? 0 : 0.25, ease: 'easeOut' }}
       className="@container relative flex w-full flex-col rounded-xl border border-[#ddd9d1] bg-surface p-5 text-ink shadow-[0_1px_2px_rgb(0_0_0/0.04)] lg:w-70 lg:rounded-2xl group-data-[theme=dark]:border-zinc-700 group-data-[theme=dark]:bg-[#22211f] group-data-[theme=dark]:text-zinc-50 group-data-[theme=dark]:shadow-none"
     >
-      <p id="profile-status" role="status" className="flex items-center gap-1.5 text-[0.625rem] font-medium uppercase tracking-[0.12em] text-accent">
+      <p id="profile-status" role="status" className="flex items-center gap-1.5 text-[0.625rem] font-medium uppercase tracking-[0.12em] text-accent group-data-[theme=dark]:text-[#ff8a7d]">
         <span className="relative flex size-2" aria-hidden="true">
           <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent/75 motion-reduce:animate-none" />
           <span className="relative inline-flex size-2 rounded-full bg-accent" />
@@ -71,7 +71,7 @@ export function ProfileCard({ content }: ProfileCardProps) {
       </header>
 
       <section id="current-role" aria-labelledby="current-label" className="mt-7 border-t border-[#ddd9d1] pt-4 group-data-[theme=dark]:border-zinc-700">
-        <p id="current-label" className="text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-accent">
+        <p id="current-label" className="text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-accent group-data-[theme=dark]:text-[#ff8a7d]">
           {ui.current}
         </p>
         <h2 id="current-company" className="mt-2 text-[1rem] tracking-[-0.015em]">
@@ -85,7 +85,7 @@ export function ProfileCard({ content }: ProfileCardProps) {
         </p>
 
         <section id="tech-stack" aria-labelledby="tech-stack-label" className="mt-5 border-t border-[#ddd9d1] pt-4 group-data-[theme=dark]:border-zinc-700">
-          <p id="tech-stack-label" className="text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-accent">
+          <p id="tech-stack-label" className="text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-accent group-data-[theme=dark]:text-[#ff8a7d]">
             {content.about.techStackLabel}
           </p>
           <ul className="mt-2 grid grid-cols-1 min-[260px]:grid-cols-2">
@@ -112,7 +112,7 @@ export function ProfileCard({ content }: ProfileCardProps) {
       </section>
 
       <nav id="profile-links" aria-labelledby="connect-label" className="mt-7 border-t border-[#ddd9d1] pt-4 group-data-[theme=dark]:border-zinc-700">
-        <p id="connect-label" className="text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-accent">
+        <p id="connect-label" className="text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-accent group-data-[theme=dark]:text-[#ff8a7d]">
           {ui.connect}
         </p>
         <div className="mt-2 flex gap-1">
@@ -127,7 +127,7 @@ export function ProfileCard({ content }: ProfileCardProps) {
                 target={isEmail ? undefined : '_blank'}
                 rel={isEmail ? undefined : 'noreferrer'}
                 aria-label={link.label}
-                className="group/link grid size-8 place-items-center text-zinc-400 transition-colors duration-200 ease-out hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent group-data-[theme=dark]:text-zinc-500 group-data-[theme=dark]:hover:text-accent"
+                className="group/link grid size-8 place-items-center text-zinc-400 transition-colors duration-200 ease-out hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent group-data-[theme=dark]:text-zinc-500 group-data-[theme=dark]:hover:text-[#ff8a7d]"
               >
                 {link.type === 'github' ? (
                   <>

@@ -18,7 +18,7 @@ export function ExperiencePanel({ content }: ExperiencePanelProps) {
       aria-labelledby="experience-label"
       className="w-full rounded-xl border border-[#ddd9d1] bg-surface p-5 text-ink shadow-[0_1px_2px_rgb(0_0_0/0.04)] sm:p-6 lg:rounded-2xl group-data-[theme=dark]:border-zinc-700 group-data-[theme=dark]:bg-[#22211f] group-data-[theme=dark]:text-zinc-50 group-data-[theme=dark]:shadow-none"
     >
-      <p id="experience-label" className="text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-accent">
+      <p id="experience-label" className="text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-accent group-data-[theme=dark]:text-[#ff8a7d]">
         {about.experienceLabel}
       </p>
       <ol className="mt-3 divide-y divide-[#e5e1da] group-data-[theme=dark]:divide-zinc-700">
