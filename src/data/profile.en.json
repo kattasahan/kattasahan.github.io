@@ -17,6 +17,20 @@
     },
     "language": {
       "switchTo": "Switch to Japanese"
+    },
+    "accent": {
+      "label": "Choose accent color",
+      "options": {
+        "cyan": "Cyan",
+        "blue": "Blue",
+        "violet": "Violet",
+        "fuchsia": "Fuchsia",
+        "rose": "Rose",
+        "orange": "Orange",
+        "emerald": "Emerald",
+        "black": "Black",
+        "white": "White"
+      }
     }
   },
   "profile": {

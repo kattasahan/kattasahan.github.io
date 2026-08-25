@@ -25,7 +25,7 @@ export function ThemeToggle({ theme, onThemeChange, labels }: ThemeToggleProps) 
       onClick={() => onThemeChange(isLight ? 'dark' : 'light')}
       aria-label={isLight ? labels.switchToDark : labels.switchToLight}
       aria-pressed={!isLight}
-      className="grid size-11 place-items-center bg-transparent text-ink hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent group-data-[theme=dark]:text-zinc-50 group-data-[theme=dark]:hover:text-[#ff8a7d]"
+      className="grid size-11 place-items-center bg-transparent text-ink hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent group-data-[theme=dark]:text-neutral-50 group-data-[theme=dark]:hover:text-[var(--color-accent-dark)]"
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.span

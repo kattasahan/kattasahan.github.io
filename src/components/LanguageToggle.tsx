@@ -15,7 +15,7 @@ export function LanguageToggle({ language, onLanguageChange, label }: LanguageTo
       onClick={() => onLanguageChange(language === 'en' ? 'ja' : 'en')}
       aria-label={label}
       aria-pressed={language === 'ja'}
-      className="grid size-11 place-items-center bg-transparent text-ink transition-colors duration-150 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent group-data-[theme=dark]:text-zinc-50 group-data-[theme=dark]:hover:text-[#ff8a7d]"
+      className="grid size-11 place-items-center bg-transparent text-ink transition-colors duration-150 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent group-data-[theme=dark]:text-neutral-50 group-data-[theme=dark]:hover:text-[var(--color-accent-dark)]"
     >
       <Languages aria-hidden="true" />
     </button>

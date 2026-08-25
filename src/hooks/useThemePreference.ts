@@ -10,9 +10,9 @@ function isTheme(value: string | null): value is Theme {
 function readThemePreference(): Theme {
   try {
     const storedTheme = window.localStorage.getItem(storageKey)
-    return isTheme(storedTheme) ? storedTheme : 'light'
+    return isTheme(storedTheme) ? storedTheme : 'dark'
   } catch {
-    return 'light'
+    return 'dark'
   }
 }
 

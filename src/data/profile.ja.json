@@ -17,6 +17,20 @@
     },
     "language": {
       "switchTo": "英語に切り替える"
+    },
+    "accent": {
+      "label": "アクセントカラーを選択",
+      "options": {
+        "cyan": "シアン",
+        "blue": "ブルー",
+        "violet": "バイオレット",
+        "fuchsia": "フクシア",
+        "rose": "ローズ",
+        "orange": "オレンジ",
+        "emerald": "エメラルド",
+        "black": "ブラック",
+        "white": "ホワイト"
+      }
     }
   },
   "profile": {
