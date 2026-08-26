@@ -8,7 +8,7 @@
     "controlsLabel": "Site controls",
     "profileLabel": "Professional profile",
     "aboutPanelLabel": "About and technology",
-    "status": "Active",
+    "status": "Open to frontend roles",
     "current": "Current",
     "connect": "Connect",
     "theme": {
@@ -45,15 +45,15 @@
       "dates": "Mar 2025 — Present"
     },
     "links": [
+      { "type": "email", "label": "Email", "url": "mailto:kattasahan2234@gmail.com" },
       { "type": "github", "label": "GitHub", "url": "https://github.com/kattasahan" },
-      { "type": "linkedin", "label": "LinkedIn", "url": "https://www.linkedin.com/in/kattasahan" },
-      { "type": "email", "label": "Email", "url": "mailto:kattasahan2234@gmail.com" }
+      { "type": "linkedin", "label": "LinkedIn", "url": "https://www.linkedin.com/in/kattasahan" }
     ]
   },
   "about": {
-    "label": "About",
-    "title": "Building reliable interfaces for complex products.",
-    "description": "Frontend Engineer with 5+ years of experience building enterprise web applications. I focus on UI architecture, API integration, validation flows, automated testing, accessibility, and translating Figma designs into dependable product experiences.",
+    "label": "Frontend Engineer · 5+ years",
+    "title": "I build reliable frontend systems for complex products.",
+    "description": "I turn data-heavy requirements into resilient product workflows with React, TypeScript, Angular, Next.js, and Cypress—from UI architecture and API integration to validation, accessibility, and production-ready test automation.",
     "techStackLabel": "Tech stack",
     "experienceLabel": "Experience",
     "experience": [

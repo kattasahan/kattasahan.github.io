@@ -8,7 +8,7 @@
     "controlsLabel": "サイトコントロール",
     "profileLabel": "プロフィール",
     "aboutPanelLabel": "自己紹介と技術スタック",
-    "status": "活動中",
+    "status": "フロントエンド職を募集中",
     "current": "現在",
     "connect": "連絡先",
     "theme": {
@@ -45,15 +45,15 @@
       "dates": "2025年3月 — 現在"
     },
     "links": [
+      { "type": "email", "label": "メール", "url": "mailto:kattasahan2234@gmail.com" },
       { "type": "github", "label": "GitHub", "url": "https://github.com/kattasahan" },
-      { "type": "linkedin", "label": "LinkedIn", "url": "https://www.linkedin.com/in/kattasahan" },
-      { "type": "email", "label": "メール", "url": "mailto:kattasahan2234@gmail.com" }
+      { "type": "linkedin", "label": "LinkedIn", "url": "https://www.linkedin.com/in/kattasahan" }
     ]
   },
   "about": {
-    "label": "自己紹介",
-    "title": "複雑なプロダクトのために、信頼できるUIをつくる。",
-    "description": "エンタープライズWebアプリケーションの開発に5年以上携わるフロントエンドエンジニアです。UIアーキテクチャ、API連携、検証フロー、自動テスト、アクセシビリティ、Figmaデザインを信頼できるプロダクト体験へ変えることに強みがあります。",
+    "label": "フロントエンドエンジニア・5年以上の経験",
+    "title": "複雑なプロダクトのために、信頼できるフロントエンドをつくる。",
+    "description": "React、TypeScript、Angular、Next.js、Cypressを使い、データ量の多い要件を堅牢なプロダクトワークフローへ変えます。UIアーキテクチャ、API連携、バリデーション、アクセシビリティ、本番品質のテスト自動化まで一貫して担います。",
     "techStackLabel": "技術スタック",
     "experienceLabel": "職務経歴",
     "experience": [

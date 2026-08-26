@@ -63,7 +63,7 @@ export function ProfileCard({ content }: ProfileCardProps) {
           <p id="profile-role" className="mt-1 text-pretty text-[1rem] tracking-[-0.015em]">
             {profile.role}
           </p>
-          <p id="profile-location" className="flex justify-center gap-1.5 text-[0.875rem] text-neutral-500 lg:@min-[14rem]:justify-start group-data-[theme=dark]:text-neutral-400">
+          <p id="profile-location" className="flex justify-center items-center gap-1.5 text-[0.875rem] text-neutral-500 lg:@min-[14rem]:justify-start group-data-[theme=dark]:text-neutral-400">
             <MapPin className="size-3.5 shrink-0" strokeWidth={1.75} aria-hidden="true" />
             {profile.location}
           </p>
