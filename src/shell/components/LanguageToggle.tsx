@@ -1,5 +1,5 @@
 import { Languages } from 'lucide-react'
-import type { Language } from '../data/content'
+import type { Language } from '@/data/repositories/portfolioRepository'
 
 type LanguageToggleProps = {
   language: Language

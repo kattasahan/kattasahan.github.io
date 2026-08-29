@@ -10,6 +10,18 @@
   <meta name="author" content="Sahan Katta" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="theme-color" content="#0a0a0a" />
+  <script>
+    (() => {
+      const redirect = new URLSearchParams(window.location.search).get('redirect')
+
+      if (!redirect) return
+
+      const destination = new URL(redirect, window.location.origin)
+      if (destination.origin === window.location.origin) {
+        window.history.replaceState(null, '', `${destination.pathname}${destination.search}${destination.hash}`)
+      }
+    })()
+  </script>
   <link rel="canonical" href="https://kattasahan.github.io/" />
   <link rel="preload" href="/images/sahan-katta.jpg" as="image" type="image/jpeg" fetchpriority="high" />
   <meta property="og:type" content="website" />

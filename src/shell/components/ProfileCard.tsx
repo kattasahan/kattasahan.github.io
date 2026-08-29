@@ -2,7 +2,7 @@ import { ExternalLink, MapPin, type LucideIcon } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
 import type { ComponentType, SVGProps } from 'react'
 import { Angular, Cypress, Figma, GitHubDark, GitHubLight, Gmail, JavaScript, LinkedIn, Nextjs, ReactDark, TailwindCSS, TypeScript } from '@ridemountainpig/svgl-react'
-import type { PortfolioContent } from '../data/content'
+import type { PortfolioContent } from '@/data/repositories/portfolioRepository'
 
 const socialIcons: Record<string, LucideIcon> = {
   portfolio: ExternalLink,

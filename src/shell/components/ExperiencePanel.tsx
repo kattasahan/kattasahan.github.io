@@ -1,7 +1,7 @@
 import { ChevronDown } from 'lucide-react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { useState } from 'react'
-import type { PortfolioContent } from '../data/content'
+import type { PortfolioContent } from '@/data/repositories/portfolioRepository'
 
 type ExperiencePanelProps = {
   content: PortfolioContent

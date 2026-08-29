@@ -11,6 +11,8 @@
     "status": "Open to frontend roles",
     "current": "Current",
     "connect": "Connect",
+    "backToPortfolio": "Back to portfolio",
+    "projectRouteReady": "This project route is ready for its own implementation.",
     "theme": {
       "switchToLight": "Switch to light theme",
       "switchToDark": "Switch to dark theme"
@@ -91,6 +93,30 @@
       { "name": "Cypress", "logo": "cypress" },
       { "name": "REST APIs", "logo": null },
       { "name": "Figma", "logo": "figma" }
+    ]
+  },
+  "work": {
+    "label": "Selected work",
+    "title": "Projects and product work.",
+    "items": [
+      {
+        "slug": "healthcare-data-validation",
+        "kind": "Product work",
+        "title": "Healthcare data validation",
+        "actionLabel": "Open project"
+      },
+      {
+        "slug": "network-data-automation",
+        "kind": "Product work",
+        "title": "Network data automation",
+        "actionLabel": "Open project"
+      },
+      {
+        "slug": "promptopia",
+        "kind": "Personal project",
+        "title": "Promptopia",
+        "actionLabel": "Open project"
+      }
     ]
   }
 }

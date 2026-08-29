@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { languages, type Language } from '../data/content'
+import { languages, type Language } from '@/data/repositories/portfolioRepository'
 
 const storageKey = 'language-preference'
 

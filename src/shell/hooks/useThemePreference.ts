@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import type { Theme } from '../components/ThemeToggle'
+import type { Theme } from '@/shell/components/ThemeToggle'
 
 const storageKey = 'theme-preference'
 

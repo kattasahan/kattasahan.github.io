@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'motion/react'
-import type { PortfolioContent } from '../data/content'
+import type { PortfolioContent } from '@/data/repositories/portfolioRepository'
 
 type AboutPanelProps = {
   content: PortfolioContent

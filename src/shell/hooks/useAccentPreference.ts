@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { defaultAccent, isAccent, type Accent } from '../data/accents'
+import { defaultAccent, isAccent, type Accent } from '@/data/accents'
 
 const storageKey = 'accent-preference'
 

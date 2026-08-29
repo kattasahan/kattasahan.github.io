@@ -1,6 +1,6 @@
 import { Check, Palette } from 'lucide-react'
 import { useEffect, useId, useRef, useState } from 'react'
-import { accents, type Accent } from '../data/accents'
+import { accents, type Accent } from '@/data/accents'
 
 type AccentColorToggleProps = {
   accent: Accent

@@ -11,6 +11,8 @@
     "status": "フロントエンド職を募集中",
     "current": "現在",
     "connect": "連絡先",
+    "backToPortfolio": "ポートフォリオに戻る",
+    "projectRouteReady": "このプロジェクトルートは、個別実装を始められる状態です。",
     "theme": {
       "switchToLight": "ライトテーマに切り替える",
       "switchToDark": "ダークテーマに切り替える"
@@ -91,6 +93,30 @@
       { "name": "サイプレス", "logo": "cypress" },
       { "name": "レスト API", "logo": null },
       { "name": "フィグマ", "logo": "figma" }
+    ]
+  },
+  "work": {
+    "label": "主な仕事",
+    "title": "プロジェクトとプロダクト開発。",
+    "items": [
+      {
+        "slug": "healthcare-data-validation",
+        "kind": "プロダクト開発",
+        "title": "医療データバリデーション",
+        "actionLabel": "プロジェクトを開く"
+      },
+      {
+        "slug": "network-data-automation",
+        "kind": "プロダクト開発",
+        "title": "ネットワークデータ自動化",
+        "actionLabel": "プロジェクトを開く"
+      },
+      {
+        "slug": "promptopia",
+        "kind": "個人プロジェクト",
+        "title": "Promptopia",
+        "actionLabel": "プロジェクトを開く"
+      }
     ]
   }
 }
